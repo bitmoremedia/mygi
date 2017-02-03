@@ -1,6 +1,7 @@
 ---
 type: GiDataTablePage
-title: Breads
-description: Glycemic Index of Breads
+title: Glycemic Index
+description: Glycemic Index Food List
 keywords: gi, GI, Glycemic Index, glycemic index, GlycemicIndex, glycemicindex
+dynamicKeyword: Food List
 ---

@@ -9,11 +9,17 @@ const GiDataFilter = ({categoryFilter}) => {
 
   return (
     <div className="gi-data-filter">
-      <PageLink to={'/'}>
+      <PageLink to={'/glycemic-index/'}>
         [All]
       </PageLink>
-      <PageLink to={'/categories/breads'}>
-        [Bread Filter]
+      <PageLink to={'/glycemic-index/beans'}>
+        [Beans]
+      </PageLink>
+      <PageLink to={'/glycemic-index/breads'}>
+        [Breads]
+      </PageLink>
+      <PageLink to={'/glycemic-index/breakfast-cereals'}>
+        [Breakfast Cereals]
       </PageLink>
     </div>
   );

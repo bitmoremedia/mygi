@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 
 import { config } from 'config'
 import GiDataTablePage from '../components/GiDataTablePage';
+import { appendToKeyWords, categoryFromPath } from '../utils';
 
 module.exports = React.createClass({
   propTypes () {
@@ -15,15 +16,18 @@ module.exports = React.createClass({
     const page = this.props.route.page.data;
     const title = page.title || "";
     const description = page.description || "";
-    const keywords = page.keywords || "";
+    let keywords = page.keywords || "";
+    // append any dynamic keywords
+    if (page.dynamicKeyword) {
+      keywords = keywords + appendToKeyWords(page.dynamicKeyword);
+    }
     const meta = [
       {"name": "description", "content": description},
       {"name": "keywords", "content": keywords },
     ];
-
     // if this markdown page is of type 'GiDataTablePage' then
     // render that component
-    if ( page.type === 'GiDataTablePage' ){
+    if (page.type === 'GiDataTablePage') {
       return (
         <GiDataTablePage
           title={title}

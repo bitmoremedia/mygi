@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
-
-import GiDataTablePage from '../components/GiDataTablePage';
+import PageLink from '../components/common/PageLink';
 
 class IndexPage extends Component {
   render () {
-    const activePath = this.props.location.pathname;
     return (
-      <GiDataTablePage
-        title={'MyGi'}
-        meta={[
-          {"name": "description", "content": "Sample"},
-          {"name": "keywords", "content": "sample, something"},
-        ]}
-        activePath={activePath}
-      />
+      <div>
+        <h1>Home Page</h1>
+        <PageLink to={'/glycemic-index/'}>
+          <button>Glycemic Index Food List</button>
+        </PageLink>
+      </div>
     )
   }
 }

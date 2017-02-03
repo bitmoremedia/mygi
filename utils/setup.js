@@ -20,11 +20,19 @@ export const pathCategoryMap = () => {
 };
 
 export const categoryFromPath = (path) => {
-  // for now we assume all paths that use this function have a prefix of 'categories'
-  if ( path.indexOf('/categories/') > -1 ){
-    const pathName = path.substring(12, path.length-1);
-    console.log({pathName});
+  // we assume all paths that use this function have a prefix of 'categories'
+  if ( path && path.indexOf('/glycemic-index/') > -1 ){
+    const pathName = path.substring('/glycemic-index/'.length, path.length-1);
     return pathCategoryMap()[pathName];
   }
   return undefined;
+};
+
+export const appendToKeyWords = (wordsToAdd) => {
+  const keyWordPrefixes = ["gi", "GI", "Glycemic Index", "glycemic index", "GlycemicIndex", "glycemicindex"];
+  let keywords = [];
+  keyWordPrefixes.forEach((prefix)=> {
+    keywords.push(prefix+" "+wordsToAdd);
+  });
+  return keywords.join();
 };

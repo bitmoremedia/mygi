@@ -5,7 +5,7 @@ import PageLink from './common/PageLink';
 
 const SiteHeader = ({ activePath }) => {
 
-  const gylcemicIndexPathActive = (activePath.indexOf("/categories/") > -1 || activePath === "/");
+  const gylcemicIndexPathActive = (activePath.indexOf("/glycemic-index/") > -1);
   const aboutPathActive = (activePath.indexOf("/about") > -1);
 
   return (
@@ -15,7 +15,7 @@ const SiteHeader = ({ activePath }) => {
           MyGi
         </h1>
       </PageLink>
-      <PageLink to={'/'}>
+      <PageLink to={'/glycemic-index'}>
         <div>
           Gylcemic Index {gylcemicIndexPathActive && '*'}
         </div>
