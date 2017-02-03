@@ -1,0 +1,4 @@
+siteTitle="MyGi"
+linkPrefix = "/mygi-io"
+
+noProductionJavascript = false
