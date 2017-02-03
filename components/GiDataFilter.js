@@ -35,6 +35,11 @@ const GiDataFilter = ({categoryFilter}) => {
       <FilterLink categoryPath="beans"/>
       <FilterLink categoryPath="breads"/>
       <FilterLink categoryPath="breakfast-cereals"/>
+      <FilterLink categoryPath="dairy"/>
+      <FilterLink categoryPath="fruits"/>
+      <FilterLink categoryPath="snacks-and-sweet-foods"/>
+      <FilterLink categoryPath="staples"/>
+      <FilterLink categoryPath="vegetables"/>
     </div>
   );
 };
