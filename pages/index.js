@@ -7,7 +7,7 @@ import GiDataTable from '../components/GiDataTable';
 import data from '../data/gi-by-group.json';
 
 class IndexPage extends Component {
-  render () {        
+  render () {
     return (
       <div>
         <Helmet
@@ -17,9 +17,8 @@ class IndexPage extends Component {
             {"name": "keywords", "content": "sample, something"},
           ]}
         />
-        <p>Welcome to MyGi</p>
-        <PageLink to={'/about'}>
-          About Page >>
+        <PageLink to={'/categories/breads'}>
+          [Bread Filter]
         </PageLink>
         <GiDataTable data={data}/>
       </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/main';
 
-import PageLink from '../components/common/PageLink';
+import SiteHeader from '../components/SiteHeader';
 
 module.exports = React.createClass({
   propTypes () {
@@ -10,15 +10,10 @@ module.exports = React.createClass({
     };
   },
   render() {
+    const activePath = this.props.location.pathname;
     return (
       <div>
-        <div className='site-header'>
-          <PageLink to={'/'}>
-            <h1>
-              MyGi
-            </h1>
-          </PageLink>
-        </div>
+        <SiteHeader activePath={activePath}/>
         <div>
           {this.props.children}
         </div>
