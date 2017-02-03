@@ -12,6 +12,8 @@
   "license": "MIT",
   "dependencies": {
     "gatsby": "^0.12.28",
+    "preact": "^7.1.0",
+    "preact-compat": "^3.13.1",
     "react": "^15.4.2",
     "react-helmet": "^4.0.0"
   }
