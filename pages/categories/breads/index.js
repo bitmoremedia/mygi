@@ -1,26 +1,19 @@
 import React, { Component } from 'react';
-import Helmet from 'react-helmet';
 
-import GiDataTable from '../../../components/GiDataTable';
-import data from '../../../data/gi-by-group.json';
+import GiDataTablePage from '../../../components/GiDataTablePage';
 
 class BreadsPage extends Component {
   render () {
-    const filters = {
-      category: 'Breads'
-    };
+    const activePath = this.props.location.pathname;
     return (
-      <div>
-        <Helmet
-          title={'MyGi'}
-          meta={[
-            {"name": "description", "content": "Sample"},
-            {"name": "keywords", "content": "sample, something"},
-          ]}
-        />
-        <p>GI Value os Breads</p>
-        <GiDataTable data={data} filters={filters}/>
-      </div>
+      <GiDataTablePage
+        title={'Breads'}
+        meta={[
+          {"name": "description", "content": "Sample"},
+          {"name": "keywords", "content": "sample, something"},
+        ]}
+        activePath={activePath}
+      />
     )
   }
 }

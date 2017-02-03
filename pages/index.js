@@ -1,27 +1,19 @@
 import React, { Component } from 'react';
-import Helmet from 'react-helmet';
 
-import { config } from 'config';
-import PageLink from '../components/common/PageLink';
-import GiDataTable from '../components/GiDataTable';
-import data from '../data/gi-by-group.json';
+import GiDataTablePage from '../components/GiDataTablePage';
 
 class IndexPage extends Component {
   render () {
+    const activePath = this.props.location.pathname;
     return (
-      <div>
-        <Helmet
-          title={'MyGi'}
-          meta={[
-            {"name": "description", "content": "Sample"},
-            {"name": "keywords", "content": "sample, something"},
-          ]}
-        />
-        <PageLink to={'/categories/breads'}>
-          [Bread Filter]
-        </PageLink>
-        <GiDataTable data={data}/>
-      </div>
+      <GiDataTablePage
+        title={'MyGi'}
+        meta={[
+          {"name": "description", "content": "Sample"},
+          {"name": "keywords", "content": "sample, something"},
+        ]}
+        activePath={activePath}
+      />
     )
   }
 }
