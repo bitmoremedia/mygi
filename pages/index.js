@@ -3,9 +3,11 @@ import Helmet from 'react-helmet';
 
 import { config } from 'config';
 import PageLink from '../components/common/PageLink';
+import GiDataTable from '../components/GiDataTable';
+import data from '../data/gi-by-group.json';
 
 class IndexPage extends Component {
-  render () {
+  render () {        
     return (
       <div>
         <Helmet
@@ -19,6 +21,7 @@ class IndexPage extends Component {
         <PageLink to={'/about'}>
           About Page >>
         </PageLink>
+        <GiDataTable data={data}/>
       </div>
     )
   }
