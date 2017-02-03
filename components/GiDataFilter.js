@@ -1,26 +1,40 @@
 import React from 'react';
 
 import PageLink from './common/PageLink';
+import { categoryPathMap, pathCategoryMap } from '../utils';
 
 const GiDataFilter = ({categoryFilter}) => {
 
-  //console.log('*** GiDataFilter ***');
-  //console.log({categoryFilter});
+  const FilterLink = ({categoryPath}) => {
+
+    let isActive = false;
+    const category = (categoryPath) ? pathCategoryMap()[categoryPath] : 'All';
+
+    if (!categoryFilter && !categoryPath) {
+      isActive = true;
+    } else {
+      if ( category === categoryFilter ) {
+        isActive = true;
+      }
+    }
+
+    const pathTo = (categoryPath) ? '/glycemic-index/' + categoryPath : '/glycemic-index/';
+
+    return (
+      <div>
+        <PageLink to={pathTo}>
+          {category} {isActive && '*'}
+        </PageLink>
+      </div>
+    );
+  };
 
   return (
     <div className="gi-data-filter">
-      <PageLink to={'/glycemic-index/'}>
-        [All]
-      </PageLink>
-      <PageLink to={'/glycemic-index/beans'}>
-        [Beans]
-      </PageLink>
-      <PageLink to={'/glycemic-index/breads'}>
-        [Breads]
-      </PageLink>
-      <PageLink to={'/glycemic-index/breakfast-cereals'}>
-        [Breakfast Cereals]
-      </PageLink>
+      <FilterLink/>
+      <FilterLink categoryPath="beans"/>
+      <FilterLink categoryPath="breads"/>
+      <FilterLink categoryPath="breakfast-cereals"/>
     </div>
   );
 };
