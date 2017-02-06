@@ -1,21 +1,18 @@
+import giCategories from '../data/glycemic-index-categories';
+
 export const categoryPathMap = () => {
-  return {
-    "Beans" : "beans",
-    "Breads" : "breads",
-    "Breakfast Cereals" : "breakfast-cereals",
-    "Dairy" : "dairy",
-    "Fruits" : "fruits",
-    "Snacks & Sweet Foods" : "snacks-and-sweet-foods",
-    "Staples" : "staples",
-    "Vegetables" : "vegetables",
-  };
+  const map = {};
+  giCategories.forEach((item)=>{
+    map[item.category] = item.page;
+  });
+  return map;
 };
 
 export const pathCategoryMap = () => {
   const map = {};
-  for (let category in categoryPathMap()) {
-    map[categoryPathMap()[category]] = category;
-  }
+  giCategories.forEach((item)=>{
+    map[item.page] = item.category;
+  });
   return map;
 };
 
