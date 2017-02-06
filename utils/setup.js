@@ -37,7 +37,11 @@ export const giTypeFilterFromPath = (path) => {
   // we assume all paths that use this function have a prefix of 'glycemic-index'
   if (path && path.indexOf('/glycemic-index/') > -1) {
     const pathName = path.substring('/glycemic-index/'.length, path.length-1);
-    // check path for GI type filter ( high-gi / medium-gi / low-gi )
+    // check if path is a gi filter
+    if ( ['high-gi','medium-gi','low-gi'].indexOf(pathName) > -1 ){
+      giFilter = pathName;
+    }
+    // check if path contains a gi filter
     if (pathName.indexOf('-gi/') > -1) {
       giFilter = pathName.substring(0, pathName.indexOf('-gi/') + '-gi/'.length-1);
     }
