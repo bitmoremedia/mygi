@@ -7,6 +7,7 @@ import { categoryFromPath } from '../utils';
 
 const GiDataTablePage = ({title, meta, activePath}) => {
   const categoryFilter = categoryFromPath(activePath);
+  debugger;
   return (
     <div>
       <Helmet
