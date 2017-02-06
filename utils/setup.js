@@ -27,12 +27,3 @@ export const categoryFromPath = (path) => {
   }
   return undefined;
 };
-
-export const appendToKeyWords = (wordsToAdd) => {
-  const keyWordPrefixes = ["gi", "GI", "Glycemic Index", "glycemic index", "GlycemicIndex", "glycemicindex"];
-  let keywords = [];
-  keyWordPrefixes.forEach((prefix)=> {
-    keywords.push(prefix+" "+wordsToAdd);
-  });
-  return keywords.join();
-};
