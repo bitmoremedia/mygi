@@ -35,8 +35,6 @@ keywords: ${dynamicKeywords}
   return template;
 }
 
-// get setup data
-
 const glycemicIndexCategories = fs.readJsonSync('./data/glycemic-index-categories.json');
 const targetDirectory = 'glycemic-index';
 let pageCount = 0;
@@ -52,6 +50,16 @@ pageCount ++;
 glycemicIndexCategories.forEach((item)=>{
   fs.outputFileSync(`./pages/${targetDirectory}/${item.page}/index.md`, generateMdTemplate(item.category));
   pageCount ++;
+});
+
+// add low/medium/high sub pages for each category
+['low-gi', 'medium-gi', 'high-gi'].forEach((giType) => {
+  fs.outputFileSync(`./pages/${targetDirectory}/${giType}/index.md`, generateMdTemplate());
+  pageCount ++;
+  glycemicIndexCategories.forEach((item)=>{
+    fs.outputFileSync(`./pages/${targetDirectory}/${giType}/${item.page}/index.md`, generateMdTemplate(item.category));
+    pageCount ++;
+  });
 });
 
 console.log(`${pageCount} pages created`);

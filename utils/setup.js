@@ -45,7 +45,6 @@ export const giTypeFilterFromPath = (path) => {
   return giFilter;
 };
 
-
 export const isOfGiType = (giValue, giType) => {
   switch (giType) {
     case 'high-gi':
