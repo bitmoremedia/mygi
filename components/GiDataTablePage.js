@@ -3,19 +3,19 @@ import Helmet from 'react-helmet';
 
 import GiDataFilter from '../components/GiDataFilter';
 import GiDataTable from '../components/GiDataTable';
-import { categoryFromPath } from '../utils';
+import { categoryFromPath, giTypeFilterFromPath } from '../utils';
 
 const GiDataTablePage = ({title, meta, activePath}) => {
   const categoryFilter = categoryFromPath(activePath);
-  debugger;
+  const giTypeFilter = giTypeFilterFromPath(activePath);
   return (
     <div>
       <Helmet
         title={title}
         meta={meta}
       />
-      <GiDataFilter categoryFilter={categoryFilter}/>
-      <GiDataTable categoryFilter={categoryFilter}/>
+    <GiDataFilter categoryFilter={categoryFilter} giTypeFilter={giTypeFilter}/>
+      <GiDataTable categoryFilter={categoryFilter} giTypeFilter={giTypeFilter}/>
     </div>
   );
 };

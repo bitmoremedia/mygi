@@ -31,3 +31,33 @@ export const categoryFromPath = (path) => {
   }
   return undefined;
 };
+
+export const giTypeFilterFromPath = (path) => {
+  let giFilter;
+  // we assume all paths that use this function have a prefix of 'glycemic-index'
+  if (path && path.indexOf('/glycemic-index/') > -1) {
+    const pathName = path.substring('/glycemic-index/'.length, path.length-1);
+    // check path for GI type filter ( high-gi / medium-gi / low-gi )
+    if (pathName.indexOf('-gi/') > -1) {
+      giFilter = pathName.substring(0, pathName.indexOf('-gi/') + '-gi/'.length-1);
+    }
+  }
+  return giFilter;
+};
+
+
+export const isOfGiType = (giValue, giType) => {
+  switch (giType) {
+    case 'high-gi':
+      return (giValue > 69);
+      break;
+    case 'medium-gi':
+      return (giValue > 55 && giValue < 70);
+      break;
+    case 'low-gi':
+      return (giValue < 56);
+      break;
+    default:
+      return false;
+  }
+};

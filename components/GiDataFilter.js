@@ -3,39 +3,36 @@ import React from 'react';
 import PageLink from './common/PageLink';
 import { categoryPathMap, pathCategoryMap } from '../utils';
 
-const GiDataFilter = ({categoryFilter, giFilter}) => {
+const GiDataFilter = ({categoryFilter, giTypeFilter}) => {
 
   const currentCategory = categoryFilter;
   const currentCategoryPath = categoryPathMap()[categoryFilter];
+  const currentGiTypeFilter = giTypeFilter;
+  const currentGiTypePath = (currentGiTypeFilter) ? `${giTypeFilter}/` : ``;
 
   const FilterLink = ({categoryPath, giType}) => {
 
-    let isActive = false;
-    const category = (categoryPath) ? pathCategoryMap()[categoryPath] : 'All';
+    let pathTo, linkTitle, isActive = false;
 
-    if (!categoryFilter && !categoryPath) {
-      isActive = true;
-    } else {
-      if ( category === categoryFilter ) {
+    // category filter links
+    if (categoryPath) {
+      pathTo = (categoryPath === 'all') ? `/glycemic-index/${currentGiTypePath}` : `/glycemic-index/${currentGiTypePath}${categoryPath}`;
+      linkTitle = (categoryPath === 'all') ? 'All' : pathCategoryMap()[categoryPath];
+      if ( currentCategoryPath === categoryPath || ( !currentCategoryPath && categoryPath === 'all' ) ){
         isActive = true;
       }
     }
 
-    let pathTo, linkTitle;
-
-    // category filter links
-    if (categoryPath) {
-      pathTo = (categoryPath === 'all') ? '/glycemic-index/' : `/glycemic-index/${categoryPath}`;
-      linkTitle = (categoryPath === 'all') ? 'All' : category;
-    }
-
     // gi type filter links
     if (giType) {
+      isActive = (currentGiTypeFilter === giType);
+      //debugger;
       pathTo = (currentCategoryPath) ? `/glycemic-index/${giType}/${currentCategoryPath}` : `/glycemic-index/${giType}`;
       switch (giType) {
         case 'all':
           linkTitle = 'All';
           pathTo = (currentCategoryPath) ? `/glycemic-index/${currentCategoryPath}` : `/glycemic-index`;
+          isActive = ( isActive || ! currentGiTypeFilter);
           break;
         case 'low-gi':
           linkTitle = 'Low'

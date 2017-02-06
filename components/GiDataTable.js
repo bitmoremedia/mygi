@@ -1,12 +1,9 @@
 import React from 'react';
 
 import data from '../data/gi-data.json';
-import { sortArrayByMultipleProperties } from '../utils';
+import { sortArrayByMultipleProperties, isOfGiType } from '../utils';
 
-const GiDataTable = ({ categoryFilter }) => {
-
-  //console.log('*** GiDataTable ***');
-  //console.log({categoryFilter, data});
+const GiDataTable = ({ categoryFilter, giTypeFilter }) => {
 
   // sort data by Category and Name
   let tableData = data.sort(sortArrayByMultipleProperties('category', 'name'));
@@ -14,6 +11,11 @@ const GiDataTable = ({ categoryFilter }) => {
   // filter by category
   if (categoryFilter){
     tableData = tableData.filter(foodItem => (foodItem.category === categoryFilter));
+  }
+
+  // filter by gi type
+  if (giTypeFilter && ( giTypeFilter !== 'all' )){
+    tableData = tableData.filter(foodItem => (isOfGiType(foodItem.gi, giTypeFilter)));
   }
 
   const renderRow = ({category, gi, name, id}) => {
