@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.2.5",
-    "gatsby": "^0.12.28",
+    "gatsby": "git+https://github.com/Rusta/gatsby.git#rusta/dist",
     "milligram": "^1.3.0",
     "normalize.css": "^5.0.0",
     "preact": "^7.1.0",
