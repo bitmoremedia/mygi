@@ -1,0 +1,17 @@
+@import '../../css/variables';
+
+th.gi-data-table__category-column {
+  @include respond-to(tablet) {
+    width: 200px;
+  }
+}
+th.gi-data-table__gi-column {
+  white-space: nowrap;
+  text-align: center;
+  @include respond-to(tablet) {
+    width: 150px;
+  }
+}
+td.gi-data-table__gi-column {
+  text-align: center;
+}
