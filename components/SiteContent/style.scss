@@ -1,0 +1,27 @@
+@import '../../css/variables';
+
+.site-content {
+  //background-color: green;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  padding-left: 10px;
+  padding-top: 20px;
+  @include respond-to(tablet) {
+    padding-left: 40px;
+  }
+  @include respond-to(laptop) {
+    padding-left: 60px;
+  }
+  @include respond-to(desktop) {
+    padding-left: 80px;
+  }
+}
+.site-content__page {
+  //background-color: red;
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}

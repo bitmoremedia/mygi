@@ -1,18 +1,27 @@
-/*
-  sass variables used:
-  - $lightest
-  - $main
-*/
 @import '../../css/variables';
 
 .site-header {
   background-color: $lightest;
   height: 60px;
+  padding-left: 10px;
+  @include respond-to(tablet) {
+    padding-left: 40px;
+  }
+  @include respond-to(laptop) {
+    padding-left: 60px;
+  }
+  @include respond-to(desktop) {
+    padding-left: 80px;
+  }
 }
 .site-header__home-link {
-  font-size: 35px;
-  padding-left: 10px;
-  padding-right: 10px;
+  font-size: 25px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  @include respond-to(tablet) {
+    font-size: 35px;
+  }
 }
 .site-header__home-link,
 .site-header__home-link:hover,
@@ -31,7 +40,11 @@
   text-align: center;
   padding-left: 10px;
   padding-right: 10px;
-  @media (min-width: 500px) {
+  @include respond-to(mobile-large) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  @include respond-to(tablet) {
     padding-left: 40px;
     padding-right: 40px;
   }

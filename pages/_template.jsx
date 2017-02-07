@@ -5,6 +5,7 @@ import '../node_modules/milligram/dist/milligram.css';
 import '../css/main.css';
 
 import SiteHeader from '../components/SiteHeader';
+import SiteContent from '../components/SiteContent';
 
 module.exports = React.createClass({
   propTypes () {
@@ -17,9 +18,9 @@ module.exports = React.createClass({
     return (
       <div>
         <SiteHeader activePath={activePath}/>
-        <div>
+        <SiteContent>
           {this.props.children}
-        </div>
+        </SiteContent>
       </div>
     );
   },
