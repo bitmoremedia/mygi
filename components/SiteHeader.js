@@ -9,22 +9,30 @@ const SiteHeader = ({ activePath }) => {
   const aboutPathActive = (activePath.indexOf("/about") > -1);
 
   return (
-    <div className='site-header'>
-      <PageLink to={'/'}>
-        <h1>
-          MyGi
-        </h1>
-      </PageLink>
-      <PageLink to={'/glycemic-index'}>
-        <div>
-          Gylcemic Index {gylcemicIndexPathActive && '*'}
+    <div className='site-header container'>
+      <div class="row">
+        <div class="column">
+          <PageLink to={'/'}>
+            <h1>
+              MyGi
+            </h1>
+          </PageLink>
         </div>
-      </PageLink>
-      <PageLink to={'/about'}>
-        <div>
-          About {aboutPathActive && '*'}
+        <div class="column">
+          <PageLink to={'/glycemic-index'}>
+            <div>
+              Gylcemic Index {gylcemicIndexPathActive && '*'}
+            </div>
+          </PageLink>
         </div>
-      </PageLink>
+        <div class="column">
+          <PageLink to={'/about'}>
+            <div>
+              About {aboutPathActive && '*'}
+            </div>
+          </PageLink>
+        </div>
+      </div>
     </div>
   );
 };
