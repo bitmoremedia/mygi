@@ -1,7 +1,9 @@
 import React from 'react';
+import classNames from 'classnames';
 
-import PageLink from './common/PageLink';
-import { categoryPathMap, pathCategoryMap } from '../utils';
+import './style';
+import PageLink from '../common/PageLink';
+import { categoryPathMap, pathCategoryMap } from '../../utils';
 
 const GiDataFilter = ({categoryFilter, giTypeFilter}) => {
 
@@ -48,18 +50,20 @@ const GiDataFilter = ({categoryFilter, giTypeFilter}) => {
       }
     }
 
+    const linkClass = classNames('gi-data-filter__filter-item button', { 'button-outline' : !isActive, 'gi-data-filter__filter-item--active' : isActive });
+
     return (
-      <div>
-        <PageLink to={pathTo}>
-          {linkTitle} {isActive && '*'}
-        </PageLink>
-      </div>
+      <PageLink className={linkClass} to={pathTo}>
+        {linkTitle}
+      </PageLink>
     );
   };
 
+//       <div className="gi-data-filter__divider"></div>
+
   return (
     <div className="gi-data-filter">
-      <h2>Filter By Category</h2>
+      <h2>Category</h2>
       <FilterLink categoryPath="all"/>
       <FilterLink categoryPath="beans"/>
       <FilterLink categoryPath="breads"/>
@@ -69,7 +73,7 @@ const GiDataFilter = ({categoryFilter, giTypeFilter}) => {
       <FilterLink categoryPath="snacks-and-sweet-foods"/>
       <FilterLink categoryPath="staples"/>
       <FilterLink categoryPath="vegetables"/>
-      <h2>Filter By GI Type</h2>
+      <h2>GI Type</h2>
       <FilterLink giType="all"/>
       <FilterLink giType="low-gi"/>
       <FilterLink giType="medium-gi"/>

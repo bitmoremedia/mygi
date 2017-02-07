@@ -1,0 +1,21 @@
+@import '../../css/variables';
+
+.gi-data-filter h2 {
+  font-size: 17px;
+  margin: 0px 0px 5px 0px;
+}
+.gi-data-filter__category {
+
+}
+.gi-data-filter__filter-item {
+  font-size: .8rem;
+  height: 2.8rem;
+  line-height: 2.8rem;
+  padding: 0 1.5rem;
+  margin-right: 5px;
+}
+.gi-data-filter__filter-item--active,
+.gi-data-filter__filter-item--active:hover {
+  border-color: $main;
+  background-color: $main;
+}
