@@ -1,8 +1,15 @@
 @import '../../css/variables';
 
+.gi-data-filter {
+  padding-top: 10px;
+  padding-bottom: 15px;
+  text-align: center;
+}
 .gi-data-filter h2 {
-  font-size: 17px;
-  margin: 0px 0px 5px 0px;
+  font-size: 14px;
+  letter-spacing: inherit;
+  text-transform: uppercase;
+  margin: 0px 0px 10px 0px;
 }
 .gi-data-filter__category {
 
