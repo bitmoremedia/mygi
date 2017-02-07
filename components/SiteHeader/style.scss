@@ -1,0 +1,44 @@
+/*
+  sass variables used:
+  - $lightest
+  - $main
+*/
+@import '../../css/variables';
+
+.site-header {
+  background-color: $lightest;
+  height: 60px;
+}
+.site-header__home-link {
+  font-size: 35px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.site-header__home-link,
+.site-header__home-link:hover,
+.site-header__home-link:focus {
+  color: $main;
+}
+.site-header__page-links {
+  float: right;
+}
+.site-header__page-link-container {
+  float: left;
+}
+.site-header__page-link {
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  @media (min-width: 500px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+.site-header__page-link--active,
+.site-header__page-link--active:hover,
+.site-header__page-link--active:focus {
+  background-color: $main;
+  color: white;
+}
