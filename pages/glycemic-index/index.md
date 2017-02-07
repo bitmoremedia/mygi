@@ -1,6 +1,6 @@
 ---
 type: GiDataTablePage
-title: GI
-description: Glycemic Index
-keywords: gi,GI,Glycemic Index,glycemic index,GlycemicIndex,glycemicindex
+title: Glycemic Index
+description: Glycemic Index Food List
+keywords: gi, GI, Glycemic Index, glycemic index, GlycemicIndex, glycemicindex
 ---
