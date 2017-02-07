@@ -21,6 +21,13 @@ const HTML = (props) => {
     css = <link rel="stylesheet" href={prefixLink(`/styles.css?t=${BUILD_TIME}`)} />;
   }
 
+  // no js script
+  const noJsScript = `
+    <script>
+      document.body.className = document.body.className.replace("no-js","");
+    </script>
+  `;
+
   return (
     <html lang="en">
       <head>
@@ -34,9 +41,10 @@ const HTML = (props) => {
         {head.meta.toComponent()}
         {css}
       </head>
-      <body>
+      <body className="no-js">
         <div id="react-mount" dangerouslySetInnerHTML={{ __html: props.body }} />
         {js}
+        <div dangerouslySetInnerHTML={{ __html: noJsScript }} />
       </body>
     </html>
   );

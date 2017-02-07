@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
 import GiDataFilter from '../components/GiDataFilter';
@@ -14,7 +14,8 @@ const GiDataTablePage = ({title, meta, activePath}) => {
         title={title}
         meta={meta}
       />
-    <GiDataFilter categoryFilter={categoryFilter} giTypeFilter={giTypeFilter}/>
+      <GiDataFilter categoryFilter={categoryFilter} giTypeFilter={giTypeFilter}/>
+      <div className="js-only">Sorting and Text Filter stuff</div>
       <GiDataTable categoryFilter={categoryFilter} giTypeFilter={giTypeFilter}/>
     </div>
   );

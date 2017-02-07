@@ -59,8 +59,6 @@ const GiDataFilter = ({categoryFilter, giTypeFilter}) => {
     );
   };
 
-//       <div className="gi-data-filter__divider"></div>
-
   return (
     <div className="gi-data-filter">
       <h2>Category</h2>
