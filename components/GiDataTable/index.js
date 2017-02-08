@@ -2,9 +2,27 @@ import React from 'react';
 
 import './style';
 import data from '../../data/gi-data.json';
-import { sortArrayByMultipleProperties, isOfGiType } from '../../utils';
+import { sortArrayByMultipleProperties, isOfGiType, isNumber } from '../../utils';
 
-const GiDataTable = ({ categoryFilter, giTypeFilter }) => {
+function filterFoodByText(foodItem, textFilter){
+  let match = false;
+  // filter based on name
+  if (foodItem.name.toUpperCase().indexOf(textFilter.toUpperCase()) > -1) {
+    match = true;
+  }
+  // filter based on single GI value
+  if (!match && isNumber(textFilter) && ( parseFloat(textFilter) === foodItem.gi)) {
+    match = true;
+  }
+  // filter based on GI value range (e.g. 1-100)
+  if (!match && (textFilter.split('-').length === 2)) {
+    const range = textFilter.split('-');
+    return (foodItem.gi >= range[0] && foodItem.gi <= range[1]);
+  }
+  return match;
+}
+
+const GiDataTable = ({ categoryFilter, giTypeFilter, textFilter }) => {
 
   // sort data by Category and Name
   let tableData = data.sort(sortArrayByMultipleProperties('category', 'name'));
@@ -16,7 +34,12 @@ const GiDataTable = ({ categoryFilter, giTypeFilter }) => {
 
   // filter by gi type
   if (giTypeFilter && ( giTypeFilter !== 'all' )){
-    tableData = tableData.filter(foodItem => (isOfGiType(foodItem.gi, giTypeFilter)));
+    tableData = tableData.filter(foodItem => isOfGiType(foodItem.gi, giTypeFilter));
+  }
+
+  // apply any text filter
+  if (textFilter){
+    tableData = tableData.filter(foodItem => filterFoodByText(foodItem, textFilter));
   }
 
   const renderRow = ({category, gi, name, id}) => {

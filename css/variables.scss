@@ -1,25 +1,18 @@
+// **********************
+// *** color palette ***
+// **********************
+
 $main: #9b4dca;
+//$darkest: #603411;
+//$dark: #4D4D4F;
+//$medium: #a2711e;
+//$light: #AEACAC;
 $lightest: #ede9ef;
 
-// colour palette
-/*
-$darkest: #603411;
-$dark: #4D4D4F;
-$medium: #a2711e;
-$light: #AEACAC;
-$lightest: #F2EEE5;
-*/
 
-// usage vars
-/*
-$heading-text-color: $darkest;
-$subheading-text-color: $medium;
-$main-text-color: $dark;
-$main-link-color: $dark;
-$hover-link-color: $light;
-*/
-
-// responsive breakpoints and mixin
+// ******************************
+// *** responsive breakpoints ***
+// ******************************
 
 $breakpoints: (
   'mobile-small'  : 320px,
@@ -29,20 +22,17 @@ $breakpoints: (
   'laptop'  : 1024px,
   'desktop'  : 1440px
 );
-
 @mixin respond-to($breakpoint) {
-  // Retrieves the value from the key
+  // retrieve value from the key
   $value: map-get($breakpoints, $breakpoint);
-
-  // If the key exists in the map
+  // if the key exists in the map
   @if $value != null {
-    // Prints a media query based on the value
+    // print a media query based on the value
     @media (min-width: $value) {
       @content;
     }
   }
-
-  // If the key doesn't exist in the map
+  // if the key doesn't exist in the map show a warning
   @else {
     @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
         + "Please make sure it is defined in `$breakpoints` map.";
