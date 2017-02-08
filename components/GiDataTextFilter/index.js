@@ -22,7 +22,6 @@ class GiDataTextFilter extends Component {
   }
 
   clearFilter = () => {
-    console.log('surely not!!');
     this.props.setTextFilter("");
   }
 
@@ -44,9 +43,11 @@ class GiDataTextFilter extends Component {
       <div className="gi-data-text-filter">
         <form className="gi-data-text-filter__form"
           onSubmit={this.handleSubmit}
+          autocomplete="off"
         >
           <input className="gi-data-text-filter__input"
             type="text"
+            autocomplete="off"
             ref="text-filter"
             name="text-filter"
             placeholder={placeholderText}
