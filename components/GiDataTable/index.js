@@ -1,8 +1,9 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import './style';
 import data from '../../data/gi-data.json';
-import { sortArrayByMultipleProperties, isOfGiType, isNumber } from '../../utils';
+import { sortArrayByMultipleProperties, isOfGiType, isNumber, giType } from '../../utils';
 
 function filterFoodByText(foodItem, textFilter){
   let match = false;
@@ -43,13 +44,15 @@ const GiDataTable = ({ categoryFilter, giTypeFilter, textFilter }) => {
   }
 
   const renderRow = ({category, gi, name, id}) => {
+    const giTypeName = giType(gi);
+    const giTypeClass = classNames('gi-data-table__gi-column', `gi-data-table__gi-column--${giTypeName}`);
     return (
       <tr key={id}>
         {
           !categoryFilter && <td className='gi-data-table__category-column'>{category}</td>
         }
         <td className='gi-data-table__name-column'>{name}</td>
-        <td className='gi-data-table__gi-column'>{gi}</td>
+        <td className={giTypeClass}>{gi}</td>
       </tr>
     );
   };

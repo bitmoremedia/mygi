@@ -8,10 +8,24 @@ th.gi-data-table__category-column {
 th.gi-data-table__gi-column {
   white-space: nowrap;
   text-align: center;
+  padding: 0;
   @include respond-to(tablet) {
     width: 150px;
   }
 }
 td.gi-data-table__gi-column {
   text-align: center;
+  padding: 0;
+}
+td.gi-data-table__gi-column--high-gi {
+  background-color: $high-gi;
+  color: white;
+}
+td.gi-data-table__gi-column--medium-gi {
+  background-color: $medium-gi;
+  color: white;
+}
+td.gi-data-table__gi-column--low-gi {
+  background-color: $low-gi;
+  color: white;
 }

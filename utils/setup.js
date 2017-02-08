@@ -80,3 +80,13 @@ export const giTypeDescr = (giType) => {
       return '';
   }
 };
+
+export const giType = (giValue) => {
+  if ( giValue > 69 ){
+    return 'high-gi';
+  }
+  if ( giValue < 56 ){
+    return 'low-gi';
+  }
+  return 'medium-gi';
+};

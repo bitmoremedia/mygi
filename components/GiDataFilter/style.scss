@@ -1,9 +1,11 @@
 @import '../../css/variables';
 
 .gi-data-filter {
-  padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
+  @include respond-to(tablet) {
+    padding-top: 10px;
+  }
 }
 .gi-data-filter h2 {
   font-size: 14px;
@@ -11,11 +13,7 @@
   text-transform: uppercase;
   margin: 5px 0px 15px 0px;
 }
-.gi-data-filter__category {
-
-}
 .gi-data-filter__filter-item {
-  font-size: .8rem;
   height: 2.8rem;
   line-height: 2.8rem;
   padding: 0 1.5rem;
