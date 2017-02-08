@@ -49,73 +49,73 @@
     },
     {
         "name": "All-bran",
-        "category": "Breakfast Cereals",
+        "category": "Cereals",
         "gi": 40,
         "id": "All-bran"
     },
     {
         "name": "Special K",
-        "category": "Breakfast Cereals",
+        "category": "Cereals",
         "gi": 54,
         "id": "Special K"
     },
     {
         "name": "Muesli",
-        "category": "Breakfast Cereals",
+        "category": "Cereals",
         "gi": 40,
         "id": "Muesli"
     },
     {
         "name": "Porridge",
-        "category": "Breakfast Cereals",
+        "category": "Cereals",
         "gi": 58,
         "id": "Porridge"
     },
     {
         "name": "Nutrigrain",
-        "category": "Breakfast Cereals",
+        "category": "Cereals",
         "gi": 66,
         "id": "Nutrigrain"
     },
     {
         "name": "Shredded Wheat",
-        "category": "Breakfast Cereals",
+        "category": "Cereals",
         "gi": 67,
         "id": "Shredded Wheat"
     },
     {
         "name": "Cornflakes",
-        "category": "Breakfast Cereals",
+        "category": "Cereals",
         "gi": 80,
         "id": "Cornflakes"
     },
     {
         "name": "Branflakes",
-        "category": "Breakfast Cereals",
+        "category": "Cereals",
         "gi": 74,
         "id": "Branflakes"
     },
     {
         "name": "Coco Pops",
-        "category": "Breakfast Cereals",
+        "category": "Cereals",
         "gi": 77,
         "id": "Coco Pops"
     },
     {
         "name": "Cheerios",
-        "category": "Breakfast Cereals",
+        "category": "Cereals",
         "gi": 74,
         "id": "Cheerios"
     },
     {
         "name": "Rice Krispies",
-        "category": "Breakfast Cereals",
+        "category": "Cereals",
         "gi": 82,
         "id": "Rice Krispies"
     },
     {
         "name": "Weetabix",
-        "category": "Breakfast Cereals",
+        "category": "Cereals",
         "gi": 74,
         "id": "Weetabix"
     },
@@ -505,139 +505,139 @@
     },
     {
         "name": "Snickers",
-        "category": "Snacks & Sweet Foods",
+        "category": "Snacks & Sweets",
         "gi": 41,
         "id": "Snickers"
     },
     {
         "name": "Nut & Seed Muesli Bar",
-        "category": "Snacks & Sweet Foods",
+        "category": "Snacks & Sweets",
         "gi": 49,
         "id": "Nut & Seed Muesli Bar"
     },
     {
         "name": "Sponge Cake",
-        "category": "Snacks & Sweet Foods",
+        "category": "Snacks & Sweets",
         "gi": 46,
         "id": "Sponge Cake"
     },
     {
         "name": "Nutella",
-        "category": "Snacks & Sweet Foods",
+        "category": "Snacks & Sweets",
         "gi": 33,
         "id": "Nutella"
     },
     {
         "name": "Milk Chocolate",
-        "category": "Snacks & Sweet Foods",
+        "category": "Snacks & Sweets",
         "gi": 42,
         "id": "Milk Chocolate"
     },
     {
         "name": "Hummus",
-        "category": "Snacks & Sweet Foods",
+        "category": "Snacks & Sweets",
         "gi": 6,
         "id": "Hummus"
     },
     {
         "name": "Peanuts",
-        "category": "Snacks & Sweet Foods",
+        "category": "Snacks & Sweets",
         "gi": 13,
         "id": "Peanuts"
     },
     {
         "name": "Walnuts",
-        "category": "Snacks & Sweet Foods",
+        "category": "Snacks & Sweets",
         "gi": 15,
         "id": "Walnuts"
     },
     {
         "name": "Cachew Nuts",
-        "category": "Snacks & Sweet Foods",
+        "category": "Snacks & Sweets",
         "gi": 25,
         "id": "Cachew Nuts"
     },
     {
         "name": "Jam",
-        "category": "Snacks & Sweet Foods",
+        "category": "Snacks & Sweets",
         "gi": 51,
         "id": "Jam"
     },
     {
         "name": "Corn Chips",
-        "category": "Snacks & Sweet Foods",
+        "category": "Snacks & Sweets",
         "gi": 42,
         "id": "Corn Chips"
     },
     {
         "name": "Oatmeal Crackers",
-        "category": "Snacks & Sweet Foods",
+        "category": "Snacks & Sweets",
         "gi": 55,
         "id": "Oatmeal Crackers"
     },
     {
         "name": "Ryvita",
-        "category": "Snacks & Sweet Foods",
+        "category": "Snacks & Sweets",
         "gi": 63,
         "id": "Ryvita"
     },
     {
         "name": "Digestives",
-        "category": "Snacks & Sweet Foods",
+        "category": "Snacks & Sweets",
         "gi": 59,
         "id": "Digestives"
     },
     {
         "name": "Muffin",
-        "category": "Snacks & Sweet Foods",
+        "category": "Snacks & Sweets",
         "gi": 59,
         "id": "Muffin"
     },
     {
         "name": "Honey",
-        "category": "Snacks & Sweet Foods",
+        "category": "Snacks & Sweets",
         "gi": 58,
         "id": "Honey"
     },
     {
         "name": "Pretzels",
-        "category": "Snacks & Sweet Foods",
+        "category": "Snacks & Sweets",
         "gi": 83,
         "id": "Pretzels"
     },
     {
         "name": "Water Crackers",
-        "category": "Snacks & Sweet Foods",
+        "category": "Snacks & Sweets",
         "gi": 78,
         "id": "Water Crackers"
     },
     {
         "name": "Rice Cakes",
-        "category": "Snacks & Sweet Foods",
+        "category": "Snacks & Sweets",
         "gi": 87,
         "id": "Rice Cakes"
     },
     {
         "name": "Puffed Crispbread",
-        "category": "Snacks & Sweet Foods",
+        "category": "Snacks & Sweets",
         "gi": 81,
         "id": "Puffed Crispbread"
     },
     {
         "name": "Donuts",
-        "category": "Snacks & Sweet Foods",
+        "category": "Snacks & Sweets",
         "gi": 76,
         "id": "Donuts"
     },
     {
         "name": "Scones",
-        "category": "Snacks & Sweet Foods",
+        "category": "Snacks & Sweets",
         "gi": 92,
         "id": "Scones"
     },
     {
         "name": "Maple Syrup",
-        "category": "Snacks & Sweet Foods",
+        "category": "Snacks & Sweets",
         "gi": 68,
         "id": "Maple Syrup"
     },

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import './style';
 import PageLink from '../common/PageLink';
-import { categoryPathMap, pathCategoryMap } from '../../utils';
+import { categoryPathMap, pathCategoryMap, categoryPathList } from '../../utils';
 
 const GiDataFilter = ({categoryFilter, giTypeFilter}) => {
 
@@ -59,18 +59,13 @@ const GiDataFilter = ({categoryFilter, giTypeFilter}) => {
     );
   };
 
+  const categoryLinks = categoryPathList().map((category) => <FilterLink categoryPath={category}/>);
+
   return (
     <div className="gi-data-filter">
       <h2>Category</h2>
       <FilterLink categoryPath="all"/>
-      <FilterLink categoryPath="beans"/>
-      <FilterLink categoryPath="breads"/>
-      <FilterLink categoryPath="breakfast-cereals"/>
-      <FilterLink categoryPath="dairy"/>
-      <FilterLink categoryPath="fruits"/>
-      <FilterLink categoryPath="snacks-and-sweet-foods"/>
-      <FilterLink categoryPath="staples"/>
-      <FilterLink categoryPath="vegetables"/>
+      {categoryLinks}
       <h2>GI Type</h2>
       <FilterLink giType="all"/>
       <FilterLink giType="low-gi"/>

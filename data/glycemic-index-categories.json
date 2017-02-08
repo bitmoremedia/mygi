@@ -8,8 +8,8 @@
       "category": "Breads"
     },
     {
-      "page": "breakfast-cereals",
-      "category": "Breakfast Cereals"
+      "page": "cereals",
+      "category": "Cereals"
     },
     {
       "page": "dairy",
@@ -20,8 +20,8 @@
       "category": "Fruits"
     },
     {
-      "page": "snacks-and-sweet-foods",
-      "category": "Snacks & Sweet Foods"
+      "page": "snacks-and-sweets",
+      "category": "Snacks & Sweets"
     },
     {
       "page": "staples",

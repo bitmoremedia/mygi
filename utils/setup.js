@@ -1,5 +1,10 @@
 import giCategories from '../data/glycemic-index-categories';
 
+export const categoryPathList = () => {
+  return giCategories.map((category)=>category.page);
+  //return ["beans", "breads", "cereals", "dairy", "fruits", "snacks-and-sweets", "staples", "vegetables"];
+};
+
 export const categoryPathMap = () => {
   const map = {};
   giCategories.forEach((item)=>{
