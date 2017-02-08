@@ -1,9 +1,6 @@
 import React from 'react';
 
-import '../node_modules/normalize.css/normalize.css';
-import '../node_modules/milligram/dist/milligram.css';
-import '../css/main.css';
-
+import '../css/main.scss';
 import SiteHeader from '../components/SiteHeader';
 import SiteContent from '../components/SiteContent';
 
