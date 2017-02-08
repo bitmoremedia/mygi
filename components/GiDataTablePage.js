@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 
 import GiDataFilter from '../components/GiDataFilter';
 import GiDataTextFilter from '../components/GiDataTextFilter';
+import GiDataTableHeader from '../components/GiDataTableHeader';
 import GiDataTable from '../components/GiDataTable';
 import { categoryFromPath, giTypeFilterFromPath } from '../utils';
 
@@ -30,6 +31,7 @@ class GiDataTablePage extends Component {
           title={this.props.title}
           meta={this.props.meta}
         />
+        <GiDataTableHeader categoryFilter={categoryFilter} giTypeFilter={giTypeFilter} />
         <GiDataFilter categoryFilter={categoryFilter} giTypeFilter={giTypeFilter}/>
         <div className="js-only">
           <GiDataTextFilter textFilter={this.state.textFilter} setTextFilter={this.setTextFilter}/>

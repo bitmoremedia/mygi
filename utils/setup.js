@@ -64,3 +64,19 @@ export const isOfGiType = (giValue, giType) => {
       return false;
   }
 };
+
+export const giTypeDescr = (giType) => {
+  switch (giType) {
+    case 'high-gi':
+      return 'High';
+      break;
+    case 'medium-gi':
+      return 'Medium';
+      break;
+    case 'low-gi':
+      return 'Low';
+      break;
+    default:
+      return '';
+  }
+};
