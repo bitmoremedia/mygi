@@ -35,7 +35,7 @@ module.exports = React.createClass({
 
     // otherwise return a standard markdown page
     return (
-      <div className="markdown">
+      <div className="markdown-page">
         <Helmet
           title={`${config.siteTitle} | ${page.title}`}
           meta={meta}

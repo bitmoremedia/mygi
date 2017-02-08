@@ -1,5 +1,6 @@
 @import '../node_modules/normalize.css/normalize';
 @import '../node_modules/milligram/dist/milligram';
+@import './variables';
 
 * {
   margin: 0;
@@ -18,6 +19,9 @@ html, body {
   display: none;
 }
 
+.markdown-page {
+  padding-top: 20px;
+}
 
 // milligram overrides
 
@@ -35,4 +39,11 @@ input[type='submit']:hover {
     border-color: #5f5c61;
     color: #fff;
     outline: 0;
+}
+
+h2 {
+  font-size: 2.5rem;
+  @include respond-to(tablet) {
+    font-size: 3.6rem;
+  }
 }
