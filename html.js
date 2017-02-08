@@ -42,7 +42,7 @@ const HTML = (props) => {
         {css}
       </head>
       <body className="no-js">
-        <div id="react-mount" dangerouslySetInnerHTML={{ __html: props.body }} />
+        <div className="full-height" id="react-mount" dangerouslySetInnerHTML={{ __html: props.body }} />
         {js}
         <div dangerouslySetInnerHTML={{ __html: noJsScript }} />
       </body>

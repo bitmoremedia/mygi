@@ -6,7 +6,7 @@ const SiteContent = ({children}) => {
 
   return (
     <div className='site-content'>
-      <div className='site-content__page'>
+      <div className='site-content__inner'>
         {children}
       </div>
     </div>

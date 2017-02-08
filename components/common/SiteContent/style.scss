@@ -1,23 +1,28 @@
-@import '../../css/variables';
+@import '../../../css/variables';
 
 .site-content {
   position: relative;
   display: block;
   overflow: hidden;
   width: 100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  padding-right: 15px;
   @include respond-to(tablet) {
     padding-left: 40px;
+    padding-right: 40px;
   }
   @include respond-to(laptop) {
     padding-left: 60px;
+    padding-right: 60px;
   }
   @include respond-to(desktop) {
     padding-left: 80px;
+    padding-right: 80px;
   }
 }
-.site-content__page {
+.site-content__inner {
   position: relative;
   width: 100%;
   max-width: 1000px;

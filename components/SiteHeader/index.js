@@ -2,7 +2,6 @@ import React from 'react';
 import classNames from 'classnames';
 
 import './style';
-import {config} from 'config';
 import PageLink from '../common/PageLink';
 
 const SiteHeader = ({activePath}) => {

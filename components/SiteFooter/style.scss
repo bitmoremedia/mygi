@@ -1,0 +1,22 @@
+@import '../../css/variables';
+
+.site-footer {
+  background-color: $lightest;
+  height: $footerHeight;
+  padding-top: 50px;
+}
+ul.site-footer__links {
+  list-style: none;
+}
+ul.site-footer__links li {
+  margin: 0px;
+}
+.site-footer__link--active,
+.site-footer__link--active:hover,
+.site-footer__link--active:focus {
+  color: $main;
+  font-weight: bold;
+}
+a.site-footer__bmm-link:hover {
+  text-decoration: underline
+}

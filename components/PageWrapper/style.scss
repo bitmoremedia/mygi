@@ -1,0 +1,12 @@
+@import '../../css/variables';
+
+.page-wrapper {
+  min-height: 100%;
+  margin-bottom: $footerHeightOffset;
+  padding-bottom: 30px;
+}
+.page-wrapper:after {
+  content: "";
+  display: block;
+  height: $footerHeight;
+}
