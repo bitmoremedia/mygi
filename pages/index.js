@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
-import PageLink from '../components/common/PageLink';
+import LandingPage from '../components/LandingPage';
 
 class IndexPage extends Component {
   render () {
     return (
-      <div>
-        <h1>Home Page</h1>
-        <PageLink to={'/glycemic-index/'}>
-          <button>Glycemic Index Food List</button>
-        </PageLink>
-      </div>
+      <LandingPage />
     )
   }
 }

@@ -1,0 +1,21 @@
+@import '../../css/variables';
+
+.site-landing-page {
+  padding-top: 10px;
+  @include respond-to(tablet) {
+    padding-top: 30px;
+  }
+}
+.site-landing-page__heading {
+  font-size: 3rem;
+  @include respond-to(tablet) {
+    font-size: 4.6rem;
+  }
+}
+.site-landing-page__app-screen-grab-img {
+  width: 200px;
+  margin-right: 10px;
+}
+.site-landing-page__gi-link {
+  margin-top: 15px;
+}

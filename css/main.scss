@@ -17,3 +17,22 @@ html, body {
 .no-js .js-only {
   display: none;
 }
+
+
+// milligram overrides
+
+.button:focus,
+.button:hover,
+button:focus,
+button:hover,
+input[type='button']:focus,
+input[type='button']:hover,
+input[type='reset']:focus,
+input[type='reset']:hover,
+input[type='submit']:focus,
+input[type='submit']:hover {
+    background-color: #5f5c61;
+    border-color: #5f5c61;
+    color: #fff;
+    outline: 0;
+}
