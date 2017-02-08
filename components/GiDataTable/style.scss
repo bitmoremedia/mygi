@@ -1,5 +1,11 @@
 @import '../../css/variables';
 
+table.gi-data-table__table {
+  font-size: 0.9em;
+  @include respond-to(mobile-large) {
+    font-size: inherit;
+  }
+}
 th.gi-data-table__category-column {
   @include respond-to(tablet) {
     width: 200px;
@@ -9,7 +15,10 @@ th.gi-data-table__gi-column {
   white-space: nowrap;
   text-align: center;
   padding: 0;
-  width: 100px;
+  width: 70px;
+  @include respond-to(mobile-large) {
+    width: 100px;
+  }
   @include respond-to(tablet) {
     width: 150px;
   }
@@ -29,4 +38,17 @@ td.gi-data-table__gi-column--medium-gi {
 td.gi-data-table__gi-column--low-gi {
   background-color: $low-gi;
   color: white;
+}
+td.gi-data-table__category-column,
+td.gi-data-table__food-column {
+  padding: 2px;
+  @include respond-to(mobile-large) {
+    padding: 5px;
+  }
+}
+th.gi-data-table__food-column {
+  padding-left: 2px;
+  @include respond-to(mobile-large) {
+    padding-left: 5px;
+  }
 }

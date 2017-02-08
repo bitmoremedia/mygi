@@ -51,7 +51,7 @@ const GiDataTable = ({ categoryFilter, giTypeFilter, textFilter }) => {
         {
           !categoryFilter && <td className='gi-data-table__category-column'>{category}</td>
         }
-        <td className='gi-data-table__name-column'>{name}</td>
+        <td className='gi-data-table__food-column'>{name}</td>
         <td className={giTypeClass}>{gi}</td>
       </tr>
     );
@@ -65,7 +65,7 @@ const GiDataTable = ({ categoryFilter, giTypeFilter, textFilter }) => {
 
   return (
     <div className='gi-data-table'>
-      <table>
+      <table className='gi-data-table__table'>
         <thead>
           {
             !categoryFilter && <th className='gi-data-table__category-column'>Category</th>
