@@ -3,7 +3,7 @@
 .site-header {
   background-color: $lightest;
   height: 60px;
-  padding-left: 10px;
+  padding-left: 15px;
   @include respond-to(tablet) {
     padding-left: 40px;
   }
