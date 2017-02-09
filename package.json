@@ -7,6 +7,7 @@
     "generate": "babel-node ./scripts/generatePages",
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "deploy": "gatsby build --prefix-links && gh-pages -d public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Russell Winborn (russ@bitmoremedia.com)",
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.22.2",
-    "fs-extra": "^2.0.0"
+    "fs-extra": "^2.0.0",
+    "gh-pages": "^0.12.0"
   }
 }

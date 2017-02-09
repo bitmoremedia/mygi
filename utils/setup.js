@@ -2,7 +2,6 @@ import giCategories from '../data/glycemic-index-categories';
 
 export const categoryPathList = () => {
   return giCategories.map((category)=>category.page);
-  //return ["beans", "breads", "cereals", "dairy", "fruits", "snacks-and-sweets", "staples", "vegetables"];
 };
 
 export const categoryPathMap = () => {
@@ -21,11 +20,17 @@ export const pathCategoryMap = () => {
   return map;
 };
 
+const giSubPath = (path) => {
+  let pathName = path.substr(path.lastIndexOf('/glycemic-index/'));
+  pathName = pathName.substring('/glycemic-index/'.length, pathName.length-1);
+  return pathName;
+};
+
 export const categoryFromPath = (path) => {
   // we assume all paths that use this function have a prefix of 'glycemic-index'
   if (path && path.indexOf('/glycemic-index/') > -1) {
     let categoryPath;
-    const pathName = path.substring('/glycemic-index/'.length, path.length-1);
+    const pathName = giSubPath(path);
     // check path for GI type filter ( high-gi / medium-gi / low-gi )
     if (pathName.indexOf('-gi/') > -1) {
       categoryPath = pathName.substring(pathName.indexOf('-gi/') + '-gi/'.length);
@@ -41,7 +46,7 @@ export const giTypeFilterFromPath = (path) => {
   let giFilter;
   // we assume all paths that use this function have a prefix of 'glycemic-index'
   if (path && path.indexOf('/glycemic-index/') > -1) {
-    const pathName = path.substring('/glycemic-index/'.length, path.length-1);
+    const pathName = giSubPath(path);
     // check if path is a gi filter
     if ( ['high-gi','medium-gi','low-gi'].indexOf(pathName) > -1 ){
       giFilter = pathName;
