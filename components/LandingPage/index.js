@@ -2,7 +2,6 @@ import React from 'react';
 import classNames from 'classnames';
 
 import './style';
-import SiteContent from '../common/SiteContent';
 import PageLink from '../common/PageLink';
 
 import AppFoodListImg1 from './app-food-list.png';

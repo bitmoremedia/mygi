@@ -18,7 +18,7 @@ module.exports = React.createClass({
       <div className="full-height">
         <PageWrapper>
           <SiteHeader activePath={activePath} />
-          <SiteContent>
+          <SiteContent page>
             {this.props.children}
           </SiteContent>
         </PageWrapper>
