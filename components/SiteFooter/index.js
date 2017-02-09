@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import GithubIcon from '../icons/github';
 
 import './style';
 import SiteContent from '../common/SiteContent';
@@ -36,8 +37,9 @@ const SiteFooter = ({activePath}) => {
               </PageLink>
             </li>
           </ul>
-          <div>
-            App and Website by <a className="site-footer__bmm-link" href="https://www.bitmoremedia.com" target="_blank">Bit More Media</a>
+          <div className="site-footer__created-by">
+            Created by <a className="site-footer__bmm-link" href="https://www.bitmoremedia.com" target="_blank">Bit More Media</a> and hosted on
+            <a className="site-footer__github-link" href="https://github.com/bitmoremedia/mygi" target="_blank"><GithubIcon /></a>
           </div>
         </SiteContent>
       </div>
