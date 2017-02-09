@@ -1,18 +1,8 @@
 @import '../../css/variables';
 
 .site-header {
-  background-color: $lightest;
+  background-color: $main;
   height: 60px;
-  padding-left: 15px;
-  @include respond-to(tablet) {
-    padding-left: 40px;
-  }
-  @include respond-to(laptop) {
-    padding-left: 60px;
-  }
-  @include respond-to(desktop) {
-    padding-left: 80px;
-  }
 }
 .site-header__home-link {
   font-size: 25px;
@@ -26,7 +16,7 @@
 .site-header__home-link,
 .site-header__home-link:hover,
 .site-header__home-link:focus {
-  color: $main;
+  color: $textOnMain;
 }
 .site-header__page-links {
   float: right;
@@ -38,20 +28,26 @@
   height: 60px;
   line-height: 60px;
   text-align: center;
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   @include respond-to(mobile-large) {
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
   @include respond-to(tablet) {
-    padding-left: 40px;
-    padding-right: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
   }
+}
+.site-header__page-link,
+.site-header__page-link:hover,
+.site-header__page-link:focus {
+  color: $textOnMain;
 }
 .site-header__page-link--active,
 .site-header__page-link--active:hover,
 .site-header__page-link--active:focus {
-  background-color: $main;
-  color: white;
+  border-bottom: solid 1px $textOnMain;
+  display: inline;
+  padding-bottom: 3px;
 }

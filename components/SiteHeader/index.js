@@ -3,6 +3,7 @@ import classNames from 'classnames';
 
 import './style';
 import PageLink from '../common/PageLink';
+import SiteContent from '../common/SiteContent';
 
 const SiteHeader = ({activePath}) => {
 
@@ -14,21 +15,23 @@ const SiteHeader = ({activePath}) => {
 
   return (
     <div className='site-header'>
-      <PageLink className='site-header__home-link' to={'/'}>
-          MyGi
-      </PageLink>
-      <div className='site-header__page-links'>
-        <PageLink className='site-header__page-link-container' to={'/glycemic-index'}>
-          <div className={giLinkClass}>
-            Gylcemic Index
-          </div>
+      <SiteContent>
+        <PageLink className='site-header__home-link' to={'/'}>
+            MyGi
         </PageLink>
-        <PageLink className='site-header__page-link-container' to={'/about'}>
-          <div className={aboutLinkClass}>
-            About
-          </div>
-        </PageLink>
-      </div>
+        <div className='site-header__page-links'>
+          <PageLink className='site-header__page-link-container' to={'/glycemic-index'}>
+            <div className={giLinkClass}>
+              Gylcemic Index
+            </div>
+          </PageLink>
+          <PageLink className='site-header__page-link-container' to={'/about'}>
+            <div className={aboutLinkClass}>
+              About
+            </div>
+          </PageLink>
+        </div>
+      </SiteContent>
     </div>
   );
 };

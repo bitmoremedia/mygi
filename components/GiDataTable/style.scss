@@ -26,6 +26,8 @@ th.gi-data-table__gi-column {
 td.gi-data-table__gi-column {
   text-align: center;
   padding: 0;
+  border-top-color: white;
+  border-bottom-color: white;
 }
 td.gi-data-table__gi-column--high-gi {
   background-color: $high-gi;
