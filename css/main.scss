@@ -35,8 +35,8 @@ input[type='reset']:focus,
 input[type='reset']:hover,
 input[type='submit']:focus,
 input[type='submit']:hover {
-    background-color: #5f5c61;
-    border-color: #5f5c61;
+    background-color: $linkHover;
+    border-color: $linkHover;
     color: #fff;
     outline: 0;
 }
@@ -45,5 +45,15 @@ h2 {
   font-size: 2.5rem;
   @include respond-to(tablet) {
     font-size: 3.6rem;
+  }
+}
+
+// global svg styles
+
+.markdown-page {
+  svg.github {
+    width: 26px;
+    fill: #9b4dca;
+    fill: $main;
   }
 }
