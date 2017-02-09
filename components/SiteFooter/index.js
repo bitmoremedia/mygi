@@ -37,7 +37,7 @@ const SiteFooter = ({activePath}) => {
             </li>
           </ul>
           <div>
-            Website by <a className="site-footer__bmm-link" href="https://www.bitmoremedia.com" target="_blank">Bit More Media</a>
+            App and Website by <a className="site-footer__bmm-link" href="https://www.bitmoremedia.com" target="_blank">Bit More Media</a>
           </div>
         </SiteContent>
       </div>

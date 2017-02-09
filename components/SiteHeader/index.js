@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import './style';
 import PageLink from '../common/PageLink';
 import SiteContent from '../common/SiteContent';
+import logoImage from '../../img/mygi-app-icon.png';
 
 const SiteHeader = ({activePath}) => {
 
@@ -17,7 +18,7 @@ const SiteHeader = ({activePath}) => {
     <div className='site-header'>
       <SiteContent>
         <PageLink className='site-header__home-link' to={'/'}>
-            MyGi
+          <img className='site-header__logo-image' src={logoImage} />
         </PageLink>
         <div className='site-header__page-links'>
           <PageLink className='site-header__page-link-container' to={'/glycemic-index'}>

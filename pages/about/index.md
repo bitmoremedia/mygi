@@ -7,8 +7,8 @@ keywords: gi, GI, Glycemic Index, glycemic index, GlycemicIndex, glycemicindex
 ## What is MyGi?
 
 **MyGi** is a soon to be released iOS and Android App that helps you monitor
-the GI Values of the food that you eat, pick your favourite foods for ease of reference
-and monitor each meal you have and set targets for success.
+the GI Values of the food you eat, pick favourite foods, track your meals
+and set personal goals, targets and rewards.
 
 ## What is the Glycemic Index?
 
@@ -47,8 +47,7 @@ appropriate standard values
 - <a href="http://www.theingredientstore.com/amescompany/GIindex.html" target="_blank">theingredientstore.com</a>
 - <a href="http://www.optimalfoods.org/" target="_blank">optimalfoods.org</a>
 
-Note: these GI values are just a guide, as some people may respond differently to certain foods. In the MyGi app you can personalise
-the GI value of any food item if you feel the 'general guide' does not match how your own body responds to certain food types
+*Note: the GI values provided by MyGi are just a **general guide** and some people may respond differently to certain foods. In the MyGi app you can personalise the GI value of any food item if you feel the general guide does not match how your own body responds to certain food types*
 
 
 ## Low GI Tips
@@ -79,4 +78,4 @@ If you want to find out more about GI and the science behind it, then check out 
 
 ## Open Source
 
-The MyGi website is an open source project. Get in touch via <a href="https://github.com" target="_blank">Github</a> if you want to contribute
+The MyGi website is an open source project - if you would like to contribute then get in touch via <a href="https://github.com" target="_blank">Github</a>

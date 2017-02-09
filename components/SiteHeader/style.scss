@@ -18,6 +18,12 @@
 .site-header__home-link:focus {
   color: $textOnMain;
 }
+.site-header__logo-image {
+  height: 46px;
+  border-radius: 9px;
+  margin-top: 7px;
+}
+
 .site-header__page-links {
   float: right;
 }
