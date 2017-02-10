@@ -20,7 +20,13 @@ $ npm run generate
 
 ## Deployments
 
-Run the following command to deploy your local version of the **public** code to the github pages branch
+Run the following command to deploy code to the github pages branch - the script will: 
+
+- empty the 'public' directory
+- copy files from '_public' to 'public'
+- generate the GI markdown pages (mentioned above)
+- run the gatsby build process
+- publish to the gh-pages branch
 
 ```
 $ npm run deploy
