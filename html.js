@@ -23,23 +23,11 @@ const HTML = (props) => {
     css = <link rel="stylesheet" href={prefixLink(`/styles.css?t=${BUILD_TIME}`)} />;
   }
 
-  // no js script
-  const noJsScript = `
-    <script>
-      document.body.className = document.body.className.replace("no-js","");
-    </script>
-  `;
-
   return (
     <html lang="en" data-version={packageJson.version}>
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta property="og:title" content="MyGi - Glycemic Index" />
-        <meta property="og:description" content="MyGi App companion website and home of the unofficial Glycemic Index Food List" />
-        <meta property="og:image" content="https://mygi.io/mygi-app-icon.png" />
-        <meta property="og:url" content="https://mygi.io" />
-        <meta property="og:site_name" content="MyGi" />
         <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png" />
         <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png" />
         <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png" />
@@ -64,7 +52,6 @@ const HTML = (props) => {
       <body className="no-js">
         <div className="full-height" id="react-mount" dangerouslySetInnerHTML={{ __html: props.body }} />
         {js}
-        <div dangerouslySetInnerHTML={{ __html: noJsScript }} />
       </body>
     </html>
   );

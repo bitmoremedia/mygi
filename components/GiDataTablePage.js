@@ -23,6 +23,7 @@ class GiDataTablePage extends Component {
   }
 
   render() {
+
     const categoryFilter = categoryFromPath(this.props.activePath);
     const giTypeFilter = giTypeFilterFromPath(this.props.activePath);
     return (

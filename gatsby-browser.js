@@ -1,6 +1,10 @@
 import ReactGA from 'react-ga';
 
+// remove the no-js class from document body
+document.body.className = document.body.className.replace("no-js","");
+
 if (process.env.NODE_ENV === 'production') {
+  // initialize google analytics
   ReactGA.initialize('UA-72779821-3');
 }
 

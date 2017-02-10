@@ -1,6 +1,8 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import classNames from 'classnames';
 
+import { config } from 'config';
 import './style';
 import PageLink from '../common/PageLink';
 
@@ -21,6 +23,20 @@ const LandingPage = ({activePath}) => {
 
   return (
     <div className="site-landing-page">
+      <Helmet
+        title={`${config.siteTitle}`}
+        meta={[
+          {
+            name: `${config.siteTitle}`,
+            content: `${config.siteDescription}`,
+          },
+          { property: 'og:title', content: `${config.siteTitle}` },
+          { property: 'og:description', content: `${config.siteDescription}` },
+          { property: 'og:image', content: `${config.appIcon}` },
+          { property: 'og:url', content: `${config.baseUrl}${config.linkPrefix}` },
+          { property: 'og:site_name', content: `${config.siteTitle}` },
+        ]}
+      />
       <h1 className="site-landing-page__heading">Welcome to MyGi</h1>
       <p>The companion site for the <b>MyGi</b> health App coming soon to iOS and Android</p>
       <div>

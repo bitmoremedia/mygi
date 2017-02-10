@@ -24,10 +24,21 @@ module.exports = React.createClass({
     // if this markdown page is of type 'GiDataTablePage' then
     // render that page as the GiDataTablePage component
     if (page.type === 'GiDataTablePage') {
+
+      // add additional meta tags for social sharing
+      const augmentedMetaTags = [
+        ...meta,
+        { property: 'og:title', content: `${title}` },
+        { property: 'og:description', content: `${description}` },
+        { property: 'og:image', content: `${config.appIcon}` },
+        { property: 'og:url', content: `${config.baseUrl}${activePath}` },
+        { property: 'og:site_name', content: `${config.siteTitle}` },
+      ];
+
       return (
         <GiDataTablePage
           title={title}
-          meta={meta}
+          meta={augmentedMetaTags}
           activePath={activePath}
         />
       );

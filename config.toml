@@ -1,3 +1,6 @@
 siteTitle="MyGi"
-linkPrefix = ""
-noProductionJavascript = false
+siteDescription="MyGi App companion website and home of the unofficial Glycemic Index Food List"
+linkPrefix=""
+noProductionJavascript=false
+baseUrl="https://mygi.io"
+appIcon="https://mygi.io/mygi-app-icon.png"
