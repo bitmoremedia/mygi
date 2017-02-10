@@ -36,7 +36,7 @@ const HTML = (props) => {
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta property="og:title" content="MyGi - Glycemic Index" />
-        <meta property="og:description" content="MyGi App companion website and home of the officially unofficial Glyemic Index Food List" />
+        <meta property="og:description" content="MyGi App companion website and home of the unofficial Glycemic Index Food List" />
         <meta property="og:image" content="https://mygi.io/mygi-app-icon.png" />
         <meta property="og:url" content="https://mygi.io" />
         <meta property="og:site_name" content="MyGi" />
