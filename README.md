@@ -2,7 +2,7 @@
 
 MyGi is the companion website for the MyGi health App (coming soon to iOS and Android) and a best endeavours listing of the Glycemic Index of various foods.
 
-The site is built with the awesome React based static site generator [gatsby](https://github.com/gatsbyjs/gatsby) and hosted on gihub.
+The site is built with the awesome React based static site generator [gatsby](https://github.com/gatsbyjs/gatsby) and hosted via github pages.
 
 ## Page Generation
 
