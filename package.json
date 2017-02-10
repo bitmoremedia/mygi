@@ -1,13 +1,14 @@
 {
   "name": "mygi-io",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "MyGi website (generated with Gatsby)",
   "main": "n/a",
   "scripts": {
     "generate": "babel-node ./scripts/generatePages",
-    "build": "gatsby build",
+    "clean": "babel-node ./scripts/cleanPublicDirectory",
+    "build": "npm run clean && npm run generate && gatsby build",
     "develop": "gatsby develop",
-    "deploy": "gatsby build --prefix-links && gh-pages -d public",
+    "deploy": "npm run build --prefix-links && gh-pages -d public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Russell Winborn (russ@bitmoremedia.com)",
