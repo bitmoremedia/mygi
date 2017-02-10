@@ -1,6 +1,6 @@
 const fs = require('fs-extra');
 
-console.log('*** generatePages START **');
+console.log('Generating GI Pages');
 
 // GENERATE GLYCEMIC INDEX PAGES
 
@@ -85,4 +85,3 @@ glycemicIndexCategories.forEach((item)=>{
 });
 
 console.log(`${pageCount} pages generated`);
-console.log('*** generatePages END **');
