@@ -2,7 +2,7 @@
 
 MyGi is the companion website for the MyGi health App (coming soon to iOS and Android) and a best endeavours listing of the Glycemic Index of various foods.
 
-The site is built with the awesome React based static site generator [gatsby](https://github.com/gatsbyjs/gatsby) and hosted on gihub.
+The site is built with the awesome React based static site generator [gatsby](https://github.com/gatsbyjs/gatsby) and hosted via github pages.
 
 ## Page Generation
 
@@ -20,7 +20,13 @@ $ npm run generate
 
 ## Deployments
 
-Run the following command to deploy your local version of the **public** code to the github pages branch
+Run the following command to deploy code to the github pages branch - the script will: 
+
+- empty the 'public' directory
+- copy files from '_public' to 'public'
+- generate the GI markdown pages (mentioned above)
+- run the gatsby build process
+- publish to the gh-pages branch
 
 ```
 $ npm run deploy

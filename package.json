@@ -1,6 +1,6 @@
 {
   "name": "mygi-io",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "description": "MyGi website (generated with Gatsby)",
   "main": "n/a",
   "scripts": {
@@ -21,6 +21,7 @@
     "preact": "^7.1.0",
     "preact-compat": "^3.13.1",
     "react": "^15.4.2",
+    "react-ga": "^2.1.2",
     "react-helmet": "^4.0.0"
   },
   "devDependencies": {

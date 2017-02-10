@@ -24,7 +24,6 @@ html, body {
 }
 
 // milligram overrides
-
 .button:focus,
 .button:hover,
 button:focus,
@@ -34,11 +33,17 @@ input[type='button']:hover,
 input[type='reset']:focus,
 input[type='reset']:hover,
 input[type='submit']:focus,
-input[type='submit']:hover {
+input[type='submit']:hover,{
     background-color: $linkHover;
     border-color: $linkHover;
     color: #fff;
     outline: 0;
+}
+a:focus,
+a:hover {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: $linkHover;
 }
 
 h2 {
