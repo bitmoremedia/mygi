@@ -50,10 +50,11 @@
 .site-header__page-link:focus {
   color: $textOnMain;
 }
-.site-header__page-link--active,
-.site-header__page-link--active:hover,
-.site-header__page-link--active:focus {
-  border-bottom: solid 1px $textOnMain;
-  display: inline;
-  padding-bottom: 3px;
+.site-header__page-link-container--active,
+.site-header__page-link-container--active:hover,
+.site-header__page-link-container--active:focus {
+  background-color: $activeTab;
+}
+.site-content.site-content__site-header {
+  padding-right: 0px;
 }

@@ -11,23 +11,23 @@ const SiteHeader = ({activePath}) => {
   const giPathActive = (activePath.indexOf("/glycemic-index/") > -1);
   const aboutPathActive = (activePath.indexOf("/about") > -1);
 
-  const giLinkClass = classNames('site-header__page-link', {'site-header__page-link--active' : giPathActive});
-  const aboutLinkClass = classNames('site-header__page-link', {'site-header__page-link--active' : aboutPathActive});
+  const giLinkClass = classNames('site-header__page-link-container', {'site-header__page-link-container--active' : giPathActive});
+  const aboutLinkClass = classNames('site-header__page-link-container', {'site-header__page-link-container--active' : aboutPathActive});
 
   return (
     <div className='site-header'>
-      <SiteContent>
+      <SiteContent className='site-content__site-header'>
         <PageLink className='site-header__home-link' to={'/'}>
           <img className='site-header__logo-image' src={logoImage} />
         </PageLink>
         <div className='site-header__page-links'>
-          <PageLink className='site-header__page-link-container' to={'/glycemic-index'}>
-            <div className={giLinkClass}>
+          <PageLink className={giLinkClass} to={'/glycemic-index'}>
+            <div className='site-header__page-link'>
               Gylcemic Index
             </div>
           </PageLink>
-          <PageLink className='site-header__page-link-container' to={'/about'}>
-            <div className={aboutLinkClass}>
+          <PageLink className={aboutLinkClass} to={'/about'}>
+            <div className='site-header__page-link'>
               About
             </div>
           </PageLink>

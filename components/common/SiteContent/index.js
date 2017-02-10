@@ -3,11 +3,13 @@ import classNames from 'classnames';
 
 import './style';
 
-const SiteContent = ({children, page}) => {
+const SiteContent = ({children, page, className}) => {
+
+  const wrapperClass = classNames('site-content', { [className]: className });
 
   if (page){
     return (
-      <div className='site-content'>
+      <div className={wrapperClass}>
         <div className='site-content__page'>
           <div className='site-content__inner'>
             {children}
@@ -18,7 +20,7 @@ const SiteContent = ({children, page}) => {
   }
 
   return (
-    <div className='site-content'>
+    <div className={wrapperClass}>
       <div className='site-content__inner'>
         {children}
       </div>
