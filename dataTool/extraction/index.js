@@ -3,7 +3,7 @@ const cheerio = require('cheerio');
 const fs = require('fs-extra');
 
 const sources = require('./sources.json');
-const dataSourceDirectory = './data/sources/';
+const dataSourceDirectory = './dataTool/extracts/';
 
 const missingSources = [];
 const missingSourcesFetch = [];
@@ -37,8 +37,8 @@ Promise.all(missingSourcesFetch)
   .then(function(allData) {
       missingSources.forEach((source, index)=>{
         try {
-          const dataExtractFunction = require(`./${source.name}`);
-          const dataExtract = dataExtractFunction(allData[index]);
+          const dataExtractScript = require(`./scripts/${source.name}`);
+          const dataExtract = dataExtractScript(allData[index]);
           if (dataExtract.length){
             // we have some data so write it to file
             console.log(`Adding ${dataExtract.length} items for: ${dataSourceDirectory}${source.name}.json`);

@@ -5,7 +5,7 @@
   "main": "n/a",
   "scripts": {
     "generate": "node ./scripts/generatePages",
-    "extract": "node ./scripts/dataExtraction",
+    "extract": "node ./dataTool/extraction",
     "clean": "node ./scripts/cleanPublicDirectory",
     "build": "npm run clean && npm run generate && gatsby build",
     "develop": "gatsby develop",
