@@ -11,6 +11,10 @@ const sources = [
   {
     'name' : 'weightlossresources',
     'url' : 'http://www.weightlossresources.co.uk/diet/gi_diet/glycaemic_index_tables.htm'
+  },
+  {
+    'name' : 'mendosa',
+    'url' : 'http://www.mendosa.com/gilists.htm'
   }
 ];
 const missingSources = [];
@@ -49,11 +53,12 @@ Promise.all(missingSourcesFetch)
           const dataExtract = dataExtractFunction(allData[index]);
           if (dataExtract.length){
             // we have some data so write it to file
-            console.log(`Adding: ${dataSourceDirectory}${source.name}.json`);
+            console.log(`Adding ${dataExtract.length} items for: ${dataSourceDirectory}${source.name}.json`);
             fs.ensureDirSync(dataSourceDirectory);
             fs.writeFile(`${dataSourceDirectory}${source.name}.json`, JSON.stringify(dataExtract), 'utf8');
+          } else {
+            console.log(`no data found for: ${source.name}`);
           }
-          console.log(dataExtract.length);
         } catch(err){
           console.log(`error running extract for: ${source.name}`);
         }
