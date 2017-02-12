@@ -2,21 +2,9 @@ const request = require('request');
 const cheerio = require('cheerio');
 const fs = require('fs-extra');
 
+const sources = require('./sources.json');
 const dataSourceDirectory = './data/sources/';
-const sources = [
-  {
-    'name' : 'havard',
-    'url' : 'http://www.health.harvard.edu/diseases-and-conditions/glycemic_index_and_glycemic_load_for_100_foods'
-  },
-  {
-    'name' : 'weightlossresources',
-    'url' : 'http://www.weightlossresources.co.uk/diet/gi_diet/glycaemic_index_tables.htm'
-  },
-  {
-    'name' : 'mendosa',
-    'url' : 'http://www.mendosa.com/gilists.htm'
-  }
-];
+
 const missingSources = [];
 const missingSourcesFetch = [];
 
