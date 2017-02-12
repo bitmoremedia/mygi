@@ -26,5 +26,9 @@
   {
     "name" : "theingredientstore",
     "url" : "http://www.theingredientstore.com/amescompany/GIindex.html"
+  },
+  {
+    "name" : "optimalfoods",
+    "url" : "http://www.optimalfoods.org"
   }
 ]
