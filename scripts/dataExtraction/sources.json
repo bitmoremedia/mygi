@@ -14,5 +14,9 @@
   {
     "name" : "nutritiondata",
     "url" : "http://nutritiondata.self.com/topics/glycemic-index"
+  },
+  {
+    "name" : "lowglycemicload",
+    "url" : "http://www.lowglycemicload.com/glycemic_table.html"
   }
 ]
