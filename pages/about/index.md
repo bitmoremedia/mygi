@@ -38,6 +38,7 @@ have been used to determine the GI Values for MyGi and more will be added over t
 appropriate standard values
 
 - <a href="http://www.health.harvard.edu/diseases-and-conditions/glycemic_index_and_glycemic_load_for_100_foods" target="_blank">Havard Medical School</a>
+- <a href="http://www.the-gi-diet.org/lowgifoods/" target="_blank">The GI Diet</a>
 - <a href="http://www.glycemicindex.com/foodSearch.php" target="_blank">The University of Sydney</a>
 - <a href="http://www.weightlossresources.co.uk/diet/gi_diet/glycaemic_index_tables.htm" target="_blank">weightlossresources.co.uk</a>
 - <a href="http://www.mendosa.com/gilists.htm" target="_blank">mendosa.com</a>
