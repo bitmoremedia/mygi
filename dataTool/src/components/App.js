@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { getFoodList, getDataSources, getCategories } from '../api';
+import { Grid, Row, Col } from './common/Grid';
 import Header from './Header';
 
 class App extends Component {
@@ -51,10 +52,18 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <h3>Food List</h3>
-        {this.state.foodList.map(this.renderFood)}
-        <h3>Data Sources</h3>
-        {this.state.dataSources.map(this.renderSource)}
+          <Grid>
+            <Row>
+              <Col xs={6} md={3}>
+                <h3>Food List</h3>
+                {this.state.foodList.map(this.renderFood)}
+              </Col>
+              <Col xs={6} md={3}>
+                <h3>Data Sources</h3>
+                {this.state.dataSources.map(this.renderSource)}
+              </Col>
+            </Row>
+          </Grid>
       </div>
     );
   }

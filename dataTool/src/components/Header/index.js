@@ -1,10 +1,18 @@
 import React from 'react';
-import { Container } from './styled-components';
+
+import { Grid, Row, Col } from '../common/Grid';
+import { Container } from './styles';
 
 const Header = () => {
   return (
     <Container>
-      <h1>MyGi Data Tool</h1>
+      <Grid>
+        <Row>
+          <Col xs={12}>
+            <h1>MyGi Data Tool</h1>            
+          </Col>
+        </Row>
+      </Grid>
     </Container>
   );
 };
