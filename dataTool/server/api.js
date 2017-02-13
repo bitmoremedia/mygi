@@ -9,6 +9,9 @@ module.exports = ({ url, method, params }) => {
         case 'food-list':
           getFoodList(resolve, reject);
           break;
+          case 'categories':
+            getCategories(resolve, reject);
+            break;
         default:
           resolve({ url, method, params });
       }
@@ -46,4 +49,10 @@ function getFoodList(resolve, reject){
     }
   }
   resolve(foodList);
+}
+
+function getCategories(resolve, reject){
+  const giCategories = require('../../data/glycemic-index-categories.json');
+  const categories = giCategories.map((category)=>category.category);
+  resolve(categories);
 }

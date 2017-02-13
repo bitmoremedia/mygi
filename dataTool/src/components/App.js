@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { getFoodList, getDataSources } from '../api';
+import { getFoodList, getDataSources, getCategories } from '../api';
 import Header from './Header';
 
 class App extends Component {
@@ -25,6 +25,13 @@ class App extends Component {
       });
 
     getDataSources()
+      .then(
+        (data)=>{ console.log(data) }
+      ).catch((err)=>{
+        console.log(err);
+      });
+
+    getCategories()
       .then(
         (data)=>{ console.log(data) }
       ).catch((err)=>{

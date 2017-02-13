@@ -1,8 +1,8 @@
 const baseUrl = "http://localhost:9000/api/";
 
-export const getDataSources = () => {
+function getRequest(target) {
   return new Promise((resolve, reject)=>{
-    fetch(`${baseUrl}data-sources`)
+    fetch(`${baseUrl}${target}`)
     .then(function(response) {
       resolve(response.json());
     }).catch(function(err) {
@@ -10,16 +10,16 @@ export const getDataSources = () => {
       resolve([]);
     });
   });
+}
+
+export const getDataSources = () => {
+  return getRequest('data-sources');
 };
 
 export const getFoodList = () => {
-  return new Promise((resolve, reject)=>{
-    fetch(`${baseUrl}food-list`)
-    .then(function(response) {
-      resolve(response.json());
-    }).catch(function(err) {
-      console.log('error', err);
-      resolve([]);
-    });
-  });
+  return getRequest('food-list');
+};
+
+export const getCategories = () => {
+  return getRequest('categories');
 };
