@@ -45,7 +45,7 @@ function getFoodList(resolve, reject){
   const foodListMap = require('../db/foodList.json');
   for (let key in foodListMap) {
     if ({}.hasOwnProperty.call(foodListMap, key)) {
-      foodList.push(foodListMap[key]);
+      foodList.push({...foodListMap[key], id:key});
     }
   }
   resolve(foodList);

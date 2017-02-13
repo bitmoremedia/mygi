@@ -6,7 +6,7 @@
   "scripts": {
     "generate": "node ./scripts/generatePages",
     "extract": "node ./dataTool/extraction",
-    "dataTool": "node ./dataTool/server",
+    "dataTool": "babel-node ./dataTool/server",
     "clean": "node ./scripts/cleanPublicDirectory",
     "build": "npm run clean && npm run generate && gatsby build",
     "develop": "gatsby develop",
