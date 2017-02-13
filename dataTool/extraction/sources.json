@@ -1,34 +1,42 @@
 [
   {
     "name" : "havard",
+    "title" : "Havard",
     "url" : "http://www.health.harvard.edu/diseases-and-conditions/glycemic_index_and_glycemic_load_for_100_foods"
   },
   {
     "name" : "weightlossresources",
+    "title" : "Weight Loss Resources",
     "url" : "http://www.weightlossresources.co.uk/diet/gi_diet/glycaemic_index_tables.htm"
   },
   {
     "name" : "mendosa",
+    "title" : "Mendosa",
     "url" : "http://www.mendosa.com/gilists.htm"
   },
   {
     "name" : "nutritiondata",
+    "title" : "Nutrition Data",
     "url" : "http://nutritiondata.self.com/topics/glycemic-index"
   },
   {
     "name" : "lowglycemicload",
+    "title" : "Low Glycemic Load",
     "url" : "http://www.lowglycemicload.com/glycemic_table.html"
   },
   {
     "name" : "ultimatepaleoguide",
+    "title" : "Ultimate Paleo Guide",
     "url" : "https://ultimatepaleoguide.com/glycemic-index-food-list/"
   },
   {
     "name" : "theingredientstore",
+    "title" : "The Ingredient Store",
     "url" : "http://www.theingredientstore.com/amescompany/GIindex.html"
   },
   {
     "name" : "optimalfoods",
+    "title" : "Optimal Foods",
     "url" : "http://www.optimalfoods.org"
   }
 ]

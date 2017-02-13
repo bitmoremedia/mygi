@@ -10,6 +10,7 @@ app.use(express.static(path.resolve(__dirname, '..', 'build')));
 
 app.get('/api/*', function(req, res){
   const { url, method, params } = req;
+  res.header("Access-Control-Allow-Origin", "*");
   api({url, method, params})
     .then((response)=>{
       res.json(response);

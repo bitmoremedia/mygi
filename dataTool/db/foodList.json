@@ -1,0 +1,19 @@
+{
+  "abcdefg" : {
+    "name": "Kidney Beans",
+    "category": "Beans",
+    "gi": 29,
+    "sources": [
+      {
+        "source": "havard",
+        "food": "Kidney beans, average",
+        "gi": "34"
+      },
+      {
+        "source": "mendosa",
+        "food":"Kidney beans",
+        "gi":"24"
+      }
+    ]
+  }
+}
