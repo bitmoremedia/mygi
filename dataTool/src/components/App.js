@@ -8,6 +8,7 @@ import {
 
 import { Grid, Row, Col } from './common/Grid';
 import FoodList from './FoodList';
+import FoodSource from './FoodSource';
 import Header from './Header';
 
 const About = () => (
@@ -29,6 +30,7 @@ class App extends Component {
                   <ul>
                     <li><Link to="/">Food List</Link></li>
                     <li><Link to="/about">About</Link></li>
+                    <li><Link to="/source/havard">Source - Havard</Link></li>
                   </ul>
                 </Col>
               </Row>
@@ -36,6 +38,7 @@ class App extends Component {
                 <Col xs={12}>
                   <Route exact path="/" component={FoodList}/>
                   <Route path="/about" component={About}/>
+                  <Route path="/source/:id" component={FoodSource}/>
               </Col>
               </Row>
             </Grid>

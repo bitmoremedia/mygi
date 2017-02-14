@@ -1,11 +1,30 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
-import { getFoodList, getDataSources, getCategories } from '../../api';
+import { getFoodList, getDataSources } from '../../api';
 import Table from '../common/Table';
-import FoodItem from '../FoodItem';
 
-class FoodList extends Component {
+class FoodSource extends Component {
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      foodList: [],
+      dataSource: [],
+      categories: [],
+    };
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Food Source</h1>
+        <h3>{this.props.match.params.id}</h3>
+      </div>
+    );
+  }
+}
+
+/*
+class FoodSource extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
@@ -42,7 +61,7 @@ class FoodList extends Component {
     dataSources.forEach((source)=>{
       columns.push({
         key: source.name,
-        label: <Link to={`/source/${source.name}`}>{source.title}</Link>,
+        label: source.title,
       });
     });
 
@@ -79,5 +98,5 @@ class FoodList extends Component {
     );
   }
 }
-
-export default FoodList;
+*/
+export default FoodSource;
