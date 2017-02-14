@@ -7,6 +7,8 @@ const tableProps = {
 
 const Table = ({columns, data}) => {
 
+  console.log({columns, data});
+
   const renderHeadings = () => {
     return columns.map((column)=><th key={`${column.key}-heading`}>{column.label}</th>);
   };

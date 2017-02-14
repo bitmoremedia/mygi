@@ -1,11 +1,21 @@
 {
   "abcdefg" : {
+    "id": "abcdefg",
     "name": "Kidney Beans",
     "category": "Beans",
     "gi": 29,
     "sources": {
       "havard" : "havard-kidney-beans,-average",
       "mendosa" : "mendosa-kidney-beans"
+    }
+  },
+  "abcdefg232323232323" : {
+    "id": "abcdefg232323232323",
+    "name": "Black Beans",
+    "category": "Beans",
+    "gi": 30,
+    "sources": {
+      "havard" : "havard-black-beans"
     }
   }
 }

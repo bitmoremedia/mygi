@@ -5,6 +5,7 @@ import forEach from 'lodash/forEach';
 
 import { List, ListItem, MatchedListItem } from './styles';
 import ToolTip from '../common/ToolTip';
+import Divider from '../common/Divider';
 import Modal from '../common/Modal';
 import FoodFinder from '../FoodFinder';
 
@@ -79,10 +80,10 @@ class FoodSource extends Component {
         <h2>{title}</h2>
         <Modal visible={findFoodModalVisible} onClose={this.closeFindFoodModal} width={80} height={80} measure={'%'}>
           {
-            findFoodModalVisible && <FoodFinder foodList={foodList} dataSources={dataSources} findFoodId={findFoodId} type={sourceName} />
+            findFoodModalVisible && <FoodFinder foodList={foodList} dataSources={dataSources} foodId={findFoodId} sourceName={sourceName} />
           }
         </Modal>
-        <hr/>
+        <Divider />
         <List>
           {sourceDataArray.map((food)=><FoodItem key={food.id} {...food}/>)}
         </List>
