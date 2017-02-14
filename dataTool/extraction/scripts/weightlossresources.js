@@ -1,6 +1,8 @@
 const cheerio = require('cheerio');
 
 module.exports = (html) => {
+  let food;
+  const dataMap = {};
   const data = [];
   const $ = cheerio.load(html);
   const $dataTables = $('table.articleTable');
@@ -12,10 +14,15 @@ module.exports = (html) => {
       const firstColumn = $(columns[0]).text();
       const secondColumn = $(columns[1]).text();
       if (!isNaN(parseInt(secondColumn))) {
-        data.push({
-          'food' : firstColumn,
+        food = {
+          'id' : firstColumn.trim().replace(/\s+/g, '-').toLowerCase(),
+          'name' : firstColumn.trim(),
           'gi' : secondColumn
-        });
+        };
+        if (!dataMap[food.id]){
+          dataMap[food.id] = true;
+          data.push(food);
+        }
       }
     });
   });

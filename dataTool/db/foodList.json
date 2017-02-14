@@ -5,11 +5,13 @@
     "gi": 29,
     "sources": {
       "havard" : {
-        "food": "Kidney beans, average",
+        "id": "kidney-beans,-average",
+        "name": "Kidney beans, average",
         "gi": "34"
       },
       "mendosa" : {
-        "food":"Kidney beans",
+        "id":"kidney-beans",
+        "name":"Kidney beans",
         "gi":"24"
       }
     }

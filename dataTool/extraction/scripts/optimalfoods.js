@@ -5,6 +5,8 @@ function replaceAll(string, find, replace){
 };
 
 module.exports = (html) => {
+  let food, foodName;
+  const dataMap = {};
   const data = [];
   const $ = cheerio.load(html);
   const $dataTable = $('table');
@@ -17,11 +19,18 @@ module.exports = (html) => {
        const secondColumn = $(columns[1]).text();
        if (!isNaN(parseInt(secondColumn))) {
          // remove asterisk and trim food text
-         let food = firstColumn.replace(/\*/g, '').trim();
-         data.push({
-           food,
-           'gi' : secondColumn
-         });
+         foodName = firstColumn.replace(/\*/g, '').trim();
+         if (foodName){
+           food = {
+             'id' : foodName.trim().replace(/\s+/g, '-').toLowerCase(),
+             'name' : foodName.trim(),
+             'gi' : secondColumn
+           };
+           if (!dataMap[food.id]){
+             dataMap[food.id] = true;
+             data.push(food);
+           }
+         }
        }
      });
   }

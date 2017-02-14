@@ -22,6 +22,8 @@ function giValueFromColumn($column){
 };
 
 module.exports = (html) => {
+  let food, foodName;
+  const dataMap = {};
   const data = [];
   const $ = cheerio.load(html);
   const $dataTable = $('table');
@@ -32,9 +34,17 @@ module.exports = (html) => {
        // GI rows have a numeric second column
        const gi = giValueFromColumn($(columns[1]));
        if (gi) {
-         const food = foodFromColumn($(columns[0]));
-         if (food) {
-           data.push({food,gi});
+         foodName = foodFromColumn($(columns[0]));
+         if (foodName) {
+           food = {
+             'id' : foodName.trim().replace(/\s+/g, '-').toLowerCase(),
+             'name' : foodName.trim(),
+             'gi' : gi
+           };
+           if (!dataMap[food.id]){
+             dataMap[food.id] = true;
+             data.push(food);
+           }
          }
        }
      });

@@ -22,15 +22,27 @@ module.exports = ({ url, method, params }) => {
 
 const dataSources = require('../extraction/sources.json');
 
+function sortArrayByProperty(property) {
+    var sortOrder = 1;
+    if(property[0] === "-") {
+        sortOrder = -1;
+        property = property.substr(1);
+    }
+    return function (a,b) {
+        var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+        return result * sortOrder;
+    }
+};
+
 function getDataSources(resolve, reject){
   try {
     const dataSourcesList = [];
     dataSources.forEach((source)=>{
-      const sourceJson = require(`../extracts/${source.name}.json`);
+      const sourceData = require(`../extracts/${source.name}.json`);
       dataSourcesList.push({
         name: source.name,
         title: source.title,
-        data: sourceJson
+        data: sourceData.sort(sortArrayByProperty('name'))
       });
     });
     resolve(dataSourcesList);
