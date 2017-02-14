@@ -16,8 +16,8 @@ class App extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      foodList: [],
-      dataSources: [],
+      foodList: {},
+      dataSources: {},
       categories: [],
     };
   }

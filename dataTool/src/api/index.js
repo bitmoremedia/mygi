@@ -16,15 +16,6 @@ export const getDataSources = () => {
   return getRequest('data-sources');
 };
 
-export const getDataSource = (source) => {
-  console.log(`getDataSource: ${source}`);
-  getDataSources
-    .then((data)=>{
-      console.log('all sources', data);
-    })
-  return [];
-};
-
 export const getFoodList = () => {
   return getRequest('food-list');
 };

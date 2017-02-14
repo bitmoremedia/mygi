@@ -1,27 +1,19 @@
 import React from 'react';
+import values from 'lodash/values';
+import sortBy from 'lodash/sortBy';
 
 const FoodSource = ({ match, foodList, dataSources }) => {
 
-  //console.log({ match, foodList, dataSources });
-
   const sourceName = match.params.id;
-  let sourceData = [], sourceTitle;
-
-  dataSources.forEach((source)=>{
-    if ( source.name === sourceName ){
-      sourceData = source.data;
-      sourceTitle = source.title;
-    }
-  });
-
-  console.log({sourceData});
+  const { title, data } = dataSources[sourceName] || {};
+  const sourceDataArray = sortBy(values(data), 'name');
 
   return (
     <div>
       <h1>Food Source</h1>
-      <h3>{sourceTitle}</h3>
+      <h3>{title}</h3>
       <ul>
-        {sourceData.map((food)=><li key={food.id}>{food.name} [{food.gi}]</li>)}
+        {sourceDataArray.map((food)=><li key={food.id}>{food.name} [{food.gi}]</li>)}
       </ul>
     </div>
   );

@@ -1,10 +1,16 @@
 import React from 'react';
+import values from 'lodash/values';
+import sortBy from 'lodash/sortBy';
 import { Link } from 'react-router-dom';
 
 import Table from '../common/Table';
 import FoodItem from '../FoodItem';
 
 const FoodList = ({ foodList, dataSources }) => {
+
+  const foodListArray = sortBy(values(foodList), 'name');
+  const dataSourcesArray = sortBy(values(dataSources), 'title');
+
   const columns = [{
     key: 'food',
     label: 'Food'
@@ -13,20 +19,20 @@ const FoodList = ({ foodList, dataSources }) => {
     label: 'GI Value'
   }];
   // add columns for each of our data sources
-  dataSources.forEach((source)=>{
+  dataSourcesArray.forEach((source)=>{
     columns.push({
       key: source.name,
       label: <Link to={`/source/${source.name}`}>{source.title}</Link>,
     });
   });
-  const data = foodList.map((food)=>{
+  const data = foodListArray.map((food)=>{
     const dataColumns = [
       { key: food.id, value: <FoodItem food={food}/> },
       { key: food.id, value: food.gi }
     ];
     // add data columns for each of our data sources
-    dataSources.forEach((source)=>{
-      const sourceGi = (food.sources[source.name]) ? food.sources[source.name].gi : "";
+    dataSourcesArray.forEach((source)=>{
+      const sourceGi = (food.sources[source.name] && source.data[food.sources[source.name]]) ? source.data[food.sources[source.name]].gi : "";
       dataColumns.push({
         key: `${food.id}-${source.name}`,
         value: sourceGi,
@@ -35,7 +41,7 @@ const FoodList = ({ foodList, dataSources }) => {
     return dataColumns;
   });
 
-  if ( foodList.length && dataSources.length ){
+  if ( foodListArray.length && dataSourcesArray.length ){
     return (
       <Table columns={columns} data={data}/>
     );

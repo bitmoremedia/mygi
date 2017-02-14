@@ -6,8 +6,7 @@ function replaceAll(string, find, replace){
 
 module.exports = (html) => {
   let food, foodName;
-  const dataMap = {};
-  const data = [];
+  const data = {};
   const $ = cheerio.load(html);
   const $dataTable = $('table');
   if ($dataTable.length ) {
@@ -26,9 +25,8 @@ module.exports = (html) => {
              'name' : foodName.trim(),
              'gi' : secondColumn
            };
-           if (!dataMap[food.id]){
-             dataMap[food.id] = true;
-             data.push(food);
+           if (!data[food.id]){
+             data[food.id] = food;
            }
          }
        }

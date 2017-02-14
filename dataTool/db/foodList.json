@@ -4,16 +4,8 @@
     "category": "Beans",
     "gi": 29,
     "sources": {
-      "havard" : {
-        "id": "kidney-beans,-average",
-        "name": "Kidney beans, average",
-        "gi": "34"
-      },
-      "mendosa" : {
-        "id":"kidney-beans",
-        "name":"Kidney beans",
-        "gi":"24"
-      }
+      "havard" : "kidney-beans,-average",
+      "mendosa" : "kidney-beans"      
     }
   }
 }

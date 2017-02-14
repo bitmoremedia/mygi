@@ -9,8 +9,7 @@ function extractGi(text){
 
 module.exports = (html) => {
   let food;
-  const dataMap = {};
-  const data = [];
+  const data = {};
   const $ = cheerio.load(html);
   const $dataTables = $('table');
   $dataTables.each((index, table)=>{
@@ -29,8 +28,8 @@ module.exports = (html) => {
           'name' : firstColumn.trim(),
           'gi' : extractGi(secondColumn)
         };
-        if (!dataMap[food.id]){
-          data.push(food);
+        if (!data[food.id]){
+          data[food.id] = food;
         }
       }
 
@@ -43,9 +42,8 @@ module.exports = (html) => {
             'name' : secondColumn.trim(),
             'gi' : extractGi(thirdColumn)
           };
-          if (!dataMap[food.id]){
-            dataMap[food.id] = true;
-            data.push(food);
+          if (!data[food.id]){
+            data[food.id] = food;
           }
         }
       }

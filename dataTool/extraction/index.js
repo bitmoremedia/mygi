@@ -8,6 +8,18 @@ const dataSourceDirectory = './dataTool/extracts/';
 const missingSources = [];
 const missingSourcesFetch = [];
 
+function isEmpty(obj){
+  return Object.keys(obj).length === 0 && obj.constructor === Object;
+}
+
+function countObjectProperties(obj){
+    var count = 0;
+    for(var i in obj)
+        if(obj.hasOwnProperty(i))
+            count++;
+    return count;
+}
+
 function fetchFrom(url) {
   return new Promise(function(resolve, reject) {
     request(url, function(err, res, body) {
@@ -39,9 +51,9 @@ Promise.all(missingSourcesFetch)
         try {
           const dataExtractScript = require(`./scripts/${source.name}`);
           const dataExtract = dataExtractScript(allData[index]);
-          if (dataExtract.length){
+          if (!isEmpty(dataExtract)) {
             // we have some data so write it to file
-            console.log(`Adding ${dataExtract.length} items for: ${dataSourceDirectory}${source.name}.json`);
+            console.log(`Adding ${countObjectProperties(dataExtract)} items for: ${dataSourceDirectory}${source.name}.json`);
             fs.ensureDirSync(dataSourceDirectory);
             fs.writeFile(`${dataSourceDirectory}${source.name}.json`, JSON.stringify(dataExtract), 'utf8');
           } else {

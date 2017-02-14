@@ -22,30 +22,18 @@ module.exports = ({ url, method, params }) => {
 
 const dataSources = require('../extraction/sources.json');
 
-function sortArrayByProperty(property) {
-    var sortOrder = 1;
-    if(property[0] === "-") {
-        sortOrder = -1;
-        property = property.substr(1);
-    }
-    return function (a,b) {
-        var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
-        return result * sortOrder;
-    }
-};
-
 function getDataSources(resolve, reject){
   try {
-    const dataSourcesList = [];
+    const dataSourceObj = {};
     dataSources.forEach((source)=>{
       const sourceData = require(`../extracts/${source.name}.json`);
-      dataSourcesList.push({
+      dataSourceObj[source.name]={
         name: source.name,
         title: source.title,
-        data: sourceData.sort(sortArrayByProperty('name'))
-      });
+        data: sourceData
+      };
     });
-    resolve(dataSourcesList);
+    resolve(dataSourceObj);
   } catch (e) {
     console.log('Error in getDataSources - make sure they all exist');
     reject(e);
@@ -53,13 +41,7 @@ function getDataSources(resolve, reject){
 }
 
 function getFoodList(resolve, reject){
-  const foodList = [];
-  const foodListMap = require('../db/foodList.json');
-  for (let key in foodListMap) {
-    if ({}.hasOwnProperty.call(foodListMap, key)) {
-      foodList.push({...foodListMap[key], id:key});
-    }
-  }
+  const foodList = require('../db/foodList.json');
   resolve(foodList);
 }
 

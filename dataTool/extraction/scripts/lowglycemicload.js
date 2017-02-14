@@ -2,8 +2,7 @@ const cheerio = require('cheerio');
 
 module.exports = (html) => {
   let food;
-  const dataMap = {};
-  const data = [];
+  const data = {};
   const $ = cheerio.load(html);
   const $dataTable = $('table');
   if ($dataTable.length ) {
@@ -19,9 +18,8 @@ module.exports = (html) => {
            'name' : firstColumn.trim(),
            'gi' : thirdColumn
          };
-         if (!dataMap[food.id]){
-           dataMap[food.id] = true;
-           data.push(food);
+         if (!data[food.id]){
+           data[food.id] = food;
          }
        }
      });
