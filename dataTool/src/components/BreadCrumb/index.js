@@ -1,25 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom';
+import { List, ListItem } from './styles';
 
-const BreadCrumb = ({ match }) => {
-  //console.log('breadcrumb', match);
-  console.log('breadcrumb', match);
+const BreadCrumb = ({ match, dataSources }) => {
   const url = match.url;
-
-  let sourceLink = <li><Link to="/source/havard">Source - Havard</Link></li>;
-  sourceLink = false;
-  // debugger;
-
+  const urlParts = url.split("/");
+  let sourceLink;
+  if ( urlParts[1] === 'source' ){
+    dataSources.forEach((dataSource)=>{
+      if ( dataSource.name === urlParts[2] ){
+        sourceLink = <ListItem>> <Link to={`/source/${dataSource.name}`}>{dataSource.title}</Link></ListItem>;
+      }
+    });
+  }
   return (
-    <ul>
-      <li><Link to="/">Food List</Link></li>
+    <List>
+      <ListItem>
+        <Link to="/">Food List</Link>
+      </ListItem>
       {sourceLink && sourceLink}
-    </ul>
+    </List>
   );
 };
 

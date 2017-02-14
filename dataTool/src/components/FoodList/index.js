@@ -1,36 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import { getFoodList, getDataSources, getCategories } from '../../api';
 import Table from '../common/Table';
 import FoodItem from '../FoodItem';
 
 class FoodList extends Component {
-  constructor(props, context) {
-    super(props, context);
-    this.state = {
-      foodList: [],
-      dataSources: [],
-      categories: [],
-    };
-  }
-
-  componentDidMount(){
-    getFoodList()
-      .then((foodList)=>{this.setState({foodList});})
-      .catch((err)=>{console.log(err);});
-
-    getDataSources()
-      .then((dataSources)=>{this.setState({dataSources});})
-      .catch((err)=>{console.log(err);});
-
-    getCategories()
-      .then((categories)=>{this.setState({categories});})
-      .catch((err)=>{console.log(err);});
-  }
 
   renderFoodItems(item) {
-    const { foodList, dataSources } = this.state;
+    const { foodList, dataSources } = this.props;
     const columns = [{
       key: 'food',
       label: 'Food'
