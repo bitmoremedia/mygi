@@ -7,14 +7,15 @@ import Rodal from 'rodal';
 const modalProps = {
   visible: React.PropTypes.bool.isRequired,
   onClose: React.PropTypes.func.isRequired,
-  width: React.PropTypes.width,
-  height: React.PropTypes.height,
+  width: React.PropTypes.number,
+  height: React.PropTypes.number,
+  measure: React.PropTypes.string,
   children: React.PropTypes.any.isRequired,
 }
 
-const Modal = ({ children, visible, onClose, width, height }) => {
+const Modal = ({ children, visible, onClose, width, height, measure }) => {
   return (
-      <Rodal visible={visible} onClose={onClose} width={width} height={height}>
+      <Rodal visible={visible} onClose={onClose} width={width} height={height} measure={measure}>
         {children}
       </Rodal>
   );

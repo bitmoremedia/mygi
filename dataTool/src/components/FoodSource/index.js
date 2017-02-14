@@ -6,34 +6,38 @@ import forEach from 'lodash/forEach';
 import { List, ListItem, MatchedListItem } from './styles';
 import ToolTip from '../common/ToolTip';
 import Modal from '../common/Modal';
+import FoodFinder from '../FoodFinder';
 
 class FoodSource extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      findFoodModalVisible: false
+      findFoodModalVisible: false,
+      findFoodId: undefined
     };
     this.openFindFoodModal = this.openFindFoodModal.bind(this);
     this.closeFindFoodModal = this.closeFindFoodModal.bind(this);
   }
 
-  openFindFoodModal(e) {
+  openFindFoodModal(e,id) {
     e.preventDefault();
     this.setState({
-      findFoodModalVisible: true
+      findFoodModalVisible: true,
+      findFoodId: id
     });
   }
 
   closeFindFoodModal(e) {
     e.preventDefault();
     this.setState({
-      findFoodModalVisible: false
+      findFoodModalVisible: false,
+      findFoodId: undefined
     });
   }
 
   render() {
     const { match, foodList, dataSources } = this.props;
-    const { findFoodModalVisible } = this.state;
+    const { findFoodModalVisible, findFoodId } = this.state;
 
     const sourceName = match.params.id;
     const { title, data } = dataSources[sourceName] || {};
@@ -62,21 +66,19 @@ class FoodSource extends Component {
               text={`${sourceMatch[id].matched.name} [${sourceMatch[id].matched.gi}]`}
               position={'right'}
             >
-              MATCH
-            </ToolTip> - {name} [{gi}]
+              ✔
+            </ToolTip> {name} [{gi}]
           </MatchedListItem>
         );
       }
-      return <ListItem>{name} [{gi}] <a href="" onClick={this.openFindFoodModal}>Find</a></ListItem>;
+      return <ListItem>{name} [{gi}] <a href="" onClick={(e)=>this.openFindFoodModal(e,id)}>Find</a></ListItem>;
     }
 
     return (
       <div>
-        <h1>Food Source</h1>
-        <h3>{title}</h3>
-        <hr/>
-        <Modal visible={findFoodModalVisible} onClose={this.closeFindFoodModal}>
-          <div>Yeah Yeah Yeah</div>
+        <h2>{title}</h2>
+        <Modal visible={findFoodModalVisible} onClose={this.closeFindFoodModal} width={80} height={80} measure={'%'}>
+          <FoodFinder foodList={foodList} dataSource={data} findFoodId={findFoodId} />
         </Modal>
         <hr/>
         <List>
