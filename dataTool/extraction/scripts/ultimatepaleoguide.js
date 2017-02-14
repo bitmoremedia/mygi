@@ -12,9 +12,9 @@ module.exports = (html) => {
        // GI rows have a numeric second column
        const firstColumn = $(columns[0]).text();
        const secondColumn = $(columns[1]).text();
-       if (!isNaN(parseInt(secondColumn))) {
+       if (!isNaN(parseInt(secondColumn, 10))) {
          food = {
-           'id' : firstColumn.trim().replace(/\s+/g, '-').toLowerCase(),
+           'id' : 'ultimatepaleoguide-'+firstColumn.trim().replace(/\s+/g, '-').toLowerCase(),
            'name' : firstColumn.trim(),
            'gi' : secondColumn
          };

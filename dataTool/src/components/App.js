@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-
-import {
-  BrowserRouter as Router,
-  Route
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import styled from 'styled-components';
 
 import { getFoodList, getDataSources, getCategories } from '../api';
 import { Grid, Row, Col } from './common/Grid';
@@ -42,6 +39,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header />
+          <Page>
             <Grid>
               <Row>
                 <Col xs={12}>
@@ -55,6 +53,7 @@ class App extends Component {
                 </Col>
               </Row>
             </Grid>
+          </Page>
         </div>
       </Router>
     );
@@ -62,3 +61,8 @@ class App extends Component {
 }
 
 export default App;
+
+export const Page = styled.div`
+  padding-left: 10px;
+  padding-right: 10px;
+`;

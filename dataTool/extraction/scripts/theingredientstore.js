@@ -14,7 +14,7 @@ function giValueFromColumn($column){
   let $item = $column.find('font b');
   if ($item.length) {
     // ensure is a number and not a range
-    if (!isNaN(parseInt($item.text())) && $item.text().indexOf('-') === -1) {
+    if (!isNaN(parseInt($item.text(),10)) && $item.text().indexOf('-') === -1) {
       gi = $item.text();
     }
   }
@@ -36,7 +36,7 @@ module.exports = (html) => {
          foodName = foodFromColumn($(columns[0]));
          if (foodName) {
            food = {
-             'id' : foodName.trim().replace(/\s+/g, '-').toLowerCase(),
+             'id' : 'theingredientstore-'+foodName.trim().replace(/\s+/g, '-').toLowerCase(),
              'name' : foodName.trim(),
              'gi' : gi
            };

@@ -12,9 +12,9 @@ module.exports = (html) => {
        // GI rows have a numeric third column
        const firstColumn = $(columns[0]).text();
        const thirdColumn = $(columns[2]).text();
-       if (!isNaN(parseInt(thirdColumn))) {
+       if (!isNaN(parseInt(thirdColumn, 10))) {
          food = {
-           'id' : firstColumn.trim().replace(/\s+/g, '-').toLowerCase(),
+           'id' : 'lowglycemicload-'+firstColumn.trim().replace(/\s+/g, '-').toLowerCase(),
            'name' : firstColumn.trim(),
            'gi' : thirdColumn
          };

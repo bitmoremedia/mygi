@@ -16,12 +16,12 @@ module.exports = (html) => {
        // GI rows have a numeric second column
        const firstColumn = $(columns[0]).text();
        const secondColumn = $(columns[1]).text();
-       if (!isNaN(parseInt(secondColumn))) {
+       if (!isNaN(parseInt(secondColumn, 10))) {
          // remove asterisk and trim food text
          foodName = firstColumn.replace(/\*/g, '').trim();
          if (foodName){
            food = {
-             'id' : foodName.trim().replace(/\s+/g, '-').toLowerCase(),
+             'id' : 'optimalfoods-'+foodName.trim().replace(/\s+/g, '-').toLowerCase(),
              'name' : foodName.trim(),
              'gi' : secondColumn
            };

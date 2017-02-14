@@ -24,7 +24,7 @@ module.exports = (html) => {
       // GI rows have a ± symbol in the second column
       if (secondColumn.indexOf('±') > -1){
         food = {
-          'id' : firstColumn.trim().replace(/\s+/g, '-').toLowerCase(),
+          'id' : 'mendosa-'+firstColumn.trim().replace(/\s+/g, '-').toLowerCase(),
           'name' : firstColumn.trim(),
           'gi' : extractGi(secondColumn)
         };
@@ -36,9 +36,9 @@ module.exports = (html) => {
       // the other massive table with 2,600 + foods
       // GI rows have the ± symbol or a number in the 3rd column
       if (addTheLongList) {
-        if (thirdColumn.indexOf('±') > -1 || !isNaN(parseInt(thirdColumn))) {
+        if (thirdColumn.indexOf('±') > -1 || !isNaN(parseInt(thirdColumn, 10))) {
           food = {
-            'id' : secondColumn.trim().replace(/\s+/g, '-').toLowerCase(),
+            'id' : 'mendosa-'+secondColumn.trim().replace(/\s+/g, '-').toLowerCase(),
             'name' : secondColumn.trim(),
             'gi' : extractGi(thirdColumn)
           };

@@ -12,11 +12,11 @@ module.exports = (html) => {
        // GI rows have a numeric second column
        const firstColumn = $(columns[0]).text();
        const secondColumn = $(columns[1]).text();
-       if (!isNaN(parseInt(secondColumn))) {
+       if (!isNaN(parseInt(secondColumn, 10))) {
          // replace new line
          foodName = firstColumn.trim().replace(/(\r\n|\n|\r)/gm," ");
          food = {
-           'id' : foodName.replace(/\s+/g, '-').toLowerCase(),
+           'id' : 'the-gi-diet='+foodName.replace(/\s+/g, '-').toLowerCase(),
            'name' : foodName,
            'gi' : secondColumn
          };

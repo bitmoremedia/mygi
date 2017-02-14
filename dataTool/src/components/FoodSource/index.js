@@ -78,7 +78,9 @@ class FoodSource extends Component {
       <div>
         <h2>{title}</h2>
         <Modal visible={findFoodModalVisible} onClose={this.closeFindFoodModal} width={80} height={80} measure={'%'}>
-          <FoodFinder foodList={foodList} dataSource={data} findFoodId={findFoodId} />
+          {
+            findFoodModalVisible && <FoodFinder foodList={foodList} dataSources={dataSources} findFoodId={findFoodId} type={sourceName} />
+          }
         </Modal>
         <hr/>
         <List>
