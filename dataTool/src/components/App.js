@@ -10,6 +10,7 @@ import { Grid, Row, Col } from './common/Grid';
 import FoodList from './FoodList';
 import FoodSource from './FoodSource';
 import Header from './Header';
+import BreadCrumb from './BreadCrumb';
 
 const About = () => (
   <div>
@@ -27,6 +28,11 @@ class App extends Component {
             <Grid>
               <Row>
                 <Col xs={12}>
+                  <Route component={BreadCrumb}/>
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={12}>
                   <ul>
                     <li><Link to="/">Food List</Link></li>
                     <li><Link to="/about">About</Link></li>
@@ -39,7 +45,7 @@ class App extends Component {
                   <Route exact path="/" component={FoodList}/>
                   <Route path="/about" component={About}/>
                   <Route path="/source/:id" component={FoodSource}/>
-              </Col>
+                </Col>
               </Row>
             </Grid>
         </div>
