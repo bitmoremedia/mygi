@@ -18,8 +18,14 @@ const DataSourceFoodList = ({ list }) => {
 
   const renderItem = (food) => {
     return (
-      <li key={food.id}>{food.name} [{food.gi}]
-
+      <li key={food.id}>
+        {food.name} [{food.gi}]
+        <ToolTip
+          text={`${food.source} / ${food.id}`}
+          position={'left'}
+        >
+          ?
+        </ToolTip>
       </li>
     );
   }
