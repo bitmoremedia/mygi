@@ -11,6 +11,9 @@ export const TableHead = styled.thead`
 export const TableRow = styled.tr`
   text-align: center;
   padding-left: 20px;
+  td:first-child {
+    text-align: left;
+  }
 `;
 export const TableBody = styled.tbody`
 `;
