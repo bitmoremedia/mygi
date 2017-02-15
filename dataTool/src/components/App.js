@@ -1,66 +1,46 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import { getFoodList, getDataSources, getCategories } from '../api';
+import { fetchFoodlist, fetchDataSources } from '../actions';
 import { Grid, Row, Col } from './common/Grid';
 import FoodList from './FoodList';
 import FoodSource from './FoodSource';
 import Header from './Header';
 import BreadCrumb from './BreadCrumb';
 
-class AppWrapper extends Component {
-  constructor(props, context) {
-    super(props, context);
-    this.state = {
-      foodList: {},
-      dataSources: {},
-      categories: [],
-    };
-  }
-
-  componentDidMount(){
-    getFoodList()
-      .then((foodList)=>{this.setState({foodList});})
-      .catch((err)=>{console.log(err);});
-
-    getDataSources()
-      .then((dataSources)=>{this.setState({dataSources});})
-      .catch((err)=>{console.log(err);});
-
-    getCategories()
-      .then((categories)=>{this.setState({categories});})
-      .catch((err)=>{console.log(err);});
+export class App extends Component {
+  componentWillMount() {
+    this.props.fetchFoodlist();
+    this.props.fetchDataSources();
   }
 
   render() {
-    return <App {...this.state} />
+    return (
+      <Router>
+        <div className="App">
+          <Header />
+          <Page>
+            <Grid>
+              <Row>
+                <Col xs={12}>
+                  <Route component={BreadCrumb} />
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={12}>
+                  <Route exact path="/" component={FoodList} />
+                  <Route path="/source/:id" component={FoodSource} />
+                </Col>
+              </Row>
+            </Grid>
+          </Page>
+        </div>
+      </Router>
+    );
   }
-}
-
-export const App = ({ foodList, dataSources, categories }) => {
-  return (
-    <Router>
-      <div className="App">
-        <Header />
-        <Page>
-          <Grid>
-            <Row>
-              <Col xs={12}>
-                <Route component={BreadCrumb} dataSources={dataSources} />
-              </Col>
-            </Row>
-            <Row>
-              <Col xs={12}>
-                <Route exact path="/" foodList={foodList} dataSources={dataSources} categories={categories} component={FoodList} />
-                <Route path="/source/:id" foodList={foodList} dataSources={dataSources} categories={categories} component={FoodSource} />
-              </Col>
-            </Row>
-          </Grid>
-        </Page>
-      </div>
-    </Router>
-  );
 }
 
 const Page = styled.div`
@@ -68,4 +48,13 @@ const Page = styled.div`
   padding-right: 10px;
 `;
 
-export default AppWrapper;
+
+function mapStateToProps() {
+  return {};
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchFoodlist, fetchDataSources }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
