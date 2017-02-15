@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import values from 'lodash/values';
-import sortBy from 'lodash/sortBy';
-import forEach from 'lodash/forEach';
+import _values from 'lodash/values';
+import _sortBy from 'lodash/sortBy';
+import _forEach from 'lodash/forEach';
 
 import { List, ListItem, MatchedListItem } from './styles';
 import ToolTip from '../common/ToolTip';
@@ -42,11 +42,11 @@ class FoodSource extends Component {
 
     const sourceName = match.params.id;
     const { title, data } = dataSources[sourceName] || {};
-    const sourceDataArray = sortBy(values(data), 'name');
+    const sourceDataArray = _sortBy(_values(data), 'name');
 
     const sourceMatch = {};
     if ( data ){
-      forEach(foodList, (food, foodId)=> {
+      _forEach(foodList, (food, foodId)=> {
         const sourceFood = data[food.sources[sourceName]];
         if (food.sources[sourceName] && sourceFood) {
           sourceMatch[sourceFood.id] = {

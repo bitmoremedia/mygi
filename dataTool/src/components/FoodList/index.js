@@ -1,6 +1,6 @@
 import React from 'react';
-import values from 'lodash/values';
-import sortBy from 'lodash/sortBy';
+import _values from 'lodash/values';
+import _sortBy from 'lodash/sortBy';
 import { Link } from 'react-router-dom';
 
 import Table from '../common/Table';
@@ -8,8 +8,8 @@ import FoodItem from '../FoodItem';
 
 const FoodList = ({ foodList, dataSources }) => {
 
-  const foodListArray = sortBy(values(foodList), 'name');
-  const dataSourcesArray = sortBy(values(dataSources), 'title');
+  const foodListArray = _sortBy(_values(foodList), 'name');
+  const dataSourcesArray = _sortBy(_values(dataSources), 'title');
 
   const columns = [{
     key: 'food',

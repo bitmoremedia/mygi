@@ -1,4 +1,8 @@
 import React from 'react';
+import _isArray from 'lodash/isArray';
+import _values from 'lodash/values';
+
+import { search } from '../../../utils/search';
 
 // import { Container } from './styles';
 
@@ -13,10 +17,16 @@ const searchOrderedListProps = {
 
 const SearchOrderedList = ({ searchText, list, searchField }) => {
 
-  console.log({ searchText, list, searchField });
+  const searchList = (_isArray(list)) ? list : _values(list);
+  const searchResults = search({ searchText, searchList, searchField: 'name' });
 
   return (
-    <h5>SearchOrderedList</h5>
+    <div>
+      <h5>SearchOrderedList</h5>
+      <ul>
+        {searchResults.map((food)=><li key={food.id}>{food.name} [{food.gi}]</li>)}
+      </ul>
+    </div>
   );
 }
 

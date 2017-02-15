@@ -9,7 +9,7 @@ import FoodSource from './FoodSource';
 import Header from './Header';
 import BreadCrumb from './BreadCrumb';
 
-class App extends Component {
+class AppWrapper extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
@@ -34,35 +34,38 @@ class App extends Component {
   }
 
   render() {
-    const { foodList, dataSources, categories } = this.state;
-    return (
-      <Router>
-        <div className="App">
-          <Header />
-          <Page>
-            <Grid>
-              <Row>
-                <Col xs={12}>
-                  <Route component={BreadCrumb} dataSources={dataSources} />
-                </Col>
-              </Row>
-              <Row>
-                <Col xs={12}>
-                  <Route exact path="/" foodList={foodList} dataSources={dataSources} categories={categories} component={FoodList} />
-                  <Route path="/source/:id" foodList={foodList} dataSources={dataSources} categories={categories} component={FoodSource} />
-                </Col>
-              </Row>
-            </Grid>
-          </Page>
-        </div>
-      </Router>
-    );
+    return <App {...this.state} />
   }
 }
 
-export default App;
+export const App = ({ foodList, dataSources, categories }) => {
+  return (
+    <Router>
+      <div className="App">
+        <Header />
+        <Page>
+          <Grid>
+            <Row>
+              <Col xs={12}>
+                <Route component={BreadCrumb} dataSources={dataSources} />
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={12}>
+                <Route exact path="/" foodList={foodList} dataSources={dataSources} categories={categories} component={FoodList} />
+                <Route path="/source/:id" foodList={foodList} dataSources={dataSources} categories={categories} component={FoodSource} />
+              </Col>
+            </Row>
+          </Grid>
+        </Page>
+      </div>
+    </Router>
+  );
+}
 
-export const Page = styled.div`
+const Page = styled.div`
   padding-left: 10px;
   padding-right: 10px;
 `;
+
+export default AppWrapper;

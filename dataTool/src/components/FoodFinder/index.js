@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import _values from 'lodash/values';
+import _merge from 'lodash/merge';
 
 import { Container, Heading, FoodHeading, SubHeading } from './styles';
 import Divider from '../common/Divider';
@@ -16,17 +18,20 @@ class FoodFinder extends Component {
 
   render(){
     const { foodList, dataSources, foodId, sourceName } = this.props;
-
-    console.log({ foodList, dataSources, foodId, sourceName });
-
     const thisFood = dataSources[sourceName].data[foodId];
-    console.log(thisFood);
+    const allDataSourcesArray = _values(dataSources);
+    let allDataSources = [];
+    allDataSourcesArray.forEach((source)=>{
+      if (source.name !== sourceName){
+        allDataSources = _merge(allDataSources, _values(source.data));
+      }
+    });
 
     return (
       <Container>
         <Heading>Find
           <FoodHeading>
-            {thisFood.name}
+            {thisFood.name} [{thisFood.gi}]
           </FoodHeading>
         </Heading>
         <Divider />
@@ -46,12 +51,16 @@ class FoodFinder extends Component {
                 <SubHeading>
                   Other Data Sources
                 </SubHeading>
+                <SearchOrderedList
+                  searchText={thisFood.name}
+                  list={allDataSources}
+                  searchField={'name'}
+                />
               </Col>
             </Row>
           </Grid>
       </Container>
     );
-
   }
 };
 
