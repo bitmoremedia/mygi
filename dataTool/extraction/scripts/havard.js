@@ -1,7 +1,7 @@
 const cheerio = require('cheerio');
 
 module.exports = (html) => {
-  let food;
+  let food, foodName;
   const data = {};
   const $ = cheerio.load(html);
   const $dataTable = $('table.special-case-border');
@@ -13,9 +13,13 @@ module.exports = (html) => {
        const firstColumn = $(columns[0]).text();
        const secondColumn = $(columns[1]).text();
        if (!isNaN(parseInt(secondColumn, 10))) {
+         // strip out the word 'average' from foodName
+         foodName = firstColumn.trim();
+         foodName = foodName.replace(/, average/g,'');
+         foodName = foodName.replace(/average/g,'');
          food = {
-           'id' : 'havard-'+firstColumn.trim().replace(/\s+/g, '-').toLowerCase(),
-           'name' : firstColumn.trim(),
+           'id' : 'havard-'+foodName.replace(/\s+/g, '-').toLowerCase(),
+           'name' : foodName,
            'gi' : secondColumn
          };
          if (!data[food.id]){

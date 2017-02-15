@@ -4,11 +4,14 @@ const data = [
   { "name": "Paul" },
   { "name": "Barry"},
   { "name": "Larry"},
-  { "name": "Steve"},
   { "name": "Beth"},
   { "name": "Bill Oddy"},
   { "name": "Steve Coogan"},
   { "name": "russthedude"},
+  { "name": "Dwayne/Dibbly"},
+  { "name": "Dwayne Dibbly"},
+  { "name": "Dwayne-Dibbly"},
+  { "name": "Darren Dibbly"},
 ];
 
 describe('Utils: search', ()=>{
@@ -28,7 +31,7 @@ describe('Utils: search', ()=>{
     expectedResult = [
       { "name": "Beth"},
     ];
-    expect(search({searchText, searchList, searchField})).toEqual(expectedResult);
+    expect(searchResult).toEqual(expectedResult);
   });
 
   it('returns partial matching text items', () => {
@@ -38,16 +41,37 @@ describe('Utils: search', ()=>{
       { "name": "Barry"},
       { "name": "Larry"},
     ];
-    expect(search({searchText, searchList, searchField})).toEqual(expectedResult);
+    expect(searchResult).toEqual(expectedResult);
   });
 
-  it('returns partial word matches', () => {
+  it('returns partial word matches - space delimited', () => {
     searchText = 'Ben Oddy';
     searchResult = search({searchText, searchList, searchField});
     expectedResult = [
       { "name": "Bill Oddy"},
     ];
-    expect(search({searchText, searchList, searchField})).toEqual(expectedResult);
+    expect(searchResult).toEqual(expectedResult);
+  });
+
+  it('returns partial word matches - slash delimited', () => {
+    searchText = 'Ben/Oddy';
+    searchResult = search({searchText, searchList, searchField});
+    expectedResult = [
+      { "name": "Bill Oddy"},
+    ];
+    expect(searchResult).toEqual(expectedResult);
+  });
+
+  it('returns partial word matches - hyphen delimited', () => {
+    searchText = 'Dwayne Dibbly';
+    searchResult = search({searchText, searchList, searchField});
+    expectedResult = [
+      { "name": "Dwayne/Dibbly"},
+      { "name": "Dwayne Dibbly"},
+      { "name": "Dwayne-Dibbly"},
+      { "name": "Darren Dibbly"},
+    ];
+    expect(searchResult).toEqual(expectedResult);
   });
 
   it('returns white space in target matches', () => {
@@ -56,7 +80,7 @@ describe('Utils: search', ()=>{
     expectedResult = [
       { "name": "Steve Coogan"},
     ];
-    expect(search({searchText, searchList, searchField})).toEqual(expectedResult);
+    expect(searchResult).toEqual(expectedResult);
   });
 
   it('returns white space in source matches', () => {
@@ -65,7 +89,18 @@ describe('Utils: search', ()=>{
     expectedResult = [
       { "name": "russthedude"},
     ];
-    expect(search({searchText, searchList, searchField})).toEqual(expectedResult);
+    expect(searchResult).toEqual(expectedResult);
+  });
+
+  it('specific use case A', () => {
+    const searchText = '100% Whole Grain® bread (Natural Ovens)';
+    const searchList = [
+      { "name" : "Whole wheat/whole meal bread" },
+      { "name" : "Wholemeal bread" }
+    ];
+    expectedResult = searchList;
+    const searchResult = search({searchText, searchList, searchField});
+    expect(searchResult).toEqual(expectedResult);
   });
 
 });

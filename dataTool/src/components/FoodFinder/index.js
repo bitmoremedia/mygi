@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import _values from 'lodash/values';
-import _merge from 'lodash/merge';
 
 import { Container, Heading, FoodHeading, SubHeading } from './styles';
 import Divider from '../common/Divider';
@@ -23,7 +22,7 @@ class FoodFinder extends Component {
     let allDataSources = [];
     allDataSourcesArray.forEach((source)=>{
       if (source.name !== sourceName){
-        allDataSources = _merge(allDataSources, _values(source.data));
+        allDataSources = allDataSources.concat(_values(source.data));
       }
     });
 
