@@ -1,4 +1,6 @@
-// API wrapper
+const fs = require('fs-extra');
+
+// api wrapper
 module.exports = ({ url, method, params }) => {
   return new Promise((resolve, reject) => {
     if ( method === 'GET' ){
@@ -9,9 +11,9 @@ module.exports = ({ url, method, params }) => {
         case 'food-list':
           getFoodList(resolve, reject);
           break;
-          case 'categories':
-            getCategories(resolve, reject);
-            break;
+        case 'categories':
+          getCategories(resolve, reject);
+          break;
         default:
           resolve({ url, method, params });
       }
@@ -20,13 +22,20 @@ module.exports = ({ url, method, params }) => {
   });
 };
 
-const dataSources = require('../extraction/sources.json');
+const path = {
+  foodList: './dataTool/db/foodList.json',
+  dataSource: './dataTool/extracts',
+  dataSources: '../extraction/sources.json',
+  categories: '../../data/glycemic-index-categories.json',
+};
+
+const dataSources = require(path.dataSources);
 
 function getDataSources(resolve, reject){
   try {
     const dataSourceObj = {};
     dataSources.forEach((source)=>{
-      const sourceData = require(`../extracts/${source.name}.json`);
+      const sourceData  = fs.readJsonSync(`${path.dataSource}/${source.name}.json`);
       dataSourceObj[source.name]={
         name: source.name,
         title: source.title,
@@ -41,12 +50,18 @@ function getDataSources(resolve, reject){
 }
 
 function getFoodList(resolve, reject){
-  const foodList = require('../db/foodList.json');
+  let foodList = [];
+  try {
+    foodList = fs.readJsonSync(path.foodList);
+  } catch(err){
+    console.log('error in getFoodList');
+    reject(err);
+  }
   resolve(foodList);
 }
 
 function getCategories(resolve, reject){
-  const giCategories = require('../../data/glycemic-index-categories.json');
+  const giCategories = require(path.categories);
   const categories = giCategories.map((category)=>category.category);
   resolve(categories);
 }
