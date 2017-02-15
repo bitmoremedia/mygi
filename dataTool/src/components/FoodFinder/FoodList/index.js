@@ -1,27 +1,15 @@
-import React from 'react';
+import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { associateDataSource } from '../../../actions';
 
-// import { Container } from './styles';
+import FoodList from './component';
 
-const foodListProps = {
-  list: React.PropTypes.arrayOf(
-    React.PropTypes.shape({
-      id: React.PropTypes.string.isRequired,
-      name: React.PropTypes.string.isRequired,
-      gi: React.PropTypes.any.isRequired,
-    })
-  ).isRequired,
+const mapStateToProps = () => {
+  return {};
 };
 
-const FoodList = ({ list }) => {
-  return (
-    <div>
-      <ul>
-        {list.map((food)=><li key={food.id}>{food.name} [{food.gi}]</li>)}
-      </ul>
-    </div>
-  );
-};
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ associateDataSource }, dispatch);
+}
 
-FoodList.propTypes = foodListProps;
-
-export default FoodList;
+export default connect(mapStateToProps, mapDispatchToProps)(FoodList);

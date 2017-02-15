@@ -80,7 +80,7 @@ class FoodSource extends Component {
         <h2>{title}</h2>
         <Modal visible={findFoodModalVisible} onClose={this.closeFindFoodModal} width={80} height={80} measure={'%'}>
           {
-            findFoodModalVisible && <FoodFinder foodList={foodList} dataSources={dataSources} foodId={findFoodId} sourceName={sourceName} />
+            findFoodModalVisible && <FoodFinder foodId={findFoodId} sourceName={sourceName} />
           }
         </Modal>
         <Divider />

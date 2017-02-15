@@ -1,4 +1,9 @@
-import { getFoodList, getDataSources, getCategories } from '../api';
+import {
+  getFoodList,
+  getDataSources,
+  getCategories,
+  postAssociateDataSource,
+} from '../api';
 import {
   RECEIVE_FOODLIST,
   RECEIVE_DATASOURCES,
@@ -30,6 +35,19 @@ export const fetchDataSources = () => {
   return (dispatch) => {
     getDataSources()
       .then((data)=>dispatch(receiveDataSources(data)))
+      .catch((err)=>console.log(err));
+  };
+};
+
+export const associateDataSource = (data) => {
+  return (dispatch) => {
+    postAssociateDataSource(data)
+      .then(
+        // (data)=>dispatch(receiveDataSources(data))
+        (response)=>{
+          console.log('postAssociateDataSource', response);
+        }
+      )
       .catch((err)=>console.log(err));
   };
 };

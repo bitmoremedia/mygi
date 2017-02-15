@@ -4,7 +4,7 @@ export const Container = styled.div`
   overflow-x: scroll;
   @media (min-width: 1250px) {
     overflow-x: inherit;
-}
+  }
 `;
 export const Table = styled.table`
   border: black 2px solid;

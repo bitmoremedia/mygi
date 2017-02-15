@@ -12,6 +12,27 @@ function getRequest(target) {
   });
 }
 
+function postRequest(target, data) {
+  return new Promise((resolve, reject)=>{
+    fetch(`${baseUrl}${target}`,{
+      method: 'POST',
+      //body: data,
+      mode: 'cors',
+      body: JSON.stringify(data),
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin':'*'
+      }),
+    })
+    .then(function(response) {
+      resolve(response.json());
+    }).catch(function(err) {
+      console.log('error', err);
+      resolve([]);
+    });
+  });
+}
+
 export const getDataSources = () => {
   return getRequest('data-sources');
 };
@@ -22,4 +43,8 @@ export const getFoodList = () => {
 
 export const getCategories = () => {
   return getRequest('categories');
+};
+
+export const postAssociateDataSource = (data) => {
+  return postRequest('associate-source', data);
 };
