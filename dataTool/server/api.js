@@ -1,5 +1,6 @@
 const fs = require('fs-extra');
 const _forEach = require('lodash/forEach');
+const uuid = require('uuid');
 
 // api wrapper
 module.exports = ({ url, method, params, body }) => {
@@ -21,8 +22,11 @@ module.exports = ({ url, method, params, body }) => {
     }
     if ( method === 'POST' ){
       switch (params[0]) {
+        case 'food-item':
+          foodItem(resolve, reject, 'add-update', body);
+          break;
         case 'associate-source':
-          associatedSource(resolve, reject, 'add', body);
+          associatedSource(resolve, reject, 'add-update', body);
           break;
         default:
           resolve({ url, method, params });
@@ -30,6 +34,9 @@ module.exports = ({ url, method, params, body }) => {
     }
     if ( method === 'DELETE' ){
       switch (params[0]) {
+        case 'food-item':
+          foodItem(resolve, reject, 'delete', body);
+          break;
         case 'associate-source':
           associatedSource(resolve, reject, 'delete', body);
           break;
@@ -88,7 +95,7 @@ function getCategories(resolve, reject){
 
 function associatedSource(resolve, reject, mode, body){
   const { foodId, sourceName, sourceId } = body;
-  if (mode !== 'add' &&  mode !== 'delete') {
+  if (mode !== 'add-update' && mode !== 'delete') {
     reject(`Mode not supported`);
   }
   if (!foodId || !sourceName || !sourceId) {
@@ -101,7 +108,7 @@ function associatedSource(resolve, reject, mode, body){
     _forEach(foodList, (food) => {
       if (food.id === foodId) {
         matched = true;
-        if (mode === 'add') {
+        if (mode === 'add-update') {
           food.sources[sourceName] = sourceId;
         }
         if (mode === 'delete'){
@@ -114,9 +121,42 @@ function associatedSource(resolve, reject, mode, body){
       resolve({status:"success"});
     }
     reject(`No food matched with id: ${foodId}`);
+  } catch(err){
+   console.log('error in associatedSource');
+   reject(err);
   }
-  catch(err){
-   console.log('error in getFoodList');
+}
+
+function foodItem(resolve, reject, mode, body){
+  const { foodId, foodName, giValue, sources } = body;
+  if (mode !== 'add-update' && mode !== 'delete') {
+    reject(`Mode not supported`);
+  }
+  if (mode === 'add-update' && (!foodName || !giValue)) {
+    reject("Missing params");
+  }
+  if (mode === 'delete' && !foodId) {
+    reject("Missing food id");
+  }
+  let id = foodId || uuid();
+  try {
+    let food, foodList = fs.readJsonSync(path.foodList);
+    if (mode === 'add-update') {
+      food = {
+        id,
+        gi: giValue,
+        name: foodName,
+        sources: sources || {},
+      };
+      foodList[id] = food;
+    }
+    if (mode === 'delete'){
+      delete foodList[id];
+    }
+    fs.writeFile(path.foodList, JSON.stringify(foodList), 'utf8');
+    resolve({status:"success", data: food});
+  } catch(err){
+   console.log('error in foodItem');
    reject(err);
   }
 }
