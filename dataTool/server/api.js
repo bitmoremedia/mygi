@@ -1,7 +1,8 @@
 const fs = require('fs-extra');
+const _forEach = require('lodash/forEach');
 
 // api wrapper
-module.exports = ({ url, method, params }) => {
+module.exports = ({ url, method, params, body }) => {
   return new Promise((resolve, reject) => {
     if ( method === 'GET' ){
       switch (params[0]) {
@@ -17,12 +18,21 @@ module.exports = ({ url, method, params }) => {
         default:
           resolve({ url, method, params });
       }
+    } else if ( method === 'POST' ){
+      switch (params[0]) {
+        case 'associate-source':
+          associateSource(resolve, reject, body);
+          break;
+        default:
+          resolve({ url, method, params });
+      }
     }
     resolve({ url, method, params });
   });
 };
 
 const path = {
+  foodListDirectory: './dataTool/db/',
   foodList: './dataTool/db/foodList.json',
   dataSource: './dataTool/extracts',
   dataSources: '../extraction/sources.json',
@@ -64,4 +74,31 @@ function getCategories(resolve, reject){
   const giCategories = require(path.categories);
   const categories = giCategories.map((category)=>category.category);
   resolve(categories);
+}
+
+function associateSource(resolve, reject, body){
+  const { foodId, sourceName, sourceId } = body;
+  if ( !foodId || !sourceName || !sourceId ){
+    reject("Missing params");
+  }
+  try {
+    // get current foodList
+    let matched = false;
+    let foodList = fs.readJsonSync(path.foodList);
+    _forEach(foodList, (food) => {
+      if (food.id === foodId){
+        matched = true;
+        food.sources[sourceName] = sourceId;
+      }
+    })
+    if (matched){
+      fs.writeFile(path.foodList, JSON.stringify(foodList), 'utf8');
+      resolve({status:"success"});
+    }
+    reject(`No food matched with id: ${foodId}`);
+  }
+  catch(err){
+   console.log('error in getFoodList');
+   reject(err);
+  }
 }
