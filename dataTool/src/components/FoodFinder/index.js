@@ -33,7 +33,10 @@ class FoodFinder extends Component {
     let allDataSources = [];
     allDataSourcesArray.forEach((source)=>{
       if (source.name !== sourceName){
-        allDataSources = allDataSources.concat(_values(source.data));
+        let sourceData = _values(source.data);
+        // add source name as data attribute of each food item
+        sourceData = sourceData.map(food=> { return {...food, source: source.name}});
+        allDataSources = allDataSources.concat(sourceData);
       }
     });
 
@@ -53,13 +56,13 @@ class FoodFinder extends Component {
         <Divider />
           <Grid>
             <Row>
-              <Col xs={6}>
+              <Col xs={12} md={4}>
                 <SubHeading>
                   Food List
                 </SubHeading>
                 <FoodList list={filteredFoodList} />
               </Col>
-              <Col xs={6}>
+              <Col xs={12} md={7}>
                 <SubHeading>
                   Other Data Sources
                 </SubHeading>

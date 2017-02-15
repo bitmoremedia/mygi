@@ -1,4 +1,5 @@
 import React from 'react';
+import ToolTip from '../../../components/common/ToolTip';
 
 // import { Container } from './styles';
 
@@ -8,16 +9,25 @@ const dataSourceFoodListProps = {
       id: React.PropTypes.string.isRequired,
       name: React.PropTypes.string.isRequired,
       gi: React.PropTypes.any.isRequired,
+      source: React.PropTypes.string.isRequired,
     })
   ).isRequired,
 };
 
 const DataSourceFoodList = ({ list }) => {
 
+  const renderItem = (food) => {
+    return (
+      <li key={food.id}>{food.name} [{food.gi}]
+
+      </li>
+    );
+  }
+
   return (
     <div>
       <ul>
-        {list.map((food)=><li key={food.id}>{food.name} [{food.gi}]</li>)}
+        {list.map((food)=>renderItem(food))}
       </ul>
     </div>
   );
