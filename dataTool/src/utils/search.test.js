@@ -17,19 +17,9 @@ describe('Utils: search', ()=>{
   let searchResult, searchText, expectedResult;
 
   it('basic search returns some data', () => {
-    searchText = 'a';
+    searchText = 'Paul';
     searchResult = search({searchText, searchList, searchField});
     expect(searchResult).toBeDefined();
-  });
-
-  it('returns matching text items', () => {
-    searchText = 'arry';
-    searchResult = search({searchText, searchList, searchField});
-    expectedResult = [
-      { "name": "Barry"},
-      { "name": "Larry"},
-    ];
-    expect(search({searchText, searchList, searchField})).toBe(expectedResult);
   });
 
   it('returns case insensitive matches', () => {
@@ -38,7 +28,17 @@ describe('Utils: search', ()=>{
     expectedResult = [
       { "name": "Beth"},
     ];
-    expect(search({searchText, searchList, searchField})).toBe(expectedResult);
+    expect(search({searchText, searchList, searchField})).toEqual(expectedResult);
+  });
+
+  it('returns partial matching text items', () => {
+    searchText = 'arry';
+    searchResult = search({searchText, searchList, searchField});
+    expectedResult = [
+      { "name": "Barry"},
+      { "name": "Larry"},
+    ];
+    expect(search({searchText, searchList, searchField})).toEqual(expectedResult);
   });
 
   it('returns partial word matches', () => {
@@ -47,7 +47,7 @@ describe('Utils: search', ()=>{
     expectedResult = [
       { "name": "Bill Oddy"},
     ];
-    expect(search({searchText, searchList, searchField})).toBe(expectedResult);
+    expect(search({searchText, searchList, searchField})).toEqual(expectedResult);
   });
 
   it('returns white space in target matches', () => {
@@ -56,7 +56,7 @@ describe('Utils: search', ()=>{
     expectedResult = [
       { "name": "Steve Coogan"},
     ];
-    expect(search({searchText, searchList, searchField})).toBe(expectedResult);
+    expect(search({searchText, searchList, searchField})).toEqual(expectedResult);
   });
 
   it('returns white space in source matches', () => {
@@ -65,7 +65,7 @@ describe('Utils: search', ()=>{
     expectedResult = [
       { "name": "russthedude"},
     ];
-    expect(search({searchText, searchList, searchField})).toBe(expectedResult);
+    expect(search({searchText, searchList, searchField})).toEqual(expectedResult);
   });
 
 });
