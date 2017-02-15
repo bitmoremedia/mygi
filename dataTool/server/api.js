@@ -18,10 +18,20 @@ module.exports = ({ url, method, params, body }) => {
         default:
           resolve({ url, method, params });
       }
-    } else if ( method === 'POST' ){
+    }
+    if ( method === 'POST' ){
       switch (params[0]) {
         case 'associate-source':
-          associateSource(resolve, reject, body);
+          associatedSource(resolve, reject, 'add', body);
+          break;
+        default:
+          resolve({ url, method, params });
+      }
+    }
+    if ( method === 'DELETE' ){
+      switch (params[0]) {
+        case 'associate-source':
+          associatedSource(resolve, reject, 'delete', body);
           break;
         default:
           resolve({ url, method, params });
@@ -76,9 +86,12 @@ function getCategories(resolve, reject){
   resolve(categories);
 }
 
-function associateSource(resolve, reject, body){
+function associatedSource(resolve, reject, mode, body){
   const { foodId, sourceName, sourceId } = body;
-  if ( !foodId || !sourceName || !sourceId ){
+  if (mode !== 'add' &&  mode !== 'delete') {
+    reject(`Mode not supported`);
+  }
+  if (!foodId || !sourceName || !sourceId) {
     reject("Missing params");
   }
   try {
@@ -86,9 +99,14 @@ function associateSource(resolve, reject, body){
     let matched = false;
     let foodList = fs.readJsonSync(path.foodList);
     _forEach(foodList, (food) => {
-      if (food.id === foodId){
+      if (food.id === foodId) {
         matched = true;
-        food.sources[sourceName] = sourceId;
+        if (mode === 'add') {
+          food.sources[sourceName] = sourceId;
+        }
+        if (mode === 'delete'){
+          delete food.sources[sourceName];
+        }
       }
     })
     if (matched){
