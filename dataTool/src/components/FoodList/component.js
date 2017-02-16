@@ -22,6 +22,14 @@ class FoodList extends Component {
     this.closeEditFoodModal = this.closeEditFoodModal.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    // a bit hacky - but if props have changed then hide the add/edit fields
+    this.setState({
+      showAddFood: false,
+      showEditFoodModal: false,
+    });
+  }
+
   toggleAddFood() {
     this.setState({
       showAddFood: !this.state.showAddFood
