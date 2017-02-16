@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import { fetchFoodlist, fetchDataSources } from '../redux/actions';
+import { getFoodlist, getDataSources } from '../redux/actions';
 import { Grid, Row, Col } from './common/Grid';
 import FoodList from './FoodList';
 import FoodSource from './FoodSource';
@@ -13,8 +13,8 @@ import BreadCrumb from './BreadCrumb';
 
 export class App extends Component {
   componentWillMount() {
-    this.props.fetchFoodlist();
-    this.props.fetchDataSources();
+    this.props.getFoodlist();
+    this.props.getDataSources();
   }
 
   render() {
@@ -54,7 +54,7 @@ function mapStateToProps() {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchFoodlist, fetchDataSources }, dispatch);
+  return bindActionCreators({ getFoodlist, getDataSources }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

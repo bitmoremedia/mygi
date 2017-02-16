@@ -1,9 +1,4 @@
-import {
-  getFoodList,
-  getDataSources,
-  getCategories,
-  postAssociateDataSource,
-} from '../../api';
+import * as api from '../../api';
 import {
   GET_FOODLIST_REQUEST,
   GET_FOODLIST_SUCCESS,
@@ -29,10 +24,10 @@ export const receiveFoodlist = (data) => {
   }
 };
 
-export const fetchFoodlist = () => async (dispatch) => {
+export const getFoodlist = () => async (dispatch) => {
   try {
     dispatch({ type: GET_FOODLIST_REQUEST });
-    let data = await getFoodList();
+    let data = await api.getFoodList();
     dispatch({ type: GET_FOODLIST_SUCCESS });
     dispatch(receiveFoodlist(data))
   } catch(error) {
@@ -52,10 +47,10 @@ export const receiveDataSources = (data) => {
   }
 };
 
-export const fetchDataSources = () => async (dispatch) => {
+export const getDataSources = () => async (dispatch) => {
   try {
     dispatch({ type: GET_DATASOURCES_REQUEST });
-    let data = await getDataSources();
+    let data = await api.getDataSources();
     dispatch({ type: GET_DATASOURCES_SUCCESS });
     dispatch(receiveDataSources(data))
   } catch(error) {
@@ -71,12 +66,11 @@ export const fetchDataSources = () => async (dispatch) => {
 export const associateDataSource = (data) => async (dispatch) => {
   try {
     dispatch({ type: POST_ASSOCIATE_DATASOURCE_REQUEST });
-    let response = await postAssociateDataSource(data);
+    let response = await api.postAssociateDataSource(data);
     if ( response.status === 'success' ){
-      console.log('success');
       dispatch({ type: POST_ASSOCIATE_DATASOURCE_SUCCESS });
       // update was a success so we refetch the food list
-      dispatch(fetchFoodlist());
+      dispatch(getFoodlist());
     } else {
       console.log('error', response.error);
       dispatch({ type: POST_ASSOCIATE_DATASOURCE_ERROR, payload: response.error });
