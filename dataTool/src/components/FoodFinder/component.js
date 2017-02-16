@@ -5,6 +5,7 @@ import { search } from '../../utils/search';
 
 import Divider from '../common/Divider';
 import { Grid, Row, Col } from '../common/Grid';
+import AddFood from '../AddFood';
 
 import { Container, Heading, SubHeading } from './styles';
 import FoodList from './FoodList';
@@ -15,12 +16,22 @@ class FoodFinder extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      showHelp: false
+      showAddFood: false,
     };
+    this.toggleAddFood = this.toggleAddFood.bind(this);
+  }
+
+  toggleAddFood() {
+    this.setState({
+      showAddFood: !this.state.showAddFood
+    });
   }
 
   render(){
+    const { toggleAddFood } = this;
+    const { showAddFood } = this.state;
     const { foodList, dataSources, foodId, sourceName } = this.props;
+
     const thisFood = dataSources[sourceName].data[foodId];
     const allDataSourcesArray = _values(dataSources);
 
@@ -46,6 +57,11 @@ class FoodFinder extends Component {
       searchField: 'name'
     });
 
+    const renderToggleAddFoodButton = () => {
+      const buttonText = (this.state.showAddFood) ? 'Hide' : 'Add';
+      return <button onClick={()=>toggleAddFood()}>{buttonText}</button>;
+    }
+
     return (
       <Container>
         <Heading>
@@ -56,8 +72,9 @@ class FoodFinder extends Component {
             <Row>
               <Col xs={12} md={4}>
                 <SubHeading>
-                  Food List
+                  Food List {renderToggleAddFoodButton()}
                 </SubHeading>
+                {showAddFood && <AddFood />}
                 <FoodList list={filteredFoodList} sourceName={sourceName} sourceId={foodId} />
               </Col>
               <Col xs={12} md={7}>
