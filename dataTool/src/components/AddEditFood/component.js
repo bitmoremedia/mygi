@@ -85,6 +85,7 @@ export class AddEditFood extends Component {
             </Col>
             <Col xs={colWidth}>
               <Select name='category' value={category} onChange={handleChange}>
+                <option value="" disabled selected>Select Category</option>
                 <option value="Beans">Beans</option>
                 <option value="Breads">Breads</option>
                 <option value="Cereals">Cereals</option>
@@ -127,7 +128,7 @@ AddEditFood.propTypes = {
     id: PropTypes.string.isRequired,
     gi: PropTypes.any.isRequired,
     sources: PropTypes.any.isRequired,
-    category: PropTypes.oneOf(['Beans', 'Breads', 'Cereals', 'Dairy', 'Fruits', 'Snacks & Sweets', 'Staples', 'Vegetables']).isRequired,
+    category: PropTypes.oneOf(['','Beans', 'Breads', 'Cereals', 'Dairy', 'Fruits', 'Snacks & Sweets', 'Staples', 'Vegetables']),
   }),
 };
 
