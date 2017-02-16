@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import { fetchFoodlist, fetchDataSources } from '../actions';
+import { fetchFoodlist, fetchDataSources } from '../redux/actions';
 import { Grid, Row, Col } from './common/Grid';
 import FoodList from './FoodList';
 import FoodSource from './FoodSource';

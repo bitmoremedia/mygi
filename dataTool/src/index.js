@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import configureStore from './configureStore';
+import configureStore from './redux/configureStore';
 import globalStyles from './global-styles';
 import App from './components/App';
 

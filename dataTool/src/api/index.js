@@ -16,7 +16,6 @@ function postRequest(target, data) {
   return new Promise((resolve, reject)=>{
     fetch(`${baseUrl}${target}`,{
       method: 'POST',
-      //body: data,
       mode: 'cors',
       body: JSON.stringify(data),
       headers: new Headers({

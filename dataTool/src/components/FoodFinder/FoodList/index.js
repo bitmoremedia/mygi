@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { associateDataSource } from '../../../actions';
+import { associateDataSource } from '../../../redux/actions';
 
 import FoodList from './component';
 
