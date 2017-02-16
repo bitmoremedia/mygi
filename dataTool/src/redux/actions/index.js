@@ -13,6 +13,9 @@ import {
   GET_DATASOURCES_SUCCESS,
   GET_DATASOURCES_ERROR,
   RECEIVE_DATASOURCES,
+  POST_ASSOCIATE_DATASOURCE_REQUEST,
+  POST_ASSOCIATE_DATASOURCE_SUCCESS,
+  POST_ASSOCIATE_DATASOURCE_ERROR,
 } from './types';
 
 // **********************
@@ -65,15 +68,21 @@ export const fetchDataSources = () => async (dispatch) => {
 // ASSOCIATE DATASOURCE
 // **********************
 
-export const associateDataSource = (data) => {
-  return (dispatch) => {
-    postAssociateDataSource(data)
-      .then(
-        // (data)=>dispatch(receiveDataSources(data))
-        (response)=>{
-          console.log('postAssociateDataSource', response);
-        }
-      )
-      .catch((err)=>console.log(err));
-  };
+export const associateDataSource = (data) => async (dispatch) => {
+  try {
+    dispatch({ type: POST_ASSOCIATE_DATASOURCE_REQUEST });
+    let response = await postAssociateDataSource(data);
+    if ( response.status === 'success' ){
+      console.log('success');
+      dispatch({ type: POST_ASSOCIATE_DATASOURCE_SUCCESS });
+      // update was a success so we refetch the food list
+      dispatch(fetchFoodlist());
+    } else {
+      console.log('error', response.error);
+      dispatch({ type: POST_ASSOCIATE_DATASOURCE_ERROR, payload: response.error });
+    }
+  } catch(error) {
+    console.log('error', error);
+    dispatch({ type: POST_ASSOCIATE_DATASOURCE_ERROR, payload: error });
+  }
 };
