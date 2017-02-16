@@ -1,6 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 
+import { Grid, Row, Col } from '../common/Grid';
 import Button from '../common/Button';
+
+import { Container, Input, ErrorMsg, ButtonWrapper } from './styles';
 
 export class AddEditFood extends Component {
   constructor(props, context) {
@@ -62,23 +65,36 @@ export class AddEditFood extends Component {
   render() {
     const { handleChange, handleSubmit, handleDelete } = this;
     const { foodName, giValue, errorMsg } = this.state;
-    const { mode, foodItem } = this.props;
+    const { mode, foodItem, layout } = this.props;
 
     const submitButtonText = ( mode === 'add' ) ? 'Add' : 'Save';
     const header = (mode === 'add') ? null : <h3>Edit: {foodItem.name}</h3>;
-    const deleteButton = (mode === 'add') ? null : <Button onClick={handleDelete} danger>Delete</Button>;
+    const deleteButton = (mode === 'add') ? null : <ButtonWrapper><Button onClick={handleDelete} danger>Delete</Button></ButtonWrapper>;
+    const colWidth = ( layout === 'vertical' ) ? 12 : -1;
 
     return (
-      <div>
+      <Container>
         {header}
         <form onSubmit={handleSubmit}>
-          <input type='text' name='foodName' placeholder="Name" value={foodName} autoComplete="off" onChange={handleChange} />
-          <input type='number' name='giValue' placeholder="GI Value" value={giValue} autoComplete="off" onChange={handleChange} />
-          <Button type="submit">{submitButtonText}</Button>
-          <span>{errorMsg}</span>
+          <Grid>
+            <Row>
+              <Col xs={colWidth}>
+                <Input type='text' name='foodName' placeholder="Name" value={foodName} autoComplete="off" onChange={handleChange} />
+              </Col>
+              <Col xs={colWidth}>
+                <Input type='number' name='giValue' placeholder="GI Value" value={giValue} autoComplete="off" onChange={handleChange} />
+              </Col>
+              <Col xs={colWidth}>
+                <ButtonWrapper><Button type="submit">{submitButtonText}</Button></ButtonWrapper>
+              </Col>
+              <Col xs={colWidth}>
+                <ErrorMsg>{errorMsg}</ErrorMsg>
+              </Col>
+            </Row>
+          </Grid>
         </form>
         {deleteButton}
-      </div>
+      </Container>
     );
   }
 
@@ -86,6 +102,7 @@ export class AddEditFood extends Component {
 
 AddEditFood.defaultProps = {
   mode: 'add',
+  layout: 'vertical',
 };
 
 AddEditFood.propTypes = {
