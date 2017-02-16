@@ -1,7 +1,5 @@
 import React from 'react';
 
-// import { Container } from './styles';
-
 const foodListProps = {
   list: React.PropTypes.arrayOf(
     React.PropTypes.shape({
@@ -12,19 +10,47 @@ const foodListProps = {
   ).isRequired,
 };
 
-const FoodList = ({ list, sourceName, sourceId, associateDataSource }) => {
-  const handleClick = (item) => {
-    associateDataSource({
-      "foodId": item.id,
-      sourceName,
-      sourceId,
-    });
+const FoodList = ({ list, sourceName, sourceId, associateDataSource, deleteAssociatedDataSource }) => {
+
+  // note: current assumption is that a food can only be associated with one item in the main Food list
+
+  let associatedFoodItem;
+  list.forEach((food)=>{
+    if (food.sources && food.sources[sourceName] && food.sources[sourceName] === sourceId) {
+      associatedFoodItem = food;
+    }
+  });
+
+  const updateDataSource = (mode, food) => {
+    if ( mode === 'add' ){
+      associateDataSource({
+        "foodId": food.id,
+        sourceName,
+        sourceId,
+      });
+    } else if ( mode === 'delete' ){
+      deleteAssociatedDataSource({
+        "foodId": food.id,
+        sourceName,
+        sourceId,
+      });
+    }
   }
+
+  const renderAction = (food) => {
+    if (associatedFoodItem) {
+      if (food.id === associatedFoodItem.id) {
+        return <button onClick={()=>updateDataSource('delete', food)}> - </button>;
+      }
+      return '';
+    }
+    return <button onClick={()=>updateDataSource('add', food)}> + </button>;
+  };
 
   return (
     <div>
       <ul>
-        {list.map((food)=><li key={food.id}>{food.name} [{food.gi}] <button onClick={()=>handleClick(food)}> (+) </button></li>)}
+        {list.map((food)=><li key={food.id}>{food.name} [{food.gi}] {renderAction(food)}</li>)}
       </ul>
     </div>
   );

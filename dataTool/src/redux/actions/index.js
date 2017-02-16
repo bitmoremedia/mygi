@@ -48,7 +48,7 @@ export const getDataSources = () => async (dispatch) => {
 }
 
 // **********************
-// ASSOCIATE DATASOURCE
+// ASSOCIATED DATASOURCES
 // **********************
 
 export const associateDataSource = (data) => async (dispatch) => {
@@ -66,5 +66,18 @@ export const associateDataSource = (data) => async (dispatch) => {
   } catch(error) {
     console.log('error', error);
     dispatch({ type: types.POST_ASSOCIATE_DATASOURCE_ERROR, payload: error });
+  }
+};
+
+export const deleteAssociatedDataSource = (data) => async (dispatch) => {
+  try {
+    dispatch({ type: types.DELETE_ASSOCIATED_DATASOURCE_REQUEST });
+    await api.deleteAssociatedDataSource(data);
+    dispatch({ type: types.DELETE_ASSOCIATED_DATASOURCE_SUCCESS });
+    // delete was a success so we refetch the food list
+    dispatch(getFoodlist());
+  } catch(error) {
+    console.log('error', error);
+    dispatch({ type: types.DELETE_ASSOCIATED_DATASOURCE_ERROR, payload: error });
   }
 };
