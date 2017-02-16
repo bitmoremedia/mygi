@@ -5,7 +5,7 @@ import { search } from '../../utils/search';
 
 import Divider from '../common/Divider';
 import { Grid, Row, Col } from '../common/Grid';
-import AddFood from '../AddFood';
+import AddEditFood from '../AddEditFood';
 
 import { Container, Heading, SubHeading } from './styles';
 import FoodList from './FoodList';
@@ -58,7 +58,7 @@ class FoodFinder extends Component {
     });
 
     const renderToggleAddFoodButton = () => {
-      const buttonText = (this.state.showAddFood) ? 'Hide' : 'Add';
+      const buttonText = (this.state.showAddFood) ? 'Cancel' : 'Add';
       return <button onClick={()=>toggleAddFood()}>{buttonText}</button>;
     }
 
@@ -74,7 +74,7 @@ class FoodFinder extends Component {
                 <SubHeading>
                   Food List {renderToggleAddFoodButton()}
                 </SubHeading>
-                {showAddFood && <AddFood />}
+                {showAddFood && <AddEditFood />}
                 <FoodList list={filteredFoodList} sourceName={sourceName} sourceId={foodId} />
               </Col>
               <Col xs={12} md={7}>
