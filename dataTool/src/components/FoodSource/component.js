@@ -3,7 +3,7 @@ import _values from 'lodash/values';
 import _sortBy from 'lodash/sortBy';
 import _forEach from 'lodash/forEach';
 
-import { List, ListItem, MatchedListItem } from './styles';
+import { List, ListItem, MatchedListItem, EditLink } from './styles';
 import ToolTip from '../common/ToolTip';
 import Divider from '../common/Divider';
 import Modal from '../common/Modal';
@@ -68,7 +68,7 @@ class FoodSource extends Component {
               position={'right'}
             >
               ✔
-            </ToolTip> {name} [{gi}]
+            </ToolTip> {name} [{gi}] <EditLink href="" onClick={(e)=>this.openFindFoodModal(e,id)}>Edit</EditLink>
           </MatchedListItem>
         );
       }

@@ -6,7 +6,7 @@ import { search } from '../../utils/search';
 import Divider from '../common/Divider';
 import { Grid, Row, Col } from '../common/Grid';
 
-import { Container, Heading, FoodHeading, SubHeading } from './styles';
+import { Container, Heading, SubHeading } from './styles';
 import FoodList from './FoodList';
 import DataSourceFoodList from './DataSourceFoodList';
 
@@ -48,10 +48,8 @@ class FoodFinder extends Component {
 
     return (
       <Container>
-        <Heading>Find
-          <FoodHeading>
-            {thisFood.name} [{thisFood.gi}]
-          </FoodHeading>
+        <Heading>
+          {thisFood.name} [{thisFood.gi}]
         </Heading>
         <Divider />
           <Grid>

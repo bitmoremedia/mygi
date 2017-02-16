@@ -14,3 +14,8 @@ export const MatchedListItem = styled.li`
   background-color: green;
   color: white
 `;
+
+export const EditLink = styled.a`
+  color: white;
+  float: right;
+`;
