@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding: 5px;
+  padding: 10px;
   background-color: red;
-  height: 80px;
+  height: 60px;
+`;
+
+export const Heading = styled.h1`
+  margin-top: 12px;
 `;

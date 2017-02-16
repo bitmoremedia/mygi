@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 import { getFoodlist, getDataSources } from '../redux/actions';
-import { Grid, Row, Col } from './common/Grid';
+import { Row, Col } from './common/Grid';
 import FoodList from './FoodList';
 import FoodSource from './FoodSource';
 import Header from './Header';
@@ -23,19 +23,17 @@ export class App extends Component {
         <div className="App">
           <Header />
           <Page>
-            <Grid>
-              <Row>
-                <Col xs={12}>
-                  <Route component={BreadCrumb} />
-                </Col>
-              </Row>
-              <Row>
-                <Col xs={12}>
-                  <Route exact path="/" component={FoodList} />
-                  <Route path="/source/:id" component={FoodSource} />
-                </Col>
-              </Row>
-            </Grid>
+            <Row>
+              <Col xs={12}>
+                <Route component={BreadCrumb} />
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={12}>
+                <Route exact path="/" component={FoodList} />
+                <Route path="/source/:id" component={FoodSource} />
+              </Col>
+            </Row>
           </Page>
         </div>
       </Router>

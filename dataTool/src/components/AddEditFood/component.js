@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-import { Grid, Row, Col } from '../common/Grid';
+import { Row, Col } from '../common/Grid';
 import Button from '../common/Button';
 
 import { Container, Input, ErrorMsg, ButtonWrapper } from './styles';
@@ -12,6 +12,7 @@ export class AddEditFood extends Component {
     const state = {
       foodName: "",
       giValue: "",
+      category: "",
       sources: {},
       errorMsg: "",
     }
@@ -19,6 +20,7 @@ export class AddEditFood extends Component {
       state.id = foodItem.id;
       state.foodName = foodItem.name;
       state.giValue = foodItem.gi;
+      state.category = foodItem.category;
       state.sources = foodItem.sources;
     }
     this.state = state;
@@ -41,6 +43,7 @@ export class AddEditFood extends Component {
     this.props.addFoodItem({
       foodName: this.state.foodName,
       giValue: this.state.giValue,
+      category: this.state.category,
       foodId: this.state.id,
       sources: this.state.sources,
     });
@@ -64,7 +67,7 @@ export class AddEditFood extends Component {
 
   render() {
     const { handleChange, handleSubmit, handleDelete } = this;
-    const { foodName, giValue, errorMsg } = this.state;
+    const { foodName, category, giValue, errorMsg } = this.state;
     const { mode, foodItem, layout } = this.props;
 
     const submitButtonText = ( mode === 'add' ) ? 'Add' : 'Save';
@@ -76,22 +79,32 @@ export class AddEditFood extends Component {
       <Container>
         {header}
         <form onSubmit={handleSubmit}>
-          <Grid>
-            <Row>
-              <Col xs={colWidth}>
-                <Input type='text' name='foodName' placeholder="Name" value={foodName} autoComplete="off" onChange={handleChange} />
-              </Col>
-              <Col xs={colWidth}>
-                <Input type='number' name='giValue' placeholder="GI Value" value={giValue} autoComplete="off" onChange={handleChange} />
-              </Col>
-              <Col xs={colWidth}>
-                <ButtonWrapper><Button type="submit">{submitButtonText}</Button></ButtonWrapper>
-              </Col>
-              <Col xs={colWidth}>
-                <ErrorMsg>{errorMsg}</ErrorMsg>
-              </Col>
-            </Row>
-          </Grid>
+          <Row>
+            <Col xs={colWidth}>
+              <Input type='text' name='foodName' placeholder="Name" value={foodName} autoComplete="off" onChange={handleChange} />
+            </Col>
+            <Col xs={colWidth}>
+              <select name='category' value={category} onChange={handleChange}>
+                <option value="Beans">Beans</option>
+                <option value="Breads">Breads</option>
+                <option value="Cereals">Cereals</option>
+                <option value="Dairy">Dairy</option>
+                <option value="Fruits">Fruits</option>
+                <option value="Snacks & Sweets">Snacks & Sweets</option>
+                <option value="Staples">Staples</option>
+                <option value="Vegetables">Vegetables</option>
+              </select>
+            </Col>
+            <Col xs={colWidth}>
+              <Input type='number' name='giValue' placeholder="GI Value" value={giValue} autoComplete="off" onChange={handleChange} />
+            </Col>
+            <Col xs={colWidth}>
+              <ButtonWrapper><Button type="submit">{submitButtonText}</Button></ButtonWrapper>
+            </Col>
+            <Col xs={colWidth}>
+              <ErrorMsg>{errorMsg}</ErrorMsg>
+            </Col>
+          </Row>
         </form>
         {deleteButton}
       </Container>
@@ -114,6 +127,7 @@ AddEditFood.propTypes = {
     id: PropTypes.string.isRequired,
     gi: PropTypes.any.isRequired,
     sources: PropTypes.any.isRequired,
+    category: PropTypes.oneOf(['Beans', 'Breads', 'Cereals', 'Dairy', 'Fruits', 'Snacks & Sweets', 'Staples', 'Vegetables']).isRequired,
   }),
 };
 

@@ -64,6 +64,9 @@ class FoodList extends Component {
       key: 'food',
       label: 'Food'
     },{
+      key: 'category',
+      label: 'Category'
+    },{
       key: 'gi',
       label: 'GI Value'
     },{
@@ -80,6 +83,7 @@ class FoodList extends Component {
     const data = foodListArray.map((food)=>{
       const dataColumns = [
         { key: food.id, value: <FoodItem food={food} editAction={openEditFoodModal} /> },
+        { key: food.id, value: food.category },
         { key: food.id, value: food.gi },
         { key: food.id, value: 'TBC' },
       ];
@@ -99,7 +103,7 @@ class FoodList extends Component {
       // update the average GI value if we have one
       if ( giTotal > 0 && giCount > 0 ){
          giAverage = (giTotal/giCount);
-        dataColumns[2].value = giAverage.toFixed(0);
+        dataColumns[3].value = giAverage.toFixed(0);
       }
       return dataColumns;
     });

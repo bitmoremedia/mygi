@@ -53,7 +53,6 @@ const path = {
   foodList: './dataTool/db/foodList.json',
   dataSource: './dataTool/extracts',
   dataSources: '../extraction/sources.json',
-  categories: '../../data/glycemic-index-categories.json',
 };
 
 const dataSources = require(path.dataSources);
@@ -85,12 +84,6 @@ function getFoodList(resolve, reject){
     reject(err);
   }
   resolve(foodList);
-}
-
-function getCategories(resolve, reject){
-  const giCategories = require(path.categories);
-  const categories = giCategories.map((category)=>category.category);
-  resolve(categories);
 }
 
 function associatedSource(resolve, reject, mode, body){
@@ -128,7 +121,7 @@ function associatedSource(resolve, reject, mode, body){
 }
 
 function foodItem(resolve, reject, mode, body){
-  const { foodId, foodName, giValue, sources } = body;
+  const { foodId, foodName, category, giValue, sources } = body;
   if (mode !== 'add-update' && mode !== 'delete') {
     reject(`Mode not supported`);
   }
@@ -145,6 +138,7 @@ function foodItem(resolve, reject, mode, body){
       food = {
         id,
         gi: giValue,
+        category,
         name: foodName,
         sources: sources || {},
       };
