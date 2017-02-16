@@ -70,6 +70,12 @@ class FoodFinder extends Component {
       return <Button onClick={()=>toggleAddFood()}>{buttonText}</Button>;
     }
 
+    const initialValues = {
+      name: thisFood.name,
+      gi: thisFood.gi,
+      sources: { [sourceName]:foodId }
+    };
+
     return (
       <Container>
         <Heading>
@@ -81,7 +87,7 @@ class FoodFinder extends Component {
               <SubHeading>
                 Food List {renderToggleAddFoodButton()}
               </SubHeading>
-              {showAddFood && <AddEditFood />}
+              {showAddFood && <AddEditFood initialValues={initialValues} />}
               {!showAddFood && <FoodList list={filteredFoodList} sourceName={sourceName} sourceId={foodId} />}
             </Col>
             <Col xs={12} md={7}>

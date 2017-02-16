@@ -8,12 +8,12 @@ import { Container, Input, Select, ErrorMsg, ButtonWrapper } from './styles';
 export class AddEditFood extends Component {
   constructor(props, context) {
     super(props, context);
-    const { foodItem } = this.props;
+    const { foodItem, initialValues = {sources:{}} } = this.props;
     const state = {
-      foodName: "",
-      giValue: "",
-      category: "",
-      sources: {},
+      foodName: initialValues.name || "",
+      giValue: initialValues.gi || "",
+      category: initialValues.category || "",
+      sources: initialValues.sources || {},
       errorMsg: "",
     }
     if ( foodItem ){
@@ -123,6 +123,7 @@ AddEditFood.propTypes = {
   addFoodItem: PropTypes.func.isRequired,
   mode: PropTypes.string,
   editFoodId: PropTypes.string,
+  initialSource: PropTypes.any,
   foodItem: PropTypes.shape({
     name: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
