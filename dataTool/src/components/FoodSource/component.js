@@ -4,6 +4,7 @@ import _sortBy from 'lodash/sortBy';
 import _forEach from 'lodash/forEach';
 
 import { List, ListItem, MatchedListItem, EditLink } from './styles';
+
 import ToolTip from '../common/ToolTip';
 import Divider from '../common/Divider';
 import Modal from '../common/Modal';
@@ -14,7 +15,7 @@ class FoodSource extends Component {
     super(props, context);
     this.state = {
       findFoodModalVisible: false,
-      findFoodId: undefined
+      findFoodId: undefined,
     };
     this.openFindFoodModal = this.openFindFoodModal.bind(this);
     this.closeFindFoodModal = this.closeFindFoodModal.bind(this);
