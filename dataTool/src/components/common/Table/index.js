@@ -1,11 +1,6 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import { Container, Table, TableHead, TableHeading, TableRow, TableBody, TableColumn } from './styles';
-
-const tableProps = {
-  columns: React.PropTypes.array.isRequired,
-  data: React.PropTypes.array.isRequired
-}
 
 const TableComponent = ({columns, data}) => {
 
@@ -41,6 +36,9 @@ const TableComponent = ({columns, data}) => {
   );
 }
 
-TableComponent.propTypes = tableProps;
+TableComponent.propTypes = {
+  columns: PropTypes.array.isRequired,
+  data: PropTypes.array.isRequired
+};
 
 export default TableComponent;

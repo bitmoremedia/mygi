@@ -41,11 +41,15 @@ export class AddEditFood extends Component {
 
   render() {
     const { foodName, giValue, errorMsg } = this.state;
+    const { mode } = this.props;
+
+    const submitButtonText = ( mode === 'add' ) ? 'Add' : 'Save';
+
     return (
       <form onSubmit={this.handleSubmit}>
         <input type='text' name='foodName' placeholder="Name" value={foodName} onChange={this.handleChange} />
         <input type='number' name='giValue' placeholder="GI Value" value={giValue} onChange={this.handleChange} />
-        <input type="submit" value="Add" />
+        <input type="submit" value={submitButtonText} />
         <span>{errorMsg}</span>
       </form>
     );
@@ -53,8 +57,13 @@ export class AddEditFood extends Component {
 
 }
 
+AddEditFood.defaultProps = {
+  mode: 'add',
+};
+
 AddEditFood.propTypes = {
   addFoodItem: PropTypes.func.isRequired,
+  mode: PropTypes.string,
 };
 
 export default AddEditFood;

@@ -4,7 +4,7 @@ import _sortBy from 'lodash/sortBy';
 import { Link } from 'react-router-dom';
 
 import Table from '../common/Table';
-import FoodItem from '../FoodItem';
+import FoodItem from './FoodItem';
 import AddEditFood from '../AddEditFood';
 
 class FoodList extends Component {

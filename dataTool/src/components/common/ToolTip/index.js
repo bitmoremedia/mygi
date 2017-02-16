@@ -1,13 +1,6 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import { Container } from './styles';
-
-const toolTipProps = {
-  text: React.PropTypes.string.isRequired,
-  position: React.PropTypes.oneOf(['up', 'down', 'left', 'right']),
-  length: React.PropTypes.oneOf(['small', 'medium', 'large', 'fit']),
-  children: React.PropTypes.any.isRequired,
-}
 
 const ToolTip = ({ children, text, position, length }) => {
   return (
@@ -19,6 +12,11 @@ const ToolTip = ({ children, text, position, length }) => {
   );
 }
 
-ToolTip.propTypes = toolTipProps;
+ToolTip.propTypes = {
+  text: PropTypes.string.isRequired,
+  position: PropTypes.oneOf(['up', 'down', 'left', 'right']),
+  length: PropTypes.oneOf(['small', 'medium', 'large', 'fit']),
+  children: PropTypes.any.isRequired,
+};
 
 export default ToolTip;

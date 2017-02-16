@@ -1,14 +1,4 @@
-import React from 'react';
-
-const foodListProps = {
-  list: React.PropTypes.arrayOf(
-    React.PropTypes.shape({
-      id: React.PropTypes.string.isRequired,
-      name: React.PropTypes.string.isRequired,
-      gi: React.PropTypes.any.isRequired,
-    })
-  ).isRequired,
-};
+import React, { PropTypes } from 'react';
 
 const FoodList = ({ list, sourceName, sourceId, associateDataSource, deleteAssociatedDataSource }) => {
 
@@ -56,6 +46,14 @@ const FoodList = ({ list, sourceName, sourceId, associateDataSource, deleteAssoc
   );
 };
 
-FoodList.propTypes = foodListProps;
+FoodList.propTypes = {
+  list: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      gi: PropTypes.any.isRequired,
+    })
+  ).isRequired,
+};
 
 export default FoodList;
