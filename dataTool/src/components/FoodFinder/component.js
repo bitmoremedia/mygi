@@ -23,6 +23,12 @@ class FoodFinder extends Component {
     this.toggleAddFood = this.toggleAddFood.bind(this);
   }
 
+  componentWillReceiveProps() {
+    this.setState({
+      showAddFood: false
+    });
+  }
+
   toggleAddFood() {
     this.setState({
       showAddFood: !this.state.showAddFood

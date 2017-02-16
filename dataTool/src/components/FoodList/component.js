@@ -66,6 +66,9 @@ class FoodList extends Component {
     },{
       key: 'gi',
       label: 'GI Value'
+    },{
+      key: 'average',
+      label: 'Average GI'
     }];
     // add columns for each of our data sources
     dataSourcesArray.forEach((source)=>{
@@ -77,8 +80,10 @@ class FoodList extends Component {
     const data = foodListArray.map((food)=>{
       const dataColumns = [
         { key: food.id, value: <FoodItem food={food} editAction={openEditFoodModal} /> },
-        { key: food.id, value: food.gi }
+        { key: food.id, value: food.gi },
+        { key: food.id, value: 'TBC' },
       ];
+      let giTotal = 0, giCount = 0, giAverage;
       // add data columns for each of our data sources
       dataSourcesArray.forEach((source)=>{
         const sourceGi = (food.sources[source.name] && source.data[food.sources[source.name]]) ? source.data[food.sources[source.name]].gi : "";
@@ -86,7 +91,16 @@ class FoodList extends Component {
           key: `${food.id}-${source.name}`,
           value: sourceGi,
         });
+        if (parseInt(sourceGi, 10) > 0) {
+          giTotal += parseInt(sourceGi, 10);
+          giCount += 1;
+        }
       });
+      // update the average GI value if we have one
+      if ( giTotal > 0 && giCount > 0 ){
+         giAverage = (giTotal/giCount);
+        dataColumns[2].value = giAverage.toFixed(0);
+      }
       return dataColumns;
     });
 

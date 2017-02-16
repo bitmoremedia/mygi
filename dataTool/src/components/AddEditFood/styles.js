@@ -13,7 +13,6 @@ export const ButtonWrapper = styled.div`
   margin-top: 4px;
 `;
 
-
 export const ErrorMsg = styled.div`
   color: red;
   margin-top: 5px;
