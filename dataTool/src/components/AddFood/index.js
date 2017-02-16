@@ -1,41 +1,15 @@
-import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { addFoodItem } from '../../redux/actions';
 
-export class AddFood extends Component {
-  constructor(props, context) {
-    super(props, context);
-    this.state = {
-      name: "",
-      gi: "",
-    };
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-  }
+import AddFood from './component';
 
-  handleSubmit(event) {
-    event.preventDefault();
-    console.log('submit form', this.state);
-  }
+const mapStateToProps = (state, props) => {
+  return {};
+};
 
-  handleChange(event) {
-    this.setState({[event.target.name]: event.target.value});
-  }
-
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Name:
-          <input type='text' name='name' value={this.state.name} onChange={this.handleChange} />
-        </label>
-        <label>
-          GI:
-          <input type='number' name='gi' value={this.state.gi} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Add" />
-      </form>
-    );
-  }
-
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ addFoodItem }, dispatch);
 }
 
-export default AddFood;
+export default connect(mapStateToProps, mapDispatchToProps)(AddFood);

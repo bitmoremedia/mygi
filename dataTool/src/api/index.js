@@ -71,3 +71,7 @@ export const postAssociateDataSource = (data) => {
 export const deleteAssociatedDataSource = (data) => {
   return deleteRequest('associate-source', data);
 };
+
+export const postFoodItem = (data) => {
+  return postRequest('food-item', data);
+};

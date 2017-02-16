@@ -24,6 +24,24 @@ export const getFoodlist = () => async (dispatch) => {
   }
 }
 
+export const addFoodItem = (data) => async (dispatch) => {
+  try {
+    dispatch({ type: types.ADD_FOOD_ITEM_REQUEST });
+    let response = await api.postFoodItem(data);
+    if ( response.status === 'success' ){
+      dispatch({ type: types.ADD_FOOD_ITEM_SUCCESS });
+      // update was a success so we refetch the food list
+      dispatch(getFoodlist());
+    } else {
+      console.log('error', response.error);
+      dispatch({ type: types.ADD_FOOD_ITEM_ERROR, payload: response.error });
+    }
+  } catch(error) {
+    console.log('error', error);
+    dispatch({ type: types.ADD_FOOD_ITEM_ERROR, payload: error });
+  }
+};
+
 // **********************
 // DATASOURCES
 // **********************
