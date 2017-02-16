@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 import Table from '../common/Table';
 import FoodItem from './FoodItem';
+import Modal from '../common/Modal';
 import AddEditFood from '../AddEditFood';
 
 class FoodList extends Component {
@@ -13,8 +14,12 @@ class FoodList extends Component {
     super(props, context);
     this.state = {
       showAddFood: false,
+      showEditFoodModal: false,
+      editFoodId: undefined,
     };
     this.toggleAddFood = this.toggleAddFood.bind(this);
+    this.openEditFoodModal = this.openEditFoodModal.bind(this);
+    this.closeEditFoodModal = this.closeEditFoodModal.bind(this);
   }
 
   toggleAddFood() {
@@ -23,9 +28,23 @@ class FoodList extends Component {
     });
   }
 
+  openEditFoodModal(id) {
+    this.setState({
+      showEditFoodModal: true,
+      editFoodId: id
+    });
+  }
+
+  closeEditFoodModal() {
+    this.setState({
+      showEditFoodModal: false,
+      editFoodId: undefined
+    });
+  }
+
   render() {
-    const { toggleAddFood } = this;
-    const { showAddFood } = this.state;
+    const { toggleAddFood, openEditFoodModal, closeEditFoodModal } = this;
+    const { showAddFood, showEditFoodModal, editFoodId } = this.state;
     const { foodList, dataSources } = this.props;
     const foodListArray = _sortBy(_values(foodList), 'name');
     const dataSourcesArray = _sortBy(_values(dataSources), 'title');
@@ -46,7 +65,7 @@ class FoodList extends Component {
     });
     const data = foodListArray.map((food)=>{
       const dataColumns = [
-        { key: food.id, value: <FoodItem food={food}/> },
+        { key: food.id, value: <FoodItem food={food} editAction={openEditFoodModal} /> },
         { key: food.id, value: food.gi }
       ];
       // add data columns for each of our data sources
@@ -65,19 +84,14 @@ class FoodList extends Component {
       return <button onClick={()=>toggleAddFood()}>{buttonText}</button>;
     }
 
-    if ( foodListArray.length && dataSourcesArray.length ){
-      return (
-        <div>
-          {renderToggleAddFoodButton()}
-          {showAddFood && <AddEditFood />}
-          <Table columns={columns} data={data}/>
-        </div>
-      );
-    }
     return (
       <div>
         {renderToggleAddFoodButton()}
         {showAddFood && <AddEditFood />}
+        { foodListArray.length > 0 && dataSourcesArray.length > 0 && <Table columns={columns} data={data}/> }
+        <Modal visible={showEditFoodModal} onClose={closeEditFoodModal}>
+          {showEditFoodModal && <AddEditFood mode='edit' editFoodId={editFoodId} />}
+        </Modal>
       </div>
     );
   }

@@ -3,13 +3,23 @@ import React, { Component, PropTypes } from 'react';
 export class AddEditFood extends Component {
   constructor(props, context) {
     super(props, context);
-    this.state = {
+    const { foodItem } = this.props;
+    const state = {
       foodName: "",
       giValue: "",
+      sources: {},
       errorMsg: "",
-    };
+    }
+    if ( foodItem ){
+      state.id = foodItem.id;
+      state.foodName = foodItem.name;
+      state.giValue = foodItem.gi;
+      state.sources = foodItem.sources;
+    }
+    this.state = state;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   isValid(data){
@@ -26,6 +36,8 @@ export class AddEditFood extends Component {
     this.props.addFoodItem({
       foodName: this.state.foodName,
       giValue: this.state.giValue,
+      foodId: this.state.id,
+      sources: this.state.sources,
     });
   }
 
@@ -39,19 +51,32 @@ export class AddEditFood extends Component {
     });
   }
 
+  handleDelete() {
+    this.props.deleteFoodItem({
+      foodId: this.state.id
+    });
+  }
+
   render() {
+    const { handleChange, handleSubmit, handleDelete } = this;
     const { foodName, giValue, errorMsg } = this.state;
     const { mode } = this.props;
 
     const submitButtonText = ( mode === 'add' ) ? 'Add' : 'Save';
+    const header = (mode === 'add') ? null : <h3>Edit {foodName}</h3>;
+    const deleteButton = (mode === 'add') ? null : <button onClick={handleDelete}>Delete</button>;
 
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input type='text' name='foodName' placeholder="Name" value={foodName} onChange={this.handleChange} />
-        <input type='number' name='giValue' placeholder="GI Value" value={giValue} onChange={this.handleChange} />
-        <input type="submit" value={submitButtonText} />
-        <span>{errorMsg}</span>
-      </form>
+      <div>
+        {header}
+        <form onSubmit={handleSubmit}>
+          <input type='text' name='foodName' placeholder="Name" value={foodName} onChange={handleChange} />
+          <input type='number' name='giValue' placeholder="GI Value" value={giValue} onChange={handleChange} />
+          <input type="submit" value={submitButtonText} />
+          <span>{errorMsg}</span>
+        </form>
+        {deleteButton}
+      </div>
     );
   }
 
@@ -64,6 +89,13 @@ AddEditFood.defaultProps = {
 AddEditFood.propTypes = {
   addFoodItem: PropTypes.func.isRequired,
   mode: PropTypes.string,
+  editFoodId: PropTypes.string,
+  foodItem: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    gi: PropTypes.any.isRequired,
+    sources: PropTypes.any.isRequired,
+  }),
 };
 
 export default AddEditFood;

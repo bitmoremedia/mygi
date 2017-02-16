@@ -60,6 +60,20 @@ export const updateFoodItem = (data) => async (dispatch) => {
   }
 };
 
+export const deleteFoodItem = (data) => async (dispatch) => {
+  try {
+    dispatch({ type: types.DELETE_FOOD_ITEM_REQUEST });
+    await api.deleteFoodItem(data);
+    dispatch({ type: types.DELETE_FOOD_ITEM_SUCCESS });
+    // delete was a success so we refetch the food list
+    dispatch(getFoodlist());
+  } catch(error) {
+    console.log('error', error);
+    dispatch({ type: types.DELETE_FOOD_ITEM_ERROR, payload: error });
+  }
+};
+
+
 // **********************
 // DATASOURCES
 // **********************
