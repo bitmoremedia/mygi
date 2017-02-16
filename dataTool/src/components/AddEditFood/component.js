@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import { Row, Col } from '../common/Grid';
 import Button from '../common/Button';
 
-import { Container, Input, ErrorMsg, ButtonWrapper } from './styles';
+import { Container, Input, Select, ErrorMsg, ButtonWrapper } from './styles';
 
 export class AddEditFood extends Component {
   constructor(props, context) {
@@ -84,7 +84,7 @@ export class AddEditFood extends Component {
               <Input type='text' name='foodName' placeholder="Name" value={foodName} autoComplete="off" onChange={handleChange} />
             </Col>
             <Col xs={colWidth}>
-              <select name='category' value={category} onChange={handleChange}>
+              <Select name='category' value={category} onChange={handleChange}>
                 <option value="Beans">Beans</option>
                 <option value="Breads">Breads</option>
                 <option value="Cereals">Cereals</option>
@@ -93,7 +93,7 @@ export class AddEditFood extends Component {
                 <option value="Snacks & Sweets">Snacks & Sweets</option>
                 <option value="Staples">Staples</option>
                 <option value="Vegetables">Vegetables</option>
-              </select>
+              </Select>
             </Col>
             <Col xs={colWidth}>
               <Input type='number' name='giValue' placeholder="GI Value" value={giValue} autoComplete="off" onChange={handleChange} />

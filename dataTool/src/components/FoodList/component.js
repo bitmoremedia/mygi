@@ -118,7 +118,7 @@ class FoodList extends Component {
         {renderToggleAddFoodButton()}
         {showAddFood && <AddEditFood layout="inline"/>}
         { foodListArray.length > 0 && dataSourcesArray.length > 0 && <Table columns={columns} data={data}/> }
-        <Modal visible={showEditFoodModal} onClose={closeEditFoodModal}>
+        <Modal visible={showEditFoodModal} height={280} onClose={closeEditFoodModal}>
           {showEditFoodModal && <AddEditFood mode='edit' editFoodId={editFoodId} />}
         </Modal>
       </div>
