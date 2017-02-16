@@ -60,18 +60,18 @@ export class AddEditFood extends Component {
   render() {
     const { handleChange, handleSubmit, handleDelete } = this;
     const { foodName, giValue, errorMsg } = this.state;
-    const { mode } = this.props;
+    const { mode, foodItem } = this.props;
 
     const submitButtonText = ( mode === 'add' ) ? 'Add' : 'Save';
-    const header = (mode === 'add') ? null : <h3>Edit {foodName}</h3>;
+    const header = (mode === 'add') ? null : <h3>Edit: {foodItem.name}</h3>;
     const deleteButton = (mode === 'add') ? null : <button onClick={handleDelete}>Delete</button>;
 
     return (
       <div>
         {header}
         <form onSubmit={handleSubmit}>
-          <input type='text' name='foodName' placeholder="Name" value={foodName} onChange={handleChange} />
-          <input type='number' name='giValue' placeholder="GI Value" value={giValue} onChange={handleChange} />
+          <input type='text' name='foodName' placeholder="Name" value={foodName} autoComplete="off" onChange={handleChange} />
+          <input type='number' name='giValue' placeholder="GI Value" value={giValue} autoComplete="off" onChange={handleChange} />
           <input type="submit" value={submitButtonText} />
           <span>{errorMsg}</span>
         </form>
