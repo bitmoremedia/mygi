@@ -8,12 +8,16 @@ const BreadCrumb = ({ match, dataSources }) => {
   const urlParts = url.split("/");
   let sourceLink;
   if ( urlParts[1] === 'source' && dataSources[urlParts[2]] ){
-    sourceLink = <ListItem>> <Link to={`/source/${dataSources[urlParts[2]].name}`}>{dataSources[urlParts[2]].title}</Link></ListItem>;
+    sourceLink = <ListItem>> {dataSources[urlParts[2]].title}</ListItem>;
   }
+
+  const isRoot = (urlParts.length === 2);
+
   return (
     <List>
       <ListItem>
-        <Link to="/">Food List</Link>
+        {isRoot && <span>Food List</span>}
+        {!isRoot && <Link to="/">Food List</Link>}
       </ListItem>
       {sourceLink && sourceLink}
     </List>

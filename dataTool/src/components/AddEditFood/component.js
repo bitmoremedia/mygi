@@ -66,7 +66,7 @@ export class AddEditFood extends Component {
 
     const submitButtonText = ( mode === 'add' ) ? 'Add' : 'Save';
     const header = (mode === 'add') ? null : <h3>Edit: {foodItem.name}</h3>;
-    const deleteButton = (mode === 'add') ? null : <Button onClick={handleDelete}>Delete</Button>;
+    const deleteButton = (mode === 'add') ? null : <Button onClick={handleDelete} danger>Delete</Button>;
 
     return (
       <div>

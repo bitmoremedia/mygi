@@ -8,11 +8,13 @@ import { ModalContainer } from './styles';
 
 const Modal = ({ children, visible, onClose, width, height, measure }) => {
 
-  // stop body scrolling when modal is open
+  // stop the background from scrolling (if scroll bars are on the page)
   if (visible){
-    document.body.style.overflowY = "hidden";
+    if ( window.innerWidth > document.documentElement.clientWidth ){
+      document.body.classList.add('modal-is-open');
+    }
   } else {
-    document.body.style.overflowY = "scroll";
+    document.body.classList.remove('modal-is-open');
   }
 
   return (
