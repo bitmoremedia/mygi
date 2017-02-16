@@ -4,7 +4,7 @@ import _values from 'lodash/values';
 import { search } from '../../utils/search';
 
 import Divider from '../common/Divider';
-import { Grid, Row, Col } from '../common/Grid';
+import { Row, Col } from '../common/Grid';
 import Button from '../common/Button';
 
 import AddEditFood from '../AddEditFood';
@@ -76,23 +76,21 @@ class FoodFinder extends Component {
           {thisFood.name} [{thisFood.gi}]
         </Heading>
         <Divider />
-          <Grid>
-            <Row>
-              <Col xs={12} md={4}>
-                <SubHeading>
-                  Food List {renderToggleAddFoodButton()}
-                </SubHeading>
-                {showAddFood && <AddEditFood />}
-                {!showAddFood && <FoodList list={filteredFoodList} sourceName={sourceName} sourceId={foodId} />}
-              </Col>
-              <Col xs={12} md={7}>
-                <SubHeading>
-                  Other Data Sources
-                </SubHeading>
-                <DataSourceFoodList list={filteredDataSources} />
-              </Col>
-            </Row>
-          </Grid>
+          <Row>
+            <Col xs={12} md={4}>
+              <SubHeading>
+                Food List {renderToggleAddFoodButton()}
+              </SubHeading>
+              {showAddFood && <AddEditFood />}
+              {!showAddFood && <FoodList list={filteredFoodList} sourceName={sourceName} sourceId={foodId} />}
+            </Col>
+            <Col xs={12} md={7}>
+              <SubHeading>
+                Other Data Sources
+              </SubHeading>
+              <DataSourceFoodList list={filteredDataSources} />
+            </Col>
+          </Row>
       </Container>
     );
   }

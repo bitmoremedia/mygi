@@ -85,7 +85,7 @@ export class AddEditFood extends Component {
             </Col>
             <Col xs={colWidth}>
               <Select name='category' value={category} onChange={handleChange}>
-                <option value="" disabled selected>Select Category</option>
+                <option value="" disabled defaultValue>Select Category</option>
                 <option value="Beans">Beans</option>
                 <option value="Breads">Breads</option>
                 <option value="Cereals">Cereals</option>
