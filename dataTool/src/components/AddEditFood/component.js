@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+import Button from '../common/Button';
+
 export class AddEditFood extends Component {
   constructor(props, context) {
     super(props, context);
@@ -64,7 +66,7 @@ export class AddEditFood extends Component {
 
     const submitButtonText = ( mode === 'add' ) ? 'Add' : 'Save';
     const header = (mode === 'add') ? null : <h3>Edit: {foodItem.name}</h3>;
-    const deleteButton = (mode === 'add') ? null : <button onClick={handleDelete}>Delete</button>;
+    const deleteButton = (mode === 'add') ? null : <Button onClick={handleDelete}>Delete</Button>;
 
     return (
       <div>
@@ -72,7 +74,7 @@ export class AddEditFood extends Component {
         <form onSubmit={handleSubmit}>
           <input type='text' name='foodName' placeholder="Name" value={foodName} autoComplete="off" onChange={handleChange} />
           <input type='number' name='giValue' placeholder="GI Value" value={giValue} autoComplete="off" onChange={handleChange} />
-          <input type="submit" value={submitButtonText} />
+          <Button type="submit">{submitButtonText}</Button>
           <span>{errorMsg}</span>
         </form>
         {deleteButton}

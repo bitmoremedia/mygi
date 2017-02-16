@@ -4,9 +4,12 @@ import _sortBy from 'lodash/sortBy';
 import { Link } from 'react-router-dom';
 
 import Table from '../common/Table';
-import FoodItem from './FoodItem';
 import Modal from '../common/Modal';
 import AddEditFood from '../AddEditFood';
+import Button from '../common/Button';
+
+import { AddButton } from './styles';
+import FoodItem from './FoodItem';
 
 class FoodList extends Component {
 
@@ -89,7 +92,7 @@ class FoodList extends Component {
 
     const renderToggleAddFoodButton = () => {
       const buttonText = (this.state.showAddFood) ? 'Cancel' : 'Add';
-      return <button onClick={()=>toggleAddFood()}>{buttonText}</button>;
+      return <AddButton><Button onClick={()=>toggleAddFood()}>{buttonText}</Button></AddButton>;
     }
 
     return (

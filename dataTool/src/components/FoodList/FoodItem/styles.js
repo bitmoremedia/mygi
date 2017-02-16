@@ -12,6 +12,6 @@ export const FoodName = styled.div`
   white-space: nowrap;
 `;
 
-export const EditButton = styled.button`
+export const EditButton = styled.div`
   margin-left: 10px;
 `;

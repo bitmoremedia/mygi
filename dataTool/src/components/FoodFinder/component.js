@@ -5,6 +5,8 @@ import { search } from '../../utils/search';
 
 import Divider from '../common/Divider';
 import { Grid, Row, Col } from '../common/Grid';
+import Button from '../common/Button';
+
 import AddEditFood from '../AddEditFood';
 
 import { Container, Heading, SubHeading } from './styles';
@@ -59,7 +61,7 @@ class FoodFinder extends Component {
 
     const renderToggleAddFoodButton = () => {
       const buttonText = (this.state.showAddFood) ? 'Cancel' : 'Add';
-      return <button onClick={()=>toggleAddFood()}>{buttonText}</button>;
+      return <Button onClick={()=>toggleAddFood()}>{buttonText}</Button>;
     }
 
     return (

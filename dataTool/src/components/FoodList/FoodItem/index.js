@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react';
 
+import Button from '../../common/Button';
+
 import { Item, FoodName, EditButton } from './styles';
 
 const FoodItem = ({food, editAction}) => {
@@ -11,7 +13,9 @@ const FoodItem = ({food, editAction}) => {
   return (
     <Item key={`${food.id}-food-item`}>
       <FoodName>{food.name}</FoodName>
-      <EditButton onClick={handleEdit}>edit</EditButton>
+      <EditButton>
+        <Button onClick={handleEdit}>edit</Button>
+      </EditButton>
     </Item>
   );
 };
