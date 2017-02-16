@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react';
 
+import AddRemoveBtn from '../../common/AddRemoveBtn';
+
 const FoodList = ({ list, sourceName, sourceId, associateDataSource, deleteAssociatedDataSource }) => {
 
   // note: current assumption is that a food can only be associated with one item in the main Food list
@@ -30,11 +32,11 @@ const FoodList = ({ list, sourceName, sourceId, associateDataSource, deleteAssoc
   const renderAction = (food) => {
     if (associatedFoodItem) {
       if (food.id === associatedFoodItem.id) {
-        return <button onClick={()=>updateDataSource('delete', food)}> - </button>;
+        return <AddRemoveBtn type='remove' onClick={()=>updateDataSource('delete', food)}></AddRemoveBtn>;
       }
       return '';
     }
-    return <button onClick={()=>updateDataSource('add', food)}> + </button>;
+    return <AddRemoveBtn type='add' onClick={()=>updateDataSource('add', food)}></AddRemoveBtn>;
   };
 
   return (

@@ -83,7 +83,7 @@ class FoodFinder extends Component {
                   Food List {renderToggleAddFoodButton()}
                 </SubHeading>
                 {showAddFood && <AddEditFood />}
-                <FoodList list={filteredFoodList} sourceName={sourceName} sourceId={foodId} />
+                {!showAddFood && <FoodList list={filteredFoodList} sourceName={sourceName} sourceId={foodId} />}
               </Col>
               <Col xs={12} md={7}>
                 <SubHeading>
