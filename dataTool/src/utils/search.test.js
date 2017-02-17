@@ -103,4 +103,14 @@ describe('Utils: search', ()=>{
     expect(searchResult).toEqual(expectedResult);
   });
 
+  it('specific use case B', () => {
+    const searchText = 'Pear, raw';
+    const searchList = [
+      { "name" : "Pears" },
+    ];
+    expectedResult = searchList;
+    const searchResult = search({searchText, searchList, searchField});
+    expect(searchResult).toEqual(expectedResult);
+  });
+
 });
