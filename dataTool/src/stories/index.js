@@ -1,13 +1,13 @@
-import React from 'react';
-import { storiesOf, action, linkTo } from '@kadira/storybook';
+import React from 'react'
+import { storiesOf, action } from '@kadira/storybook'
 
-import Button from '../components/common/Button';
+import globalStyles from '../global-styles';
+globalStyles();
 
-const testing = ()=>{
-  alert('testing!!');
-};
+import Button from '../components/common/Button'
+import Modal from '../components/common/Modal'
 
-storiesOf('common: Button', module)
+storiesOf('common.Button', module)
   .add('default display', () => (
     <Button>
       A Button
@@ -23,57 +23,25 @@ storiesOf('common: Button', module)
       Click Me!
     </Button>
   ))
-  .add('custom onClick', () => (
-    <Button onClick={testing}>
-      Click Me!!!!!
-    </Button>
-  ));
 
-
-/*
-  import Table from '../components/common/Table';
-
-  storiesOf('common: Button', module)
-    .add('default display', () => (
-      <Button>
-        A Button
-      </Button>
-    ))
-    .add('danger display', () => (
-      <Button danger>
-        A Dangerous Button
-      </Button>
-    ))
-    .add('with onClick', () => (
-      <Button onClick={action('onClick')}>
-        Click Me!
-      </Button>
-    ));
-*/
-
-
-/*
-import Loading from '../components/common/Loading';
-import RangePicker from '../components/common/RangePicker';
-
-storiesOf('common: Loading', module)
-  .add('default display', () => (
-    <Loading />
-  ));
-
-storiesOf('common: RangePicker', module)
-  .add('range of strings (A,B,C)', () => (
-      <RangePicker
-        setValue={action('set value called')}
-        values={['A', 'B', 'C']}
-        value={'A'}
-      />
+storiesOf('common.Modal', module)
+  .add('hidden', () => (
+    <Modal visible={false} onClose={action('onClose event triggered')}>
+      Modal Content
+    </Modal>
   ))
-  .add('range of numbers (1-10)', () => (
-      <RangePicker
-        setValue={action('set value called')}
-        values={[1,2,3,4,5,6,7,8,9,10]}
-        value={1}
-      />
-  ));
-*/
+  .add('displayed', () => (
+    <Modal visible={true} onClose={action('onClose event triggered')}>
+      Modal Content
+    </Modal>
+  ))
+  .add('displayed - custom dimensions %', () => (
+    <Modal visible={true} width="90" height="90" measure="%" onClose={action('onClose event triggered')}>
+      Modal Content
+    </Modal>
+  ))
+  .add('displayed - custom dimensions px', () => (
+    <Modal visible={true} width="200" height="400" measure="px" onClose={action('onClose event triggered')}>
+      Modal Content
+    </Modal>
+  ))

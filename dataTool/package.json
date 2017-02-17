@@ -24,7 +24,9 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -c .storybook",
-    "build-storybook": "build-storybook -c .storybook -o build.storybook"
+    "storybook-examples": "start-storybook -p 9010 -c .storybook-examples",
+    "build-storybook": "build-storybook -c .storybook -o build.storybook",
+    "build-storybook-examples": "build-storybook -c .storybook-examples -o build.storybook-examples"
   },
   "eslintConfig": {
     "extends": "react-app"
