@@ -13,9 +13,12 @@ module.exports = (html) => {
        const firstColumn = $(columns[0]).text();
        const secondColumn = $(columns[1]).text();
        if (!isNaN(parseInt(secondColumn, 10))) {
+         let foodName = firstColumn.trim();
+         foodName = foodName.replace(/, average/g,'');
+         foodName = foodName.replace(/average/g,'');
          food = {
-           'id' : 'ultimatepaleoguide-'+firstColumn.trim().replace(/\s+/g, '-').toLowerCase(),
-           'name' : firstColumn.trim(),
+           'id' : 'ultimatepaleoguide-'+foodName.replace(/\s+/g, '-').toLowerCase(),
+           'name' : foodName,
            'gi' : secondColumn
          };
          if (!data[food.id]){
