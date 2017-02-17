@@ -6,6 +6,7 @@ globalStyles();
 
 import ButtonToggle from './ButtonToggle'
 import ButtonToggleModal from './ButtonToggleModal'
+import SearchUtility from './SearchUtility'
 
 storiesOf('Toggle Display', module)
   .add('ButtonToggle', () => (
@@ -13,4 +14,9 @@ storiesOf('Toggle Display', module)
   ))
   .add('ButtonToggleModal', () => (
     <ButtonToggleModal />
+  ))
+
+storiesOf('Utilities', module)
+  .add('SearchUtility', () => (
+    <SearchUtility />
   ))

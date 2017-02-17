@@ -44,6 +44,12 @@ export const search = ({ searchText, searchList, searchField }) => {
     if (partialWordMatch(itemWordsHyphen,searchTextWordsHyphen)) {
       return true;
     }
+    // case insensitive partial word matches (comma delimited)
+    const itemWordsComma = item[searchField].trim().toLowerCase().split(",");
+    const searchTextWordsComma = searchText.trim().toLowerCase().split(",");
+    if (partialWordMatch(itemWordsComma,searchTextWordsComma)) {
+      return true;
+    }
     // no white space mega match
     const itemWordsNoWhiteSpace = item[searchField].replace(/\s/g,'');
     const searchTextWordsNoWhiteSpace = searchText.replace(/\s/g,'');
