@@ -18,7 +18,7 @@ module.exports = (html) => {
          food = {
            'id' : 'the-gi-diet='+foodName.replace(/\s+/g, '-').toLowerCase(),
            'name' : foodName,
-           'gi' : secondColumn
+           'gi' : parseInt(secondColumn, 10)
          };
          if (!data[food.id]){
            data[food.id] = food;
