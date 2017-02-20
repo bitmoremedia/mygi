@@ -1,24 +1,24 @@
-const cheerio = require('cheerio');
+const cheerio = require('cheerio')
 
-const addTheLongList = false;
+const addTheLongList = false
 
 function extractGi(text){
-  let end = (text.indexOf('±') > -1) ? text.indexOf('±') : text.length;
+  let end = (text.indexOf('±') > -1) ? text.indexOf('±') : text.length
   return text.substring(0,end)
-};
+}
 
 module.exports = (html) => {
-  let food;
-  const data = {};
-  const $ = cheerio.load(html);
-  const $dataTables = $('table');
+  let food
+  const data = {}
+  const $ = cheerio.load(html)
+  const $dataTables = $('table')
   $dataTables.each((index, table)=>{
-    const rows = $(table).find('tr');
+    const rows = $(table).find('tr')
     rows.each((index, row)=>{
-      const columns = $(row).find('td');
-      const firstColumn = $(columns[0]).text();
-      const secondColumn = $(columns[1]).text();
-      const thirdColumn = $(columns[2]).text();
+      const columns = $(row).find('td')
+      const firstColumn = $(columns[0]).text()
+      const secondColumn = $(columns[1]).text()
+      const thirdColumn = $(columns[2]).text()
 
       // the 62 foods table
       // GI rows have a ± symbol in the second column
@@ -27,9 +27,9 @@ module.exports = (html) => {
           'id' : 'mendosa-'+firstColumn.trim().replace(/\s+/g, '-').toLowerCase(),
           'name' : firstColumn.trim(),
           'gi' : extractGi(secondColumn)
-        };
+        }
         if (!data[food.id]){
-          data[food.id] = food;
+          data[food.id] = food
         }
       }
 
@@ -41,13 +41,13 @@ module.exports = (html) => {
             'id' : 'mendosa-'+secondColumn.trim().replace(/\s+/g, '-').toLowerCase(),
             'name' : secondColumn.trim(),
             'gi' : extractGi(thirdColumn)
-          };
+          }
           if (!data[food.id]){
-            data[food.id] = food;
+            data[food.id] = food
           }
         }
       }
-    });
-  });
-  return data;
-};
+    })
+  })
+  return data
+}
