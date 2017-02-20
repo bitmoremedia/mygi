@@ -22,6 +22,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "coverage": "npm run test -- --coverage",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -c .storybook",
     "storybook-examples": "start-storybook -p 9010 -c .storybook-examples",
