@@ -1,6 +1,7 @@
 const fs = require('fs-extra')
 const _forEach = require('lodash/forEach')
 const uuid = require('uuid')
+const path = require('path')
 
 // api wrapper
 module.exports = ({ url, method, params, body }) => {
@@ -45,20 +46,19 @@ module.exports = ({ url, method, params, body }) => {
   })
 }
 
-const path = {
-  foodListDirectory: './dataTool/db/',
-  foodList: './dataTool/db/foodList.json',
-  dataSource: './dataTool/extracts',
-  dataSources: '../extraction/sources.json',
+const paths = {
+  foodList: path.join(__dirname, '..', 'db', 'foodList.json'),
+  dataSource: path.join(__dirname, '..', 'extracts'),
+  dataSources: path.join(__dirname, '..', 'extraction', 'sources.json'),
 }
 
-const dataSources = require(path.dataSources)
+const dataSources = require(paths.dataSources)
 
 function getDataSources(resolve, reject){
   try {
     const dataSourceObj = {}
     dataSources.forEach((source)=>{
-      const sourceData  = fs.readJsonSync(`${path.dataSource}/${source.name}.json`)
+      const sourceData  = fs.readJsonSync(`${paths.dataSource}/${source.name}.json`)
       dataSourceObj[source.name]={
         name: source.name,
         title: source.title,
@@ -75,7 +75,7 @@ function getDataSources(resolve, reject){
 function getFoodList(resolve, reject){
   let foodList = []
   try {
-    foodList = fs.readJsonSync(path.foodList)
+    foodList = fs.readJsonSync(paths.foodList)
   } catch(err){
     console.log('error in getFoodList')
     reject(err)
@@ -94,7 +94,7 @@ function associatedSource(resolve, reject, mode, body){
   try {
     // get current foodList
     let matched = false
-    let foodList = fs.readJsonSync(path.foodList)
+    let foodList = fs.readJsonSync(paths.foodList)
     _forEach(foodList, (food) => {
       if (food.id === foodId) {
         matched = true
@@ -107,7 +107,7 @@ function associatedSource(resolve, reject, mode, body){
       }
     })
     if (matched){
-      fs.writeFile(path.foodList, JSON.stringify(foodList), 'utf8')
+      fs.writeFile(paths.foodList, JSON.stringify(foodList), 'utf8')
       resolve({status:"success"})
     }
     reject(`No food matched with id: ${foodId}`)
@@ -130,7 +130,7 @@ function foodItem(resolve, reject, mode, body){
   }
   let id = foodId || uuid()
   try {
-    let food, foodList = fs.readJsonSync(path.foodList)
+    let food, foodList = fs.readJsonSync(paths.foodList)
     if (mode === 'add-update') {
       food = {
         id,
@@ -144,7 +144,7 @@ function foodItem(resolve, reject, mode, body){
     if (mode === 'delete'){
       delete foodList[id]
     }
-    fs.writeFile(path.foodList, JSON.stringify(foodList), 'utf8')
+    fs.writeFile(paths.foodList, JSON.stringify(foodList), 'utf8')
     resolve({status:"success", data: food})
   } catch(err){
    console.log('error in foodItem')
