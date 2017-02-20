@@ -16,7 +16,7 @@ _forEach(sources, (source)=>{
   }
 })
 
-const sourceAverage = (sources)=>{
+const sourceAverage = (gi, sources)=>{
   let giTotal = 0, giCount = 0;
   _forEach(sources, (source, key)=>{
     const sourceGi = (sourceData[key] && sourceData[key][source]) ? sourceData[key][source].gi : 0
@@ -31,12 +31,12 @@ const sourceAverage = (sources)=>{
     // ensure that our average does not exceed 100
     return (giAverage>100) ? 100 : giAverage
   }
-  return '';
+  return gi;
 }
 
 // apply source average to each food item
 _forEach(foodList, (food)=>{
-  food.gi = sourceAverage(food.sources)
+  food.gi = sourceAverage(food.gi, food.sources)
 })
 
 try {
