@@ -10,7 +10,7 @@ try {
   const gatsbyHelpers = require('gatsby-helpers') // eslint-disable-line
   prefixLink = gatsbyHelpers.prefixLink
 } catch (e) {
-  console.log('gatsby=helpers ignored') // eslint-disable-line
+  // do nothing as this is part of our gatsby mega hack
 }
 
 const PageLink = ({ to, children, className }) => {
