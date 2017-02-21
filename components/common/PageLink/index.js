@@ -1,15 +1,15 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
-//import { prefixLink } from '../../../node_modules/gatsby/dist/isomorphic/gatsby-helpers';
 
+// the below looks weird, but it means that we can use this component outside of the gatsby build run time
+// which is required when running a standalone test for this component
 let prefixLink = (linkTo) => {
     return linkTo
 }
 try {
-  prefixLink = require('gatsby-helpers/prefixLink')
-} catch (e) {
-  console.log('*** CATCH THE MONKEY ***');
-}
+  let gatsbyHelpers = require('gatsby-helpers')
+  prefixLink = gatsbyHelpers.prefixLink
+} catch (e) {}
 
 const PageLink = ({ to, children, className }) => {
   // add a trailing slash if there is not one (to support SPA)

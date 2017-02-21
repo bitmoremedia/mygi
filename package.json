@@ -16,7 +16,7 @@
     "publish-data": "node ./dataTool/extraction/publishData",
     "dataTool": "babel-node ./dataTool/server",
     "clean": "node ./scripts/cleanPublicDirectory",
-    "build": "npm run clean && npm run generate && gatsby build",
+    "build": "npm run clean && npm run generate && gatsby build --prefix-links",
     "develop": "gatsby develop",
     "deploy": "npm run build --prefix-links && gh-pages -d public",
     "test": "jest",

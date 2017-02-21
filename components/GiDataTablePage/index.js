@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
-import GiDataFilter from '../components/GiDataFilter';
-import GiDataTextFilter from '../components/GiDataTextFilter';
-import GiDataTableHeader from '../components/GiDataTableHeader';
-import GiDataTable from '../components/GiDataTable';
-import { categoryFromPath, giTypeFilterFromPath } from '../utils';
+import GiDataFilter from '../GiDataFilter';
+import GiDataTextFilter from '../GiDataTextFilter';
+import GiDataTableHeader from '../GiDataTableHeader';
+import GiDataTable from '../GiDataTable';
+import { categoryFromPath, giTypeFilterFromPath } from '../../utils';
 
 class GiDataTablePage extends Component {
 
