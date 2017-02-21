@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`basic header with no props 1`] = `
+<div
+  className="gi-data-table-header"
+>
+  <h2
+    className="gi-data-table-header__title"
+  >
+    Glycemic Index
+  </h2>
+</div>
+`;

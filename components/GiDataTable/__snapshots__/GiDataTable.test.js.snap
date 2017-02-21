@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders basic component as expected 1`] = `
+exports[`basic table output with no filters applied 1`] = `
 <div
   className="gi-data-table"
 >
@@ -3219,6 +3219,2100 @@ exports[`renders basic component as expected 1`] = `
           className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
         >
           49
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`table data filtered by category "Beans" 1`] = `
+<div
+  className="gi-data-table"
+>
+  <table
+    className="gi-data-table__table"
+  >
+    <thead>
+      <th
+        className="gi-data-table__food-column"
+      >
+        Food
+      </th>
+      <th
+        className="gi-data-table__gi-column"
+      >
+        GI Value
+      </th>
+    </thead>
+    <tbody>
+      <tr>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Baked Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          50
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Black Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          30
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Butter Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          36
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Fava Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--high-gi"
+        >
+          80
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Jelly Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--high-gi"
+        >
+          96
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Kidney Bean
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          35
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Lima Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          46
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Navy Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          31
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Pinto Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          39
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Soy Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          15
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`table data filtered by gi value "Low Gi" 1`] = `
+<div
+  className="gi-data-table"
+>
+  <table
+    className="gi-data-table__table"
+  >
+    <thead>
+      <th
+        className="gi-data-table__category-column"
+      >
+        Category
+      </th>
+      <th
+        className="gi-data-table__food-column"
+      >
+        Food
+      </th>
+      <th
+        className="gi-data-table__gi-column"
+      >
+        GI Value
+      </th>
+    </thead>
+    <tbody>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Beans
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Baked Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          50
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Beans
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Black Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          30
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Beans
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Butter Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          36
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Beans
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Kidney Bean
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          35
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Beans
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Lima Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          46
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Beans
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Navy Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          31
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Beans
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Pinto Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          39
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Beans
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Soy Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          15
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Breads
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Chapatti
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          52
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Breads
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Coarse Barley Bread
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          34
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Breads
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Corn Tortilla
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          55
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Breads
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Ezekiel Bread
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          35
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Breads
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Sourdough Rye
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          48
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Breads
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Sourdough Wheat
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          54
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Breads
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Wheat Tortilla
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          30
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Cereals
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          All-Bran
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          45
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Cereals
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Porridge
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          52
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Cereals
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Special K
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          53
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Dairy
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Cheese
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          0
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Dairy
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Skimmed Milk
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          33
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Dairy
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Soy Milk
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          38
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Dairy
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Whole Milk
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          33
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Fruits
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Apple
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          39
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Fruits
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Apricot
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          54
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Fruits
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Blueberries
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          50
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Fruits
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Cherries
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          22
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Fruits
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Coconut
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          45
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Fruits
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Dried Apricots
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          32
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Fruits
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Dried Dates
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          42
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Fruits
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Grapefruit
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          26
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Fruits
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Grapes
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          55
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Fruits
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Nectarines
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          43
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Fruits
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Oranges
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          45
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Fruits
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Peaches
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          42
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Fruits
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Pears
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          37
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Fruits
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Plums
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          24
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Fruits
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Prunes
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          29
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Fruits
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Strawberries
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          36
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Snacks & Sweets
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Banana Cake
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          51
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Snacks & Sweets
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Cashew Nuts
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          26
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Snacks & Sweets
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Chocolate cake
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          54
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Snacks & Sweets
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Crisps / Potato Chips
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          54
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Snacks & Sweets
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Custard
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          35
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Snacks & Sweets
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Jam
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          50
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Snacks & Sweets
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Milk Chocolate
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          48
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Snacks & Sweets
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Muesli Bar
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          49
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Snacks & Sweets
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Nutella
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          33
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Snacks & Sweets
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Peanuts
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          13
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Snacks & Sweets
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Snickers Bar
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          50
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Snacks & Sweets
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Sponge Cake
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          46
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Snacks & Sweets
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Walnuts
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          15
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Snacks & Sweets
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Yoghurt / Yogurt
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          34
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Angel Hair
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          45
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Buckwheat
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          51
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Bulgur
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          48
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Bulgur Wheat
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          47
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Chickpeas
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          29
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Eggs
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          0
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Fettuccini
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          32
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Fettucini
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          32
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Fish
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          0
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Hummus
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          6
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Macaroni
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          52
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Meat
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          0
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Meat Ravioli
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          39
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Mung Noodles
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          39
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Noodles
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          51
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Pasta
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          53
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Poultry
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          0
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Quinoa
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          52
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Rice Noodles
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          40
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Soba Noodles
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          35
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Spaghetti
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          47
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Tortellini
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          50
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Udon Noodles
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          55
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Vegetable Soup
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          48
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Vermicelli
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          35
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Wheat Pasta
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          54
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Wholemeal / Whole Grain Pasta
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          45
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Staples
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Wholemeal / Whole Grain Spaghetti
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          42
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Vegetables
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Bean Sprouts
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          25
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Vegetables
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Black Eyed Peas
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          42
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Vegetables
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Boiled Carrots
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          47
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Vegetables
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Broccoli
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          10
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Vegetables
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Cabbage
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          10
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Vegetables
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Cauliflower
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          15
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Vegetables
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Chillies
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          10
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Vegetables
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Eggplant/Aubergine
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          15
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Vegetables
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Green Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          15
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Vegetables
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Green Lentils
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          30
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Vegetables
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Lentils
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          30
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Vegetables
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Lettuce
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          10
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Vegetables
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Mushrooms
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          10
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Vegetables
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Onions
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          10
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Vegetables
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Peas
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          48
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Vegetables
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Raw Carrots
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          20
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Vegetables
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Red Lentils
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          24
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Vegetables
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Red Peppers
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          10
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Vegetables
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Runner Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          31
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Vegetables
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Split Peas
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          29
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Vegetables
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Sweet Corn
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          50
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Vegetables
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Tomatoes
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          27
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Vegetables
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Yam
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          49
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`table data filtered by gi value "Low Gi" and category "Beans" 1`] = `
+<div
+  className="gi-data-table"
+>
+  <table
+    className="gi-data-table__table"
+  >
+    <thead>
+      <th
+        className="gi-data-table__food-column"
+      >
+        Food
+      </th>
+      <th
+        className="gi-data-table__gi-column"
+      >
+        GI Value
+      </th>
+    </thead>
+    <tbody>
+      <tr>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Baked Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          50
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Black Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          30
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Butter Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          36
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Kidney Bean
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          35
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Lima Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          46
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Navy Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          31
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Pinto Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          39
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Soy Beans
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          15
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`table data filtered by text 1`] = `
+<div
+  className="gi-data-table"
+>
+  <table
+    className="gi-data-table__table"
+  >
+    <thead>
+      <th
+        className="gi-data-table__category-column"
+      >
+        Category
+      </th>
+      <th
+        className="gi-data-table__food-column"
+      >
+        Food
+      </th>
+      <th
+        className="gi-data-table__gi-column"
+      >
+        GI Value
+      </th>
+    </thead>
+    <tbody>
+      <tr>
+        <td
+          className="gi-data-table__category-column"
+        >
+          Beans
+        </td>
+        <td
+          className="gi-data-table__food-column"
+        >
+          Kidney Bean
+        </td>
+        <td
+          className="gi-data-table__gi-column gi-data-table__gi-column--low-gi"
+        >
+          35
         </td>
       </tr>
     </tbody>
