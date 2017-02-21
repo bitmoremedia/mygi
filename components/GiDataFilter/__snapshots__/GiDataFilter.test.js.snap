@@ -1,0 +1,417 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`category "Beans" filter shows relevant button as active 1`] = `
+<div
+  className="gi-data-filter"
+>
+  <h2>
+    Category
+  </h2>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    All
+  </a>
+  <a
+    className="gi-data-filter__filter-item button gi-data-filter__filter-item--active"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Beans
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Breads
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Cereals
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Dairy
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Fruits
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Snacks & Sweets
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Staples
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Vegetables
+  </a>
+  <h2>
+    GI Type
+  </h2>
+  <a
+    className="gi-data-filter__filter-item button gi-data-filter__filter-item--active"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    All
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Low
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Medium
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    High
+  </a>
+</div>
+`;
+
+exports[`combined filters "Beans" and "Low GI" show the relevant buttons as active 1`] = `
+<div
+  className="gi-data-filter"
+>
+  <h2>
+    Category
+  </h2>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    All
+  </a>
+  <a
+    className="gi-data-filter__filter-item button gi-data-filter__filter-item--active"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Beans
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Breads
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Cereals
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Dairy
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Fruits
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Snacks & Sweets
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Staples
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Vegetables
+  </a>
+  <h2>
+    GI Type
+  </h2>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    All
+  </a>
+  <a
+    className="gi-data-filter__filter-item button gi-data-filter__filter-item--active"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Low
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Medium
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    High
+  </a>
+</div>
+`;
+
+exports[`default filters display with the two "All" buttons as active 1`] = `
+<div
+  className="gi-data-filter"
+>
+  <h2>
+    Category
+  </h2>
+  <a
+    className="gi-data-filter__filter-item button gi-data-filter__filter-item--active"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    All
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Beans
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Breads
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Cereals
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Dairy
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Fruits
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Snacks & Sweets
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Staples
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Vegetables
+  </a>
+  <h2>
+    GI Type
+  </h2>
+  <a
+    className="gi-data-filter__filter-item button gi-data-filter__filter-item--active"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    All
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Low
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Medium
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    High
+  </a>
+</div>
+`;
+
+exports[`gi type "Low GI" filter shows relevant button as active 1`] = `
+<div
+  className="gi-data-filter"
+>
+  <h2>
+    Category
+  </h2>
+  <a
+    className="gi-data-filter__filter-item button gi-data-filter__filter-item--active"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    All
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Beans
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Breads
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Cereals
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Dairy
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Fruits
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Snacks & Sweets
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Staples
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Vegetables
+  </a>
+  <h2>
+    GI Type
+  </h2>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    All
+  </a>
+  <a
+    className="gi-data-filter__filter-item button gi-data-filter__filter-item--active"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Low
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Medium
+  </a>
+  <a
+    className="gi-data-filter__filter-item button button-outline"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    High
+  </a>
+</div>
+`;

@@ -57,14 +57,14 @@ export const FilterLink = ({ categoryPath, giType, categoryFilter, giTypeFilter 
 
 FilterLink.propTypes = {
   categoryPath: PropTypes.string,
-  giType: PropTypes.oneOf(['all', 'low-gi', 'medium-gi', 'high-gi']),
+  giType: PropTypes.oneOf(['', 'all', 'low-gi', 'medium-gi', 'high-gi']),
   categoryFilter: PropTypes.oneOf(['', 'Beans', 'Breads', 'Cereals', 'Dairy', 'Fruits', 'Snacks & Sweets', 'Staples', 'Vegetables']),
   giTypeFilter: PropTypes.oneOf(['', 'all', 'low-gi', 'medium-gi', 'high-gi']),
 }
 
 FilterLink.defaultProps = {
   categoryPath: '',
-  giType: 'all',
+  giType: '',
   categoryFilter: '',
   giTypeFilter: '',
 }

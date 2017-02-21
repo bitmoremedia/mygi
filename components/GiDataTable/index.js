@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import './style';
+import './style.scss';
 import data from '../../data/gi-data.json';
 import { sortArrayByMultipleProperties, isOfGiType, isNumber, giType } from '../../utils';
 
