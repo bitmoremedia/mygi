@@ -1,7 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import './style';
+import './grr.css';
+
+//import './style.scss';
 
 const SiteContent = ({children, page, className}) => {
 
