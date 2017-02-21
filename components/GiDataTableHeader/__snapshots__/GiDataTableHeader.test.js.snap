@@ -11,3 +11,39 @@ exports[`basic header with no props 1`] = `
   </h2>
 </div>
 `;
+
+exports[`header with categoryFilter and giTypeFilter props 1`] = `
+<div
+  className="gi-data-table-header"
+>
+  <h2
+    className="gi-data-table-header__title"
+  >
+    Low GI Beans
+  </h2>
+</div>
+`;
+
+exports[`header with categoryFilter prop only 1`] = `
+<div
+  className="gi-data-table-header"
+>
+  <h2
+    className="gi-data-table-header__title"
+  >
+    Glycemic Index of Beans
+  </h2>
+</div>
+`;
+
+exports[`header with giTypeFilter prop only 1`] = `
+<div
+  className="gi-data-table-header"
+>
+  <h2
+    className="gi-data-table-header__title"
+  >
+    Low GI Foods
+  </h2>
+</div>
+`;

@@ -25,7 +25,7 @@ const GiDataTableHeader = ({ categoryFilter, giTypeFilter }) => {
 
 GiDataTableHeader.propTypes = {
   categoryFilter: PropTypes.string,
-  giTypeFilter: PropTypes.string,
+  giTypeFilter: PropTypes.oneOf(['', 'all', 'low-gi', 'medium-gi', 'high-gi']),
 }
 
 GiDataTableHeader.defaultProps = {
