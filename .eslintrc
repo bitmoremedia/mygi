@@ -1,10 +1,12 @@
 {
   "extends": "airbnb",
   "env" : {
-    "jest" : true
+    "jest" : true,
   },
   "rules": {
       "semi": 0,
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+      "one-var-declaration-per-line": 0,
+      "one-var": 0,
   }
 }

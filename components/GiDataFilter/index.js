@@ -1,65 +1,82 @@
-import React from 'react';
-import classNames from 'classnames';
+import React, { PropTypes } from 'react'
+import classNames from 'classnames'
 
-import './style';
-import PageLink from '../common/PageLink';
-import { categoryPathMap, pathCategoryMap, categoryPathList } from '../../utils';
+import { categoryPathMap, pathCategoryMap, categoryPathList } from '../../utils'
 
-const FilterLink = ({categoryPath, giType, categoryFilter, giTypeFilter}) => {
+import PageLink from '../common/PageLink'
 
-  let pathTo, linkTitle, isActive = false;
-  const currentCategory = categoryFilter;
-  const currentCategoryPath = categoryPathMap()[categoryFilter];
-  const currentGiTypeFilter = giTypeFilter;
-  const currentGiTypePath = (currentGiTypeFilter) ? `${giTypeFilter}/` : ``;
+import './style.scss'
+
+export const FilterLink = ({ categoryPath, giType, categoryFilter, giTypeFilter }) => {
+  let pathTo, linkTitle, isActive = false
+  const currentCategoryPath = categoryPathMap()[categoryFilter]
+  const currentGiTypeFilter = giTypeFilter
+  const currentGiTypePath = (currentGiTypeFilter) ? `${giTypeFilter}/` : ''
 
   // category filter links
   if (categoryPath) {
-    pathTo = (categoryPath === 'all') ? `/glycemic-index/${currentGiTypePath}` : `/glycemic-index/${currentGiTypePath}${categoryPath}`;
-    linkTitle = (categoryPath === 'all') ? 'All' : pathCategoryMap()[categoryPath];
-    if ( currentCategoryPath === categoryPath || ( !currentCategoryPath && categoryPath === 'all' ) ){
-      isActive = true;
+    pathTo = (categoryPath === 'all') ? `/glycemic-index/${currentGiTypePath}` : `/glycemic-index/${currentGiTypePath}${categoryPath}`
+    linkTitle = (categoryPath === 'all') ? 'All' : pathCategoryMap()[categoryPath]
+    if (currentCategoryPath === categoryPath || (!currentCategoryPath && categoryPath === 'all')) {
+      isActive = true
     }
   }
 
   // gi type filter links
   if (giType) {
-    isActive = (currentGiTypeFilter === giType);
-    //debugger;
-    pathTo = (currentCategoryPath) ? `/glycemic-index/${giType}/${currentCategoryPath}` : `/glycemic-index/${giType}`;
+    isActive = (currentGiTypeFilter === giType)
+    pathTo = (currentCategoryPath) ? `/glycemic-index/${giType}/${currentCategoryPath}` : `/glycemic-index/${giType}`
     switch (giType) {
       case 'all':
-        linkTitle = 'All';
-        pathTo = (currentCategoryPath) ? `/glycemic-index/${currentCategoryPath}` : `/glycemic-index`;
-        isActive = ( isActive || ! currentGiTypeFilter);
-        break;
+        linkTitle = 'All'
+        pathTo = (currentCategoryPath) ? `/glycemic-index/${currentCategoryPath}` : '/glycemic-index'
+        isActive = (isActive || !currentGiTypeFilter)
+        break
       case 'low-gi':
         linkTitle = 'Low'
-        break;
+        break
       case 'medium-gi':
         linkTitle = 'Medium'
-        break;
+        break
       case 'high-gi':
         linkTitle = 'High'
-        break;
+        break
       default:
         linkTitle = 'All'
     }
   }
 
-  const linkClass = classNames('gi-data-filter__filter-item button', { 'button-outline' : !isActive, 'gi-data-filter__filter-item--active' : isActive });
+  const linkClass = classNames('gi-data-filter__filter-item button', { 'button-outline': !isActive, 'gi-data-filter__filter-item--active': isActive })
 
   return (
     <PageLink className={linkClass} to={pathTo}>
       {linkTitle}
     </PageLink>
-  );
-};
+  )
+}
 
+FilterLink.propTypes = {
+  categoryPath: PropTypes.string,
+  giType: PropTypes.oneOf(['all', 'low-gi', 'medium-gi', 'high-gi']),
+  categoryFilter: PropTypes.oneOf(['', 'Beans', 'Breads', 'Cereals', 'Dairy', 'Fruits', 'Snacks & Sweets', 'Staples', 'Vegetables']),
+  giTypeFilter: PropTypes.oneOf(['', 'all', 'low-gi', 'medium-gi', 'high-gi']),
+}
 
-const GiDataFilter = ({categoryFilter, giTypeFilter}) => {
+FilterLink.defaultProps = {
+  categoryPath: '',
+  giType: 'all',
+  categoryFilter: '',
+  giTypeFilter: '',
+}
 
-  const categoryLinks = categoryPathList().map((category) => <FilterLink categoryPath={category} categoryFilter={categoryFilter} giTypeFilter={giTypeFilter} />);
+const GiDataFilter = ({ categoryFilter, giTypeFilter }) => {
+  const categoryLinks = categoryPathList().map(category =>
+    <FilterLink
+      key={category}
+      categoryPath={category}
+      categoryFilter={categoryFilter}
+      giTypeFilter={giTypeFilter}
+    />)
 
   return (
     <div className="gi-data-filter">
@@ -72,7 +89,17 @@ const GiDataFilter = ({categoryFilter, giTypeFilter}) => {
       <FilterLink giType="medium-gi" categoryFilter={categoryFilter} giTypeFilter={giTypeFilter} />
       <FilterLink giType="high-gi" categoryFilter={categoryFilter} giTypeFilter={giTypeFilter} />
     </div>
-  );
-};
+  )
+}
 
-export default GiDataFilter;
+GiDataFilter.propTypes = {
+  categoryFilter: PropTypes.oneOf(['', 'Beans', 'Breads', 'Cereals', 'Dairy', 'Fruits', 'Snacks & Sweets', 'Staples', 'Vegetables']),
+  giTypeFilter: PropTypes.oneOf(['all', 'low-gi', 'medium-gi', 'high-gi']),
+}
+
+GiDataFilter.defaultProps = {
+  categoryFilter: '',
+  giTypeFilter: 'all',
+}
+
+export default GiDataFilter
