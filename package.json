@@ -4,10 +4,17 @@
   "description": "MyGi website (generated with Gatsby)",
   "main": "n/a",
   "jest": {
-    "rootDir": "components",
+    "roots": [
+      "<rootDir>/components/"
+    ],
     "collectCoverageFrom": [
       "**/*.{js,jsx}"
-    ]
+    ],
+    "transform": {
+      "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.css$": "<rootDir>/utils/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/utils/jest/fileTransform.js"
+    }
   },
   "scripts": {
     "generate": "node ./scripts/generatePages",
@@ -40,6 +47,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.22.2",
+    "babel-jest": "^19.0.0",
     "body-parser": "^1.16.1",
     "cheerio": "^0.22.0",
     "cors": "^2.8.1",
@@ -51,7 +59,7 @@
     "eslint-plugin-react": "^6.10.0",
     "fs-extra": "^2.0.0",
     "gh-pages": "^0.12.0",
-    "jest": "^18.1.0",
+    "jest": "^19.0.0",
     "morgan": "^1.8.1",
     "react-addons-test-utils": "^15.4.2",
     "request": "^2.79.0",
