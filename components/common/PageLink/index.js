@@ -1,18 +1,15 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
-// import { prefixLink } from 'gatsby-helpers';
+//import { prefixLink } from '../../../node_modules/gatsby/dist/isomorphic/gatsby-helpers';
 
 let prefixLink = (linkTo) => {
     return linkTo
 }
-
-/*
 try {
-  let prefixLink = require('gatsby-helpers/prefixLink')
+  prefixLink = require('gatsby-helpers/prefixLink')
 } catch (e) {
   console.log('*** CATCH THE MONKEY ***');
 }
-*/
 
 const PageLink = ({ to, children, className }) => {
   // add a trailing slash if there is not one (to support SPA)
