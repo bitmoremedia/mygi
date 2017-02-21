@@ -1,8 +1,21 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { Link } from 'react-router'
+import renderer from 'react-test-renderer'
 
 import PageLink from './index'
+
+test('basic snapshot render', () => {
+  const component = renderer.create(
+    <PageLink
+      to="somewhere"
+    >
+      A page link
+    </PageLink>,
+  )
+  const tree = component.toJSON()
+  expect(tree).toMatchSnapshot()
+})
 
 test('renders a react router Link component', () => {
   const wrapper = shallow(

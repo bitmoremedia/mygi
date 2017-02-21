@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`basic snapshot render 1`] = `
+<div
+  className="site-content"
+>
+  <div
+    className="site-content__inner"
+  >
+    <div
+      className="some-class"
+    >
+      some content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`wraps content in wrapper class if provided 1`] = `
+<div
+  className="site-content some-wrapper-class"
+>
+  <div
+    className="site-content__inner"
+  >
+    <div
+      className="some-class"
+    >
+      some content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`wraps the child content as a page if specified 1`] = `
+<div
+  className="site-content"
+>
+  <div
+    className="site-content__page"
+  >
+    <div
+      className="site-content__inner"
+    >
+      <div
+        className="some-class"
+      >
+        some content
+      </div>
+    </div>
+  </div>
+</div>
+`;

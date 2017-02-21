@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`basic snapshot render 1`] = `
+<a
+  className=""
+  onClick={[Function]}
+  style={Object {}}
+>
+  A page link
+</a>
+`;
