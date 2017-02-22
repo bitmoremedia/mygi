@@ -25,7 +25,7 @@
     "extract": "node ./dataTool/extraction",
     "reset-to-average": "node ./dataTool/extraction/resetToAverage",
     "publish-data": "node ./dataTool/extraction/publishData",
-    "dataTool": "babel-node ./dataTool/server",
+    "data-tool": "babel-node ./dataTool/server",
     "clean": "node ./scripts/cleanPublicDirectory",
     "build": "npm run clean && npm run generate && gatsby build --prefix-links",
     "develop": "gatsby develop",
