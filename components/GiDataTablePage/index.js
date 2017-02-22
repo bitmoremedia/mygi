@@ -36,9 +36,9 @@ class GiDataTablePage extends Component {
           meta={meta}
         />
         <GiDataTableHeader categoryFilter={categoryFilter} giTypeFilter={giTypeFilter} />
-        <GiDataFilter categoryFilter={categoryFilter} giTypeFilter={giTypeFilter}/>
+        <GiDataFilter categoryFilter={categoryFilter} giTypeFilter={giTypeFilter} />
         <div className="js-only">
-          <GiDataTextFilter textFilter={textFilter} setTextFilter={setTextFilter}/>
+          <GiDataTextFilter textFilter={textFilter} setTextFilter={setTextFilter} />
         </div>
         <GiDataTable categoryFilter={categoryFilter} giTypeFilter={giTypeFilter} textFilter={textFilter}/>
       </div>
