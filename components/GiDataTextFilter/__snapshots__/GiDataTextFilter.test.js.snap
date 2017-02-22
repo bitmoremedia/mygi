@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component output as expected 1`] = `
+<div
+  className="gi-data-text-filter"
+>
+  <form
+    autoComplete="off"
+    className="gi-data-text-filter__form"
+    onSubmit={[Function]}
+  >
+    <input
+      autoComplete="off"
+      className="gi-data-text-filter__input"
+      name="text-filter"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      placeholder="Filter"
+      type="text"
+      value=""
+    />
+  </form>
+  
+</div>
+`;
