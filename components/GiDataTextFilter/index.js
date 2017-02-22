@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import classNames from 'classnames';
 
-import './style';
+import './style.scss';
 
 class GiDataTextFilter extends Component {
 

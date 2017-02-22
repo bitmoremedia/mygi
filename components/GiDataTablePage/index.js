@@ -1,46 +1,59 @@
-import React, { Component } from 'react';
-import Helmet from 'react-helmet';
+import React, { Component, PropTypes } from 'react'
+import Helmet from 'react-helmet'
 
-import GiDataFilter from '../GiDataFilter';
-import GiDataTextFilter from '../GiDataTextFilter';
-import GiDataTableHeader from '../GiDataTableHeader';
-import GiDataTable from '../GiDataTable';
-import { categoryFromPath, giTypeFilterFromPath } from '../../utils';
+import { categoryFromPath, giTypeFilterFromPath } from '../../utils'
+
+import GiDataFilter from '../GiDataFilter'
+import GiDataTextFilter from '../GiDataTextFilter'
+import GiDataTableHeader from '../GiDataTableHeader'
+import GiDataTable from '../GiDataTable'
+
 
 class GiDataTablePage extends Component {
 
   constructor(props, context) {
-    super(props, context);
+    super(props, context)
     this.state = {
       textFilter: '',
-    };
+    }
   }
 
   setTextFilter = (newValue) => {
     this.setState({
       textFilter: newValue
-    });
+    })
   }
 
   render() {
 
-    const categoryFilter = categoryFromPath(this.props.activePath);
-    const giTypeFilter = giTypeFilterFromPath(this.props.activePath);
+    const { setTextFilter } = this
+    const { activePath, title, meta } = this.props
+    const { textFilter } = this.state
+    const categoryFilter = categoryFromPath(activePath)
+    const giTypeFilter = giTypeFilterFromPath(activePath)
     return (
       <div>
         <Helmet
-          title={this.props.title}
-          meta={this.props.meta}
+          title={title}
+          meta={meta}
         />
         <GiDataTableHeader categoryFilter={categoryFilter} giTypeFilter={giTypeFilter} />
         <GiDataFilter categoryFilter={categoryFilter} giTypeFilter={giTypeFilter}/>
         <div className="js-only">
-          <GiDataTextFilter textFilter={this.state.textFilter} setTextFilter={this.setTextFilter}/>
+          <GiDataTextFilter textFilter={textFilter} setTextFilter={setTextFilter}/>
         </div>
-        <GiDataTable categoryFilter={categoryFilter} giTypeFilter={giTypeFilter} textFilter={this.state.textFilter}/>
+        <GiDataTable categoryFilter={categoryFilter} giTypeFilter={giTypeFilter} textFilter={textFilter}/>
       </div>
-    );
+    )
   }
 }
 
-export default GiDataTablePage;
+GiDataTablePage.propTypes = {
+  activePath: PropTypes.string
+}
+
+GiDataTablePage.defaultProps = {
+  activePath: ''
+}
+
+export default GiDataTablePage
