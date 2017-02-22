@@ -5,6 +5,7 @@ MyGi is the companion website for the MyGi health App (coming soon to iOS and An
 Tech stack
 
 - [Gatsby](https://github.com/gatsbyjs/gatsby) - React based static site generator
+- [Preact](https://github.com/developit/preact) - 3KB React Alternative
 - [SCSS](http://sass-lang.com/) - site styles
 - [Github](https://github.com) - hosting and version control
 - [Jest](https://facebook.github.io/jest/) - unit tests (assertions and snapshot) and coverage reports
@@ -21,13 +22,14 @@ Tech stack
 - [Story Book](https://getstorybook.io/) - for sandboxed development and testing of components (game changer)
 - [Jest](https://facebook.github.io/jest/) - unit tests (assertions and snapshot) and coverage reports
 - [Enzyme](https://github.com/airbnb/enzyme) - more unit tests
+- [NodeJS](https://nodejs.org/en/) & [Express](http://expressjs.com/) - gloriously simple JSON file based local persistence API
 
 ## Main Commands
 
 | Scripts     | Description           |
 | ------------- | --------------------- |
-| develop       | this will kick off a local gatsby development [environment](http://0.0.0.0:8000) |
-| data-tool     | this will start the dataTool in a local [environment](http://0.0.0.0:9000) which can be used to update the core GI Data values  |
+| develop       | this will kick off a local gatsby development [environment](http://localhost:8000) |
+| data-tool     | this will start the dataTool in a local [environment](http://localhost:9000) which can be used to update the core GI Data values  |
 | publish-data | this will publish any changes made in the data tool across to the main site data directory |
 | deploy        | this will run 'build' processes and then publish the content of the 'public' directory to the live server via github pages      |
 
