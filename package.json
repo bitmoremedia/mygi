@@ -11,6 +11,9 @@
     "collectCoverageFrom": [
       "**/*.{js,jsx}"
     ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/utils/jest/", "<rootDir>/node_modules/"
+    ],
     "transform": {
       "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.css$": "<rootDir>/utils/jest/cssTransform.js",
