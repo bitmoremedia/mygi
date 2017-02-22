@@ -5,7 +5,8 @@
   "main": "n/a",
   "jest": {
     "roots": [
-      "<rootDir>/components/"
+      "<rootDir>/components/",
+      "<rootDir>/utils/"
     ],
     "collectCoverageFrom": [
       "**/*.{js,jsx}"
