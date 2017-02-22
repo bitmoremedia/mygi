@@ -3,9 +3,18 @@ import { shallow } from 'enzyme'
 
 import GiDataTablePage from './index'
 
-test('renders a react router Link component', () => {
+test('page renders without error', () => {
   const wrapper = shallow(
     <GiDataTablePage />,
   )
-  expect(true).toBe(true)
+  expect(wrapper.exists()).toBe(true)
+})
+
+test('setTextFilter function updates the textFilter state', () => {
+  const wrapper = shallow(
+    <GiDataTablePage />,
+  )
+  expect(wrapper.instance().state.textFilter).toEqual('')
+  wrapper.instance().setTextFilter('Kidney')
+  expect(wrapper.instance().state.textFilter).toEqual('Kidney')
 })

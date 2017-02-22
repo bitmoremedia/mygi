@@ -35,23 +35,44 @@ class GiDataTablePage extends Component {
           title={title}
           meta={meta}
         />
-        <GiDataTableHeader categoryFilter={categoryFilter} giTypeFilter={giTypeFilter} />
-        <GiDataFilter categoryFilter={categoryFilter} giTypeFilter={giTypeFilter} />
+        <GiDataTableHeader
+          categoryFilter={categoryFilter}
+          giTypeFilter={giTypeFilter}
+        />
+        <GiDataFilter
+          categoryFilter={categoryFilter}
+          giTypeFilter={giTypeFilter}
+        />
         <div className="js-only">
-          <GiDataTextFilter textFilter={textFilter} setTextFilter={setTextFilter} />
+          <GiDataTextFilter
+            textFilter={textFilter}
+            setTextFilter={setTextFilter}
+          />
         </div>
-        <GiDataTable categoryFilter={categoryFilter} giTypeFilter={giTypeFilter} textFilter={textFilter}/>
+        <GiDataTable
+          categoryFilter={categoryFilter}
+          giTypeFilter={giTypeFilter}
+          textFilter={textFilter}
+        />
       </div>
     )
   }
 }
 
 GiDataTablePage.propTypes = {
-  activePath: PropTypes.string
+  activePath: PropTypes.string,
+  title: PropTypes.string,
+  meta: PropTypes.arrayOf(PropTypes.shape({
+    content: PropTypes.string,
+    name: PropTypes.string,
+    property: PropTypes.string,
+  })),
 }
 
 GiDataTablePage.defaultProps = {
-  activePath: ''
+  activePath: '',
+  title: '',
+  meta: [],
 }
 
 export default GiDataTablePage
