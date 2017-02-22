@@ -94,12 +94,12 @@ const GiDataFilter = ({ categoryFilter, giTypeFilter }) => {
 
 GiDataFilter.propTypes = {
   categoryFilter: PropTypes.oneOf(['', 'Beans', 'Breads', 'Cereals', 'Dairy', 'Fruits', 'Snacks & Sweets', 'Staples', 'Vegetables']),
-  giTypeFilter: PropTypes.oneOf(['all', 'low-gi', 'medium-gi', 'high-gi']),
+  giTypeFilter: PropTypes.oneOf(['', 'all', 'low-gi', 'medium-gi', 'high-gi']),
 }
 
 GiDataFilter.defaultProps = {
   categoryFilter: '',
-  giTypeFilter: 'all',
+  giTypeFilter: '',
 }
 
 export default GiDataFilter
