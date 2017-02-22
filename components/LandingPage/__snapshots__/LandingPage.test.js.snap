@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component output as expected 1`] = `
+<div
+  className="site-landing-page"
+>
+  <h1
+    className="site-landing-page__heading"
+  >
+    Welcome to MyGi
+  </h1>
+  <p>
+    The companion site for the 
+    <b>
+      MyGi
+    </b>
+     health App coming soon to iOS and Android
+  </p>
+  <div>
+    <img
+      alt="Mobile App Screen Shot 1"
+      className="site-landing-page__app-screen-grab-img"
+      src="app-food-list.png"
+    />
+    <img
+      alt="Mobile App Screen Shot 2"
+      className="site-landing-page__app-screen-grab-img"
+      src="app-food-category.png"
+    />
+    <img
+      alt="Mobile App Screen Shot 3"
+      className="site-landing-page__app-screen-grab-img"
+      src="app-favourites.png"
+    />
+  </div>
+  <div
+    className="site-landing-page__gi-link"
+  >
+    <a
+      className=""
+      onClick={[Function]}
+      style={Object {}}
+    >
+      <button>
+        Glycemic Index Food List
+      </button>
+    </a>
+  </div>
+</div>
+`;
