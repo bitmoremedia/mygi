@@ -1,0 +1,209 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`about page active 1`] = `
+<div
+  className="site-header"
+>
+  <div
+    className="site-content site-content__site-header"
+  >
+    <div
+      className="site-content__inner"
+    >
+      <a
+        className="site-header__home-link"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        <img
+          alt="MyGi Logo"
+          className="site-header__logo-image"
+          src="mygi-app-icon.png"
+        />
+      </a>
+      <div
+        className="site-header__page-links"
+      >
+        <a
+          className="site-header__page-link-container"
+          onClick={[Function]}
+          style={Object {}}
+        >
+          <div
+            className="site-header__page-link"
+          >
+            Gylcemic Index
+          </div>
+        </a>
+        <a
+          className="site-header__page-link-container site-header__page-link-container--active"
+          onClick={[Function]}
+          style={Object {}}
+        >
+          <div
+            className="site-header__page-link"
+          >
+            About
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`component renders as expected 1`] = `
+<div
+  className="site-header"
+>
+  <div
+    className="site-content site-content__site-header"
+  >
+    <div
+      className="site-content__inner"
+    >
+      <a
+        className="site-header__home-link"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        <img
+          alt="MyGi Logo"
+          className="site-header__logo-image"
+          src="mygi-app-icon.png"
+        />
+      </a>
+      <div
+        className="site-header__page-links"
+      >
+        <a
+          className="site-header__page-link-container"
+          onClick={[Function]}
+          style={Object {}}
+        >
+          <div
+            className="site-header__page-link"
+          >
+            Gylcemic Index
+          </div>
+        </a>
+        <a
+          className="site-header__page-link-container"
+          onClick={[Function]}
+          style={Object {}}
+        >
+          <div
+            className="site-header__page-link"
+          >
+            About
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`glycemic index page active 1`] = `
+<div
+  className="site-header"
+>
+  <div
+    className="site-content site-content__site-header"
+  >
+    <div
+      className="site-content__inner"
+    >
+      <a
+        className="site-header__home-link"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        <img
+          alt="MyGi Logo"
+          className="site-header__logo-image"
+          src="mygi-app-icon.png"
+        />
+      </a>
+      <div
+        className="site-header__page-links"
+      >
+        <a
+          className="site-header__page-link-container site-header__page-link-container--active"
+          onClick={[Function]}
+          style={Object {}}
+        >
+          <div
+            className="site-header__page-link"
+          >
+            Gylcemic Index
+          </div>
+        </a>
+        <a
+          className="site-header__page-link-container"
+          onClick={[Function]}
+          style={Object {}}
+        >
+          <div
+            className="site-header__page-link"
+          >
+            About
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`glycemic index sub page active 1`] = `
+<div
+  className="site-header"
+>
+  <div
+    className="site-content site-content__site-header"
+  >
+    <div
+      className="site-content__inner"
+    >
+      <a
+        className="site-header__home-link"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        <img
+          alt="MyGi Logo"
+          className="site-header__logo-image"
+          src="mygi-app-icon.png"
+        />
+      </a>
+      <div
+        className="site-header__page-links"
+      >
+        <a
+          className="site-header__page-link-container site-header__page-link-container--active"
+          onClick={[Function]}
+          style={Object {}}
+        >
+          <div
+            className="site-header__page-link"
+          >
+            Gylcemic Index
+          </div>
+        </a>
+        <a
+          className="site-header__page-link-container"
+          onClick={[Function]}
+          style={Object {}}
+        >
+          <div
+            className="site-header__page-link"
+          >
+            About
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-import GithubIcon from '../icons/github'
+import GitHubIcon from '../icons/GitHubIcon'
 import SiteContent from '../common/SiteContent'
 import PageLink from '../common/PageLink'
 
@@ -39,7 +39,7 @@ const SiteFooter = ({ activePath }) => {
         </ul>
         <div className="site-footer__created-by">
           Created by <a className="site-footer__bmm-link" href="https://www.bitmoremedia.com" target="_blank" rel="noreferrer noopener">Bit More Media</a> and hosted on
-          <a className="site-footer__github-link" href="https://github.com/bitmoremedia/mygi" target="_blank" rel="noreferrer noopener"><GithubIcon /></a>
+          <a className="site-footer__github-link" href="https://github.com/bitmoremedia/mygi" target="_blank" rel="noreferrer noopener"><GitHubIcon /></a>
         </div>
       </SiteContent>
     </div>

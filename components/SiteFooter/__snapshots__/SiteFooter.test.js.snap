@@ -62,11 +62,11 @@ exports[`about page active 1`] = `
         >
           <svg
             aria-labelledby="Github logo"
-            clip-rule="evenodd"
-            fill-rule="evenodd"
+            clipRule="evenodd"
+            fillRule="evenodd"
             height={undefined}
-            stroke-linejoin="round"
-            stroke-miterlimit="1.414"
+            strokeLinejoin="round"
+            strokeMiterlimit="1.414"
             viewBox="0 0 16 16"
             width={20}
             xmlns="http://www.w3.org/2000/svg"
@@ -150,11 +150,11 @@ exports[`component renders as expected 1`] = `
         >
           <svg
             aria-labelledby="Github logo"
-            clip-rule="evenodd"
-            fill-rule="evenodd"
+            clipRule="evenodd"
+            fillRule="evenodd"
             height={undefined}
-            stroke-linejoin="round"
-            stroke-miterlimit="1.414"
+            strokeLinejoin="round"
+            strokeMiterlimit="1.414"
             viewBox="0 0 16 16"
             width={20}
             xmlns="http://www.w3.org/2000/svg"
@@ -238,11 +238,11 @@ exports[`glycemic index page active 1`] = `
         >
           <svg
             aria-labelledby="Github logo"
-            clip-rule="evenodd"
-            fill-rule="evenodd"
+            clipRule="evenodd"
+            fillRule="evenodd"
             height={undefined}
-            stroke-linejoin="round"
-            stroke-miterlimit="1.414"
+            strokeLinejoin="round"
+            strokeMiterlimit="1.414"
             viewBox="0 0 16 16"
             width={20}
             xmlns="http://www.w3.org/2000/svg"
@@ -326,11 +326,11 @@ exports[`glycemic index sub page active 1`] = `
         >
           <svg
             aria-labelledby="Github logo"
-            clip-rule="evenodd"
-            fill-rule="evenodd"
+            clipRule="evenodd"
+            fillRule="evenodd"
             height={undefined}
-            stroke-linejoin="round"
-            stroke-miterlimit="1.414"
+            strokeLinejoin="round"
+            strokeMiterlimit="1.414"
             viewBox="0 0 16 16"
             width={20}
             xmlns="http://www.w3.org/2000/svg"
