@@ -1,11 +1,11 @@
 import React from 'react'
 import { storiesOf, action } from '@kadira/storybook'
 
-import globalStyles from '../global-styles';
+import globalStyles from '../src/global-styles';
 globalStyles();
 
-import Button from '../components/common/Button'
-import Modal from '../components/common/Modal'
+import Button from '../src/components/common/Button'
+import Modal from '../src/components/common/Modal'
 
 storiesOf('common.Button', module)
   .add('default display', () => (

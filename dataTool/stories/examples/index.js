@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@kadira/storybook'
 
-import globalStyles from '../../global-styles';
+import globalStyles from '../../src/global-styles';
 globalStyles();
 
 import ButtonToggle from './ButtonToggle'

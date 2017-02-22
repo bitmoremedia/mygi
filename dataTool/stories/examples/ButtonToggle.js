@@ -1,16 +1,14 @@
 import React, { Component } from 'react'
 
-import Button from '../../components/common/Button'
-import Modal from '../../components/common/Modal'
+import Button from '../../src/components/common/Button'
 
-class ButtonToggleModal extends Component {
+class ButtonToggle extends Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
       show: false,
     }
     this.toggleShow = this.toggleShow.bind(this)
-    this.onClose = this.onClose.bind(this)
   }
 
   toggleShow() {
@@ -19,22 +17,16 @@ class ButtonToggleModal extends Component {
     })
   }
 
-  onClose() {
-    this.setState({
-      show: false
-    })
-  }
-
   render() {
-    const { toggleShow, onClose } = this
+    const { toggleShow } = this
     const { show } = this.state
     return (
       <div>
         <Button onClick={toggleShow}>Toggle Display</Button>
-        <Modal visible={show} onClose={onClose}>Hello</Modal>
+        { show && <div>Hello</div> }
       </div>
     );
   }
 }
 
-export default ButtonToggleModal;
+export default ButtonToggle
