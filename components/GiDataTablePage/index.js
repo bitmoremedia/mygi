@@ -8,7 +8,6 @@ import GiDataTextFilter from '../GiDataTextFilter'
 import GiDataTableHeader from '../GiDataTableHeader'
 import GiDataTable from '../GiDataTable'
 
-
 class GiDataTablePage extends Component {
 
   constructor(props, context) {
@@ -20,12 +19,11 @@ class GiDataTablePage extends Component {
 
   setTextFilter = (newValue) => {
     this.setState({
-      textFilter: newValue
+      textFilter: newValue,
     })
   }
 
   render() {
-
     const { setTextFilter } = this
     const { activePath, title, meta } = this.props
     const { textFilter } = this.state
