@@ -78,11 +78,13 @@ const GiDataTable = ({ categoryFilter, giTypeFilter, textFilter }) => {
     <div className="gi-data-table">
       <table className="gi-data-table__table">
         <thead>
-          {
-            !categoryFilter && <th className="gi-data-table__category-column">Category</th>
-          }
-          <th className="gi-data-table__food-column">Food</th>
-          <th className="gi-data-table__gi-column">GI Value</th>
+          <tr>
+            {
+              !categoryFilter && <th className="gi-data-table__category-column">Category</th>
+            }
+            <th className="gi-data-table__food-column">Food</th>
+            <th className="gi-data-table__gi-column">GI Value</th>
+          </tr>
         </thead>
         <tbody>
           {tableRows}

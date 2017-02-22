@@ -8,21 +8,23 @@ exports[`basic table output with no filters applied 1`] = `
     className="gi-data-table__table"
   >
     <thead>
-      <th
-        className="gi-data-table__category-column"
-      >
-        Category
-      </th>
-      <th
-        className="gi-data-table__food-column"
-      >
-        Food
-      </th>
-      <th
-        className="gi-data-table__gi-column"
-      >
-        GI Value
-      </th>
+      <tr>
+        <th
+          className="gi-data-table__category-column"
+        >
+          Category
+        </th>
+        <th
+          className="gi-data-table__food-column"
+        >
+          Food
+        </th>
+        <th
+          className="gi-data-table__gi-column"
+        >
+          GI Value
+        </th>
+      </tr>
     </thead>
     <tbody>
       <tr>
@@ -3234,16 +3236,18 @@ exports[`table data filtered by category "Beans" 1`] = `
     className="gi-data-table__table"
   >
     <thead>
-      <th
-        className="gi-data-table__food-column"
-      >
-        Food
-      </th>
-      <th
-        className="gi-data-table__gi-column"
-      >
-        GI Value
-      </th>
+      <tr>
+        <th
+          className="gi-data-table__food-column"
+        >
+          Food
+        </th>
+        <th
+          className="gi-data-table__gi-column"
+        >
+          GI Value
+        </th>
+      </tr>
     </thead>
     <tbody>
       <tr>
@@ -3379,21 +3383,23 @@ exports[`table data filtered by gi value "Low Gi" 1`] = `
     className="gi-data-table__table"
   >
     <thead>
-      <th
-        className="gi-data-table__category-column"
-      >
-        Category
-      </th>
-      <th
-        className="gi-data-table__food-column"
-      >
-        Food
-      </th>
-      <th
-        className="gi-data-table__gi-column"
-      >
-        GI Value
-      </th>
+      <tr>
+        <th
+          className="gi-data-table__category-column"
+        >
+          Category
+        </th>
+        <th
+          className="gi-data-table__food-column"
+        >
+          Food
+        </th>
+        <th
+          className="gi-data-table__gi-column"
+        >
+          GI Value
+        </th>
+      </tr>
     </thead>
     <tbody>
       <tr>
@@ -5160,16 +5166,18 @@ exports[`table data filtered by gi value "Low Gi" and category "Beans" 1`] = `
     className="gi-data-table__table"
   >
     <thead>
-      <th
-        className="gi-data-table__food-column"
-      >
-        Food
-      </th>
-      <th
-        className="gi-data-table__gi-column"
-      >
-        GI Value
-      </th>
+      <tr>
+        <th
+          className="gi-data-table__food-column"
+        >
+          Food
+        </th>
+        <th
+          className="gi-data-table__gi-column"
+        >
+          GI Value
+        </th>
+      </tr>
     </thead>
     <tbody>
       <tr>
@@ -5281,21 +5289,23 @@ exports[`table data filtered by text 1`] = `
     className="gi-data-table__table"
   >
     <thead>
-      <th
-        className="gi-data-table__category-column"
-      >
-        Category
-      </th>
-      <th
-        className="gi-data-table__food-column"
-      >
-        Food
-      </th>
-      <th
-        className="gi-data-table__gi-column"
-      >
-        GI Value
-      </th>
+      <tr>
+        <th
+          className="gi-data-table__category-column"
+        >
+          Category
+        </th>
+        <th
+          className="gi-data-table__food-column"
+        >
+          Food
+        </th>
+        <th
+          className="gi-data-table__gi-column"
+        >
+          GI Value
+        </th>
+      </tr>
     </thead>
     <tbody>
       <tr>

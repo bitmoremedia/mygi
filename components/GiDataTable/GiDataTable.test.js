@@ -1,7 +1,15 @@
 import React from 'react'
+import { mount } from 'enzyme'
 import renderer from 'react-test-renderer'
 
 import GiDataTable from './index'
+
+test('component renders without errors', () => {
+  const wrapper = mount(
+    <GiDataTable />,
+  )
+  expect(wrapper.exists()).toBe(true)
+})
 
 test('basic table output with no filters applied', () => {
   const component = renderer.create(
