@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { PropTypes } from 'react'
 
-import './style';
+import './style.scss'
 
-const SiteWrapper = ({children}) => {
-  return (
-      <div className='page-wrapper'>
-        {children}
-      </div>
-  );
-};
+const SiteWrapper = ({ children }) =>
+  <div className="page-wrapper">
+    {children}
+  </div>
+
+SiteWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
+}
 
 export default SiteWrapper;

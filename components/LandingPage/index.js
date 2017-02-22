@@ -17,7 +17,6 @@ try {
   // do nothing as this is part of our gatsby mega hack
 }
 
-
 const LandingPage = () =>
   <div className="site-landing-page">
     <Helmet
