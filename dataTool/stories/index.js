@@ -8,6 +8,7 @@ import Button from '../src/components/common/Button'
 import Modal from '../src/components/common/Modal'
 import Table from '../src/components/common/Table'
 import ToolTip from '../src/components/common/ToolTip'
+import Divider from '../src/components/common/Divider'
 
 // ******************
 // ***** BUTTON *****
@@ -158,4 +159,13 @@ storiesOf('common.ToolTip', module)
         Hover over me to see my tooltip
       </ToolTip>
     </ToolTipStoryWrapper>
+  ))
+
+// ******************
+// ***** DIVIDER *****
+// ******************
+
+storiesOf('common.Divider', module)
+  .add('default display', () => (
+    <Divider />
   ))

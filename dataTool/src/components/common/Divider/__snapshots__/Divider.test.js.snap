@@ -1,0 +1,4 @@
+exports[`test component renders as expected 1`] = `
+<hr
+  className="fTafup" />
+`;
