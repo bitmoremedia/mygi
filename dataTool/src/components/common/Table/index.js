@@ -1,24 +1,13 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react'
 
-import { Container, Table, TableHead, TableHeading, TableRow, TableBody, TableColumn } from './styles';
+import { Container, Table, TableHead, TableHeading, TableRow, TableBody, TableColumn } from './styled-components'
 
-const TableComponent = ({columns, data}) => {
-
-  const renderHeadings = () => {
-    return columns.map((column)=><TableHeading key={`${column.key}-heading`}>{column.label}</TableHeading>);
-  };
-
-  const renderColumn = ({key, value, index})=>{
-    return <TableColumn key={`${key}-${columns[index].key}`}>{value}</TableColumn>;
-  };
-
-  const renderColumns = (columnData) => {
-    return columnData.map((data, index)=>renderColumn({...data, index}));
-  };
-
-  const renderRows = () => {
-    return data.map((columnData)=><TableRow key={`${columnData[0].key}-row`}>{renderColumns(columnData)}</TableRow>);
-  };
+const TableComponent = ({ columns, data }) => {
+  const renderHeadings = () => columns.map(column => <TableHeading key={`${column.key}-heading`}>{column.label}</TableHeading>)
+  const renderColumn = ({ key, value, index }) => <TableColumn key={`${key}-${columns[index].key}`}>{value}</TableColumn>
+  const renderColumns = columnData =>
+    columnData.map((colData, index) => renderColumn({ ...colData, index }))
+  const renderRows = () => data.map(columnData => <TableRow key={`${columnData[0].key}-row`}>{renderColumns(columnData)}</TableRow>)
 
   return (
     <Container>
@@ -33,12 +22,15 @@ const TableComponent = ({columns, data}) => {
         </TableBody>
       </Table>
     </Container>
-  );
+  )
 }
 
 TableComponent.propTypes = {
-  columns: PropTypes.array.isRequired,
-  data: PropTypes.array.isRequired
-};
+  columns: PropTypes.arrayOf(PropTypes.shape({
+    key: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+  })).isRequired,
+  data: PropTypes.array.isRequired,
+}
 
-export default TableComponent;
+export default TableComponent
