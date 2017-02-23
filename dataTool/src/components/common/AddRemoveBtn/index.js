@@ -1,19 +1,24 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react'
 
-import { Button } from './styles';
+import { Button } from './styled-components'
 
 const AddRemoveBtn = ({ onClick, type }) => {
-  const btnText = ( type === 'add' ) ? 'Assign' : 'Un-Assign' ;
+  const btnText = (type === 'add') ? 'Assign' : 'Un-Assign'
   return (
     <Button onClick={onClick} type={type}>
       {btnText}
     </Button>
-  );
+  )
 }
 
-AddRemoveBtn.propTypes =  {
+AddRemoveBtn.propTypes = {
   onClick: PropTypes.func,
   type: PropTypes.oneOf(['add', 'remove']),
-};
+}
 
-export default AddRemoveBtn;
+AddRemoveBtn.defaultProps = {
+  onClick: undefined,
+  type: 'add',
+}
+
+export default AddRemoveBtn
