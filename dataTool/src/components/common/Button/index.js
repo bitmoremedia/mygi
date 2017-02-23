@@ -1,19 +1,31 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react'
 
-import { Button } from './styles';
+import { Button, DangerButton } from './styles'
 
 const ButtonComponent = ({ children, onClick, danger }) => {
+  if (danger) {
+    return (
+      <DangerButton onClick={onClick} >
+        {children}
+      </DangerButton>
+    )
+  }
   return (
-    <Button onClick={onClick} danger={danger} >
+    <Button onClick={onClick} >
       {children}
     </Button>
-  );
+  )
 }
 
-ButtonComponent.propTypes =  {
+ButtonComponent.propTypes = {
   children: PropTypes.any.isRequired,
   onClick: PropTypes.func,
   danger: PropTypes.bool,
-};
+}
 
-export default ButtonComponent;
+ButtonComponent.defaultProps = {
+  onClick: undefined,
+  danger: false,
+}
+
+export default ButtonComponent

@@ -1,0 +1,15 @@
+exports[`test component renders a dangerous button 1`] = `
+<button
+  className="feUtjL"
+  onClick={undefined}>
+  Button Label
+</button>
+`;
+
+exports[`test component renders as expected 1`] = `
+<button
+  className="OgMJe"
+  onClick={undefined}>
+  Button Label
+</button>
+`;

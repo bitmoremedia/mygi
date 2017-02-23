@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Button = styled.button`
-  background-color: ${props => props.danger ? 'red' : 'black'};
+  background-color: black;
   color: white;
   cursor: pointer;
   border-radius: 1px;
@@ -11,4 +11,8 @@ export const Button = styled.button`
   &:focus {
       outline:none;
   }
+`;
+
+export const DangerButton = styled(Button)`
+  background-color: red;
 `;
