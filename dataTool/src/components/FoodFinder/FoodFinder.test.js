@@ -9,7 +9,7 @@ import testData from '../../utils/testData'
 //console.log('**** testData *******')
 //console.log(testData)
 
-test('component renders without error', () => {
+xtest('component renders without error', () => {
   const wrapper = shallow(
     <FoodFinder
       foodList={testData.foodList}
@@ -26,7 +26,7 @@ test('component renders without error', () => {
 
 // SNAPSHOT TESTS
 
-test('component renders as expected', () => {
+xtest('component renders as expected', () => {
   const component = renderer.create(
     <FoodFinder
       foodList={testData.foodList}
