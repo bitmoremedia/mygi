@@ -1,0 +1,59 @@
+exports[`test component renders as expected 1`] = `
+<styled.div>
+  <styled.h1>
+    White Bread
+     [
+    77
+    ]
+  </styled.h1>
+  <Component />
+  <Row>
+    <Col
+      md={4}
+      xs={12}>
+      <styled.h4>
+        Food List 
+        <Component
+          danger={false}
+          onClick={[Function]}>
+          Add
+        </Component>
+      </styled.h4>
+      <Connect(Component)
+        list={
+          Array [
+            Object {
+              "category": "Bread",
+              "gi": 68,
+              "id": "efgh-456",
+              "name": "White Bread",
+              "sources": Object {
+                "havard": "havard-white-bread",
+              },
+            },
+          ]
+        }
+        sourceId="mendosa-white-bread"
+        sourceName="mendosa" />
+    </Col>
+    <Col
+      md={7}
+      xs={12}>
+      <styled.h4>
+        Other Data Sources
+      </styled.h4>
+      <Component
+        list={
+          Array [
+            Object {
+              "gi": 65,
+              "id": "havard-white-bread",
+              "name": "White Bread",
+              "source": "havard",
+            },
+          ]
+        } />
+    </Col>
+  </Row>
+</styled.div>
+`;

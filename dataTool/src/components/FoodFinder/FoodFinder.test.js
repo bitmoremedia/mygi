@@ -1,15 +1,12 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import renderer from 'react-test-renderer'
+import toJson from 'enzyme-to-json'
 
 import FoodFinder from './component'
 
 import testData from '../../utils/testData'
 
-//console.log('**** testData *******')
-//console.log(testData)
-
-xtest('component renders without error', () => {
+test('component renders without error', () => {
   const wrapper = shallow(
     <FoodFinder
       foodList={testData.foodList}
@@ -18,16 +15,13 @@ xtest('component renders without error', () => {
       sourceName={testData.sourceName}
     />,
   )
-  console.log(wrapper.debug())
   expect(wrapper.exists()).toBe(true)
 })
 
-// INTERACTIVITY TESTS
-
 // SNAPSHOT TESTS
 
-xtest('component renders as expected', () => {
-  const component = renderer.create(
+test('component renders as expected', () => {
+  const wrapper = shallow(
     <FoodFinder
       foodList={testData.foodList}
       dataSources={testData.dataSources}
@@ -35,6 +29,5 @@ xtest('component renders as expected', () => {
       sourceName={testData.sourceName}
     />,
   )
-  const tree = component.toJSON()
-  expect(tree).toMatchSnapshot()
+  expect(toJson(wrapper)).toMatchSnapshot()
 })
