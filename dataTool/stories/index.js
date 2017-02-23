@@ -1,14 +1,15 @@
 import React from 'react'
 import { storiesOf, action } from '@kadira/storybook'
 
-import globalStyles from '../src/global-styles';
-globalStyles();
+import globalStyles from '../src/global-styles'
 
 import Button from '../src/components/common/Button'
 import Modal from '../src/components/common/Modal'
 import Table from '../src/components/common/Table'
 import ToolTip from '../src/components/common/ToolTip'
 import Divider from '../src/components/common/Divider'
+
+globalStyles()
 
 // ******************
 // ***** BUTTON *****
