@@ -1,12 +1,10 @@
-import {connect} from 'react-redux';
+import { connect } from 'react-redux'
 
-import FoodList from './component';
+import FoodList from './component'
 
-const mapStateToProps = (state, props) => {
-  return {
-    foodList: state.foodList,
-    dataSources: state.dataSources,
-  };
-};
+const mapStateToProps = state => ({
+  foodList: state.foodList,
+  dataSources: state.dataSources,
+})
 
-export default connect(mapStateToProps)(FoodList);
+export default connect(mapStateToProps)(FoodList)

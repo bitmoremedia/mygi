@@ -5,6 +5,7 @@ const testData = {
       gi: 35,
       id: 'abcd-123',
       name: 'Kidney Beans',
+      sources: {},
     },
     'efgh-456': {
       category: 'Bread',

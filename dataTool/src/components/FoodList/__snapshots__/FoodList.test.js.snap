@@ -1,0 +1,130 @@
+exports[`test component renders as expected 1`] = `
+<div>
+  <styled.div>
+    <Component
+      danger={false}
+      onClick={[Function]}>
+      Add
+    </Component>
+  </styled.div>
+  <Component
+    columns={
+      Array [
+        Object {
+          "key": "food",
+          "label": "Food",
+        },
+        Object {
+          "key": "category",
+          "label": "Category",
+        },
+        Object {
+          "key": "gi",
+          "label": "GI Value",
+        },
+        Object {
+          "key": "average",
+          "label": "Average GI",
+        },
+        Object {
+          "key": "havard",
+          "label": <Link
+            replace={false}
+            to="/source/havard">
+            Havard
+      </Link>,
+        },
+        Object {
+          "key": "mendosa",
+          "label": <Link
+            replace={false}
+            to="/source/mendosa">
+            Mendosa
+      </Link>,
+        },
+      ]
+    }
+    data={
+      Array [
+        Array [
+          Object {
+            "key": "abcd-123",
+            "value": <Component
+              editAction={[Function]}
+              food={
+                      Object {
+                              "category": "Beans",
+                              "gi": 35,
+                              "id": "abcd-123",
+                              "name": "Kidney Beans",
+                              "sources": Object {},
+                            }
+              } />,
+          },
+          Object {
+            "key": "abcd-123",
+            "value": "Beans",
+          },
+          Object {
+            "key": "abcd-123",
+            "value": 35,
+          },
+          Object {
+            "key": "abcd-123",
+            "value": "TBC",
+          },
+          Object {
+            "key": "abcd-123-havard",
+            "value": "",
+          },
+          Object {
+            "key": "abcd-123-mendosa",
+            "value": "",
+          },
+        ],
+        Array [
+          Object {
+            "key": "efgh-456",
+            "value": <Component
+              editAction={[Function]}
+              food={
+                      Object {
+                              "category": "Bread",
+                              "gi": 68,
+                              "id": "efgh-456",
+                              "name": "White Bread",
+                              "sources": Object {
+                                "havard": "havard-white-bread",
+                              },
+                            }
+              } />,
+          },
+          Object {
+            "key": "efgh-456",
+            "value": "Bread",
+          },
+          Object {
+            "key": "efgh-456",
+            "value": 68,
+          },
+          Object {
+            "key": "efgh-456",
+            "value": "65",
+          },
+          Object {
+            "key": "efgh-456-havard",
+            "value": 65,
+          },
+          Object {
+            "key": "efgh-456-mendosa",
+            "value": "",
+          },
+        ],
+      ]
+    } />
+  <Modal
+    height={280}
+    onClose={[Function]}
+    visible={false} />
+</div>
+`;
