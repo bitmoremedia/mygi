@@ -6,8 +6,9 @@
   },
   "rules": {
       "semi": 0,
-      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
       "one-var-declaration-per-line": 0,
       "one-var": 0,
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+      "react/forbid-prop-types": 0,
   }
 }

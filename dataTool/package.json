@@ -3,6 +3,7 @@
   "version": "1.1.0",
   "devDependencies": {
     "@kadira/storybook": "^2.35.3",
+    "enzyme": "^2.7.1",
     "eslint": "^3.16.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
