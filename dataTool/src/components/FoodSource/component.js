@@ -3,7 +3,7 @@ import _values from 'lodash/values'
 import _sortBy from 'lodash/sortBy'
 import _forEach from 'lodash/forEach'
 
-import { List, ListItem, MatchedListItem, EditLink } from './styles'
+import { List, ListItem, MatchedListItem, EditLink } from './styled-components'
 
 import ToolTip from '../common/ToolTip'
 import Divider from '../common/Divider'

@@ -8,7 +8,7 @@ const columns = [
   { key: 'first-name', label: 'First Name' },
   { key: 'last-name', label: 'Last Name' },
   { key: 'age', label: 'Age' },
-];
+]
 const data = [
   [
     { key: 'abcd-1', value: 'Bill' },
@@ -25,7 +25,7 @@ const data = [
     { key: 'abcdef-2', value: 'Brown' },
     { key: 'abcdef-3', value: 34 },
   ],
-];
+]
 
 test('component renders without error', () => {
   const wrapper = mount(

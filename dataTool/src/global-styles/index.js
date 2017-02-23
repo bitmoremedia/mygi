@@ -1,7 +1,7 @@
 /* eslint-disable */
-import { injectGlobal } from 'styled-components';
-import normalizeCss from 'normalize.css';
-import rodalCSS from 'rodal/lib/rodal.css';
+import { injectGlobal } from 'styled-components'
+import normalizeCss from 'normalize.css'
+import rodalCSS from 'rodal/lib/rodal.css'
 
 export default () => {
   injectGlobal`
@@ -48,4 +48,4 @@ export default () => {
     }
 
   `
-};
+}
