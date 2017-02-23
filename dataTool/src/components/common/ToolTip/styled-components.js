@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 // below CSS rules taken from this repo:
 // https://kazzkiq.github.io/balloon.css
@@ -175,4 +175,6 @@ export const Container = styled.span`
   [data-balloon-length="fit"]:after {
     width: 100%;
   }
-`;
+`
+
+export default Container

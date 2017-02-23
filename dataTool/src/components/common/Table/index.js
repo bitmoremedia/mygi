@@ -28,7 +28,7 @@ const TableComponent = ({ columns, data }) => {
 TableComponent.propTypes = {
   columns: PropTypes.arrayOf(PropTypes.shape({
     key: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
+    label: PropTypes.any.isRequired,
   })).isRequired,
   data: PropTypes.array.isRequired,
 }

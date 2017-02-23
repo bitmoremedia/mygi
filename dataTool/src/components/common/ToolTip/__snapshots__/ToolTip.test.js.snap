@@ -1,0 +1,11 @@
+exports[`test component renders as expected 1`] = `
+<span
+  className="kpQwSz">
+  <span
+    data-balloon="tool-tip-text"
+    data-balloon-length="large"
+    data-balloon-pos="up">
+    Content
+  </span>
+</span>
+`;
