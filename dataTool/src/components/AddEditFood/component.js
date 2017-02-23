@@ -122,7 +122,7 @@ AddEditFood.propTypes = {
   addFoodItem: PropTypes.func.isRequired,
   deleteFoodItem: PropTypes.func.isRequired,
   mode: PropTypes.oneOf(['add', 'edit']),
-  layout: PropTypes.oneOf(['vertical', 'horizontal']),
+  layout: PropTypes.oneOf(['vertical', 'inline']),
   foodItem: PropTypes.shape({
     name: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,

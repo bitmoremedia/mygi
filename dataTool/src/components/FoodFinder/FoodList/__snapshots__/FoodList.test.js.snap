@@ -1,0 +1,67 @@
+exports[`test component renders as expected 1`] = `
+<Component
+  associateDataSource={[Function]}
+  deleteAssociatedDataSource={[Function]}
+  list={
+    Array [
+      Object {
+        "category": "Beans",
+        "gi": 35,
+        "id": "abcd-123",
+        "name": "Kidney Beans",
+      },
+      Object {
+        "category": "Bread",
+        "gi": 68,
+        "id": "efgh-456",
+        "name": "White Bread",
+        "sources": Object {
+          "havard": "havard-white-bread",
+        },
+      },
+    ]
+  }
+  sourceId="mendosa-white-bread"
+  sourceName="mendosa">
+  <div>
+    <ul>
+      <li>
+        Kidney Beans
+         [
+        35
+        ] 
+        <Component
+          onClick={[Function]}
+          type="add">
+          <styled.span
+            onClick={[Function]}>
+            <span
+              className="bBeLnM"
+              onClick={[Function]}>
+              Assign
+            </span>
+          </styled.span>
+        </Component>
+      </li>
+      <li>
+        White Bread
+         [
+        68
+        ] 
+        <Component
+          onClick={[Function]}
+          type="add">
+          <styled.span
+            onClick={[Function]}>
+            <span
+              className="bBeLnM"
+              onClick={[Function]}>
+              Assign
+            </span>
+          </styled.span>
+        </Component>
+      </li>
+    </ul>
+  </div>
+</Component>
+`;

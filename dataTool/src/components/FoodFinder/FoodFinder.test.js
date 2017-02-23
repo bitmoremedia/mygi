@@ -2,9 +2,9 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import toJson from 'enzyme-to-json'
 
-import FoodFinder from './component'
-
 import testData from '../../utils/testData'
+
+import FoodFinder from './component'
 
 test('component renders without error', () => {
   const wrapper = shallow(
