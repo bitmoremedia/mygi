@@ -1,0 +1,71 @@
+exports[`test component renders as expected 1`] = `
+<div
+  className="rodal rodal-fade-enter "
+  onAnimationEnd={[Function]}
+  style={
+    Object {
+      "WebkitAnimationDuration": "300ms",
+      "animationDuration": "300ms",
+      "display": "",
+    }
+  }>
+  <div
+    className="rodal-mask"
+    onClick={[Function]}
+    style={Object {}} />
+  <div
+    className="rodal-dialog rodal-zoom-enter"
+    style={
+      Object {
+        "WebkitAnimationDuration": "300ms",
+        "animationDuration": "300ms",
+        "height": "240px",
+        "width": "400px",
+      }
+    }>
+    <span
+      className="rodal-close"
+      onClick={[Function]} />
+    <div
+      className="CiQaJ">
+      Modal Content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test modal hidden 1`] = `
+<div
+  className="rodal rodal-fade-leave "
+  onAnimationEnd={[Function]}
+  style={
+    Object {
+      "WebkitAnimationDuration": "300ms",
+      "animationDuration": "300ms",
+      "display": "none",
+    }
+  }>
+  <div
+    className="rodal-mask"
+    onClick={[Function]}
+    style={Object {}} />
+  <div
+    className="rodal-dialog rodal-zoom-leave"
+    style={
+      Object {
+        "WebkitAnimationDuration": "300ms",
+        "animationDuration": "300ms",
+        "height": "240px",
+        "width": "400px",
+      }
+    }>
+    <span
+      className="rodal-close"
+      onClick={[Function]} />
+    <div
+      className="CiQaJ">
+      Modal Content
+    </div>
+  </div>
+</div>
+`;

@@ -1,17 +1,17 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.div`
   margin-bottom: 5px;
-`;
+`
 
 export const ButtonWrapper = styled.div`
   margin-top: 7px;
-`;
+`
 
 export const ErrorMsg = styled.div`
   color: red;
   margin-top: 5px;
-`;
+`
 
 export const Input = styled.input`
   margin-top: 5px;
@@ -25,7 +25,7 @@ export const Input = styled.input`
   height: 30px;
   padding-left: 10px;
   width: 100%;
-`;
+`
 
 export const Select = styled.select`
 
@@ -43,4 +43,4 @@ export const Select = styled.select`
   padding-left: 10px;
   width: 100%;
 
-`;
+`

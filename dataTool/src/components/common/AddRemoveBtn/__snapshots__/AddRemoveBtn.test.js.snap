@@ -1,17 +1,15 @@
 exports[`test render add mode 1`] = `
 <span
   className="bBeLnM"
-  onClick={undefined}
-  type="add">
+  onClick={undefined}>
   Assign
 </span>
 `;
 
 exports[`test render remove mode 1`] = `
 <span
-  className="VehbQ"
-  onClick={undefined}
-  type="remove">
+  className="gZIOPq"
+  onClick={undefined}>
   Un-Assign
 </span>
 `;

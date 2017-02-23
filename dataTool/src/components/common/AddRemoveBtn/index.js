@@ -1,13 +1,19 @@
 import React, { PropTypes } from 'react'
 
-import { Button } from './styled-components'
+import { AddButton, RemoveButton } from './styled-components'
 
 const AddRemoveBtn = ({ onClick, type }) => {
-  const btnText = (type === 'add') ? 'Assign' : 'Un-Assign'
+  if (type === 'add') {
+    return (
+      <AddButton onClick={onClick}>
+        Assign
+      </AddButton>
+    )
+  }
   return (
-    <Button onClick={onClick} type={type}>
-      {btnText}
-    </Button>
+    <RemoveButton onClick={onClick}>
+      Un-Assign
+    </RemoveButton>
   )
 }
 

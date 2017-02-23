@@ -3,7 +3,7 @@ import { mount } from 'enzyme'
 import renderer from 'react-test-renderer'
 
 import AddRemoveBtn from './index'
-import { Button } from './styled-components'
+import { AddButton } from './styled-components'
 
 test('component renders without error', () => {
   const wrapper = mount(
@@ -20,7 +20,7 @@ test('onclick function is fired', () => {
     <AddRemoveBtn onClick={onClick} />,
   )
   expect(onClick).not.toHaveBeenCalled()
-  wrapper.find(Button).simulate('click')
+  wrapper.find(AddButton).simulate('click')
   expect(onClick).toHaveBeenCalled()
 })
 

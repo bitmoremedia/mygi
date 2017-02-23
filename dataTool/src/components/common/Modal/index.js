@@ -4,7 +4,7 @@ import Rodal from 'rodal';
 // note: this component has a dependency on global styles
 // import 'rodal/lib/rodal.css';
 
-import { ModalContainer } from './styles';
+import { ModalContainer } from './styled-components';
 
 class Modal extends Component {
 
