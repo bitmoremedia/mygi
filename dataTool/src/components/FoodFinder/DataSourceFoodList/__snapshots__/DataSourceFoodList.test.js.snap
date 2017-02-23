@@ -1,0 +1,68 @@
+exports[`test component renders as expected 1`] = `
+<Component
+  list={
+    Array [
+      Object {
+        "gi": 30,
+        "id": "abc-123",
+        "name": "Kidney Bean",
+        "source": "havard",
+      },
+      Object {
+        "gi": 44,
+        "id": "def-456",
+        "name": "Kidney Bean",
+        "source": "mendosa",
+      },
+    ]
+  }>
+  <div>
+    <ul>
+      <li>
+        Kidney Bean
+         [
+        30
+        ]
+        <Component
+          length="large"
+          position="left"
+          text="havard / abc-123">
+          <styled.span>
+            <span
+              className="kpQwSz">
+              <span
+                data-balloon="havard / abc-123"
+                data-balloon-length="large"
+                data-balloon-pos="left">
+                ?
+              </span>
+            </span>
+          </styled.span>
+        </Component>
+      </li>
+      <li>
+        Kidney Bean
+         [
+        44
+        ]
+        <Component
+          length="large"
+          position="left"
+          text="mendosa / def-456">
+          <styled.span>
+            <span
+              className="kpQwSz">
+              <span
+                data-balloon="mendosa / def-456"
+                data-balloon-length="large"
+                data-balloon-pos="left">
+                ?
+              </span>
+            </span>
+          </styled.span>
+        </Component>
+      </li>
+    </ul>
+  </div>
+</Component>
+`;

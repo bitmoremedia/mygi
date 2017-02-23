@@ -4,7 +4,7 @@ import { associateDataSource, deleteAssociatedDataSource } from '../../../redux/
 
 import FoodList from './component'
 
-const mapStateToProps = () => {}
+const mapStateToProps = () => ({})
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ associateDataSource, deleteAssociatedDataSource }, dispatch)
