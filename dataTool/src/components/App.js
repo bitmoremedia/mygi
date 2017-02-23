@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -41,18 +41,18 @@ export class App extends Component {
   }
 }
 
+App.propTypes = {
+  getFoodlist: PropTypes.func.isRequired,
+  getDataSources: PropTypes.func.isRequired,
+}
+
 const Page = styled.div`
   padding-left: 10px
   padding-right: 10px
 `
 
+const mapStateToProps = () => ({})
 
-function mapStateToProps() {
-  return {}
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ getFoodlist, getDataSources }, dispatch)
-}
+const mapDispatchToProps = dispatch => bindActionCreators({ getFoodlist, getDataSources }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

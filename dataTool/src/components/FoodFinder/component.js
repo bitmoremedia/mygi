@@ -9,7 +9,7 @@ import Button from '../common/Button'
 
 import AddEditFood from '../AddEditFood'
 
-import { Container, Heading, SubHeading } from './styles'
+import { Container, Heading, SubHeading } from './styled-components'
 import FoodList from './FoodList'
 import DataSourceFoodList from './DataSourceFoodList'
 

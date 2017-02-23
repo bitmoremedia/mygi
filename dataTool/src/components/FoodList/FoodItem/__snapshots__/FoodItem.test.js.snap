@@ -1,0 +1,40 @@
+exports[`test component renders as expected 1`] = `
+<Component
+  editAction={[Function]}
+  food={
+    Object {
+      "gi": 36,
+      "id": "abc-123",
+      "name": "Kidney Beans",
+    }
+  }>
+  <styled.div>
+    <div
+      className="gpERpa">
+      <styled.div>
+        <div
+          className="egTnmM">
+          Kidney Beans
+        </div>
+      </styled.div>
+      <styled.div>
+        <div
+          className="jTDtNq">
+          <Component
+            danger={false}
+            onClick={[Function]}>
+            <styled.button
+              onClick={[Function]}>
+              <button
+                className="OgMJe"
+                onClick={[Function]}>
+                edit
+              </button>
+            </styled.button>
+          </Component>
+        </div>
+      </styled.div>
+    </div>
+  </styled.div>
+</Component>
+`;

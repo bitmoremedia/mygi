@@ -1,14 +1,13 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react'
 
-import Button from '../../common/Button';
+import Button from '../../common/Button'
 
-import { Item, FoodName, EditButton } from './styles';
+import { Item, FoodName, EditButton } from './styled-components'
 
-const FoodItem = ({food, editAction}) => {
-
-  const handleEdit = ()=>{
-    editAction(food.id);
-  };
+const FoodItem = ({ food, editAction }) => {
+  const handleEdit = () => {
+    editAction(food.id)
+  }
 
   return (
     <Item key={`${food.id}-food-item`}>
@@ -17,8 +16,8 @@ const FoodItem = ({food, editAction}) => {
         <Button onClick={handleEdit}>edit</Button>
       </EditButton>
     </Item>
-  );
-};
+  )
+}
 
 FoodItem.propTypes = {
   food: PropTypes.shape({
@@ -27,6 +26,6 @@ FoodItem.propTypes = {
     gi: PropTypes.any.isRequired,
   }).isRequired,
   editAction: PropTypes.func.isRequired,
-};
+}
 
-export default FoodItem;
+export default FoodItem

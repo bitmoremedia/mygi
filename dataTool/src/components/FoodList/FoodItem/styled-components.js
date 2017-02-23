@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Item = styled.div`
   padding: 5px;
@@ -6,12 +6,12 @@ export const Item = styled.div`
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between
-`;
+`
 
 export const FoodName = styled.div`
   white-space: nowrap;
-`;
+`
 
 export const EditButton = styled.div`
   margin-left: 10px;
-`;
+`

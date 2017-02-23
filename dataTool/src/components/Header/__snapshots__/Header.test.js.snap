@@ -1,0 +1,33 @@
+exports[`test component renders as expected 1`] = `
+<Component>
+  <styled.div>
+    <div
+      className="jTlqhU">
+      <Row>
+        <Component
+          className="jhQCSn">
+          <div
+            className="jhQCSn">
+            <Col
+              xs={12}>
+              <Component
+                className="egpniL"
+                xs={12}>
+                <div
+                  className="egpniL">
+                  <styled.h1>
+                    <h1
+                      className="iZkySE">
+                      MyGi Data Tool
+                    </h1>
+                  </styled.h1>
+                </div>
+              </Component>
+            </Col>
+          </div>
+        </Component>
+      </Row>
+    </div>
+  </styled.div>
+</Component>
+`;

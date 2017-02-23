@@ -1,0 +1,183 @@
+exports[`test component renders as expected 1`] = `
+<FoodSource
+  dataSources={
+    Object {
+      "havard": Object {
+        "data": Object {
+          "havard-white-bread": Object {
+            "gi": 65,
+            "id": "havard-white-bread",
+            "name": "White Bread",
+          },
+        },
+        "name": "havard",
+        "title": "Havard",
+      },
+      "mendosa": Object {
+        "data": Object {
+          "mendosa-white-bread": Object {
+            "gi": 77,
+            "id": "mendosa-white-bread",
+            "name": "White Bread",
+          },
+        },
+        "name": "mendosa",
+        "title": "Mendosa",
+      },
+    }
+  }
+  foodList={
+    Object {
+      "abcd-123": Object {
+        "category": "Beans",
+        "gi": 35,
+        "id": "abcd-123",
+        "name": "Kidney Beans",
+        "sources": Object {},
+      },
+      "efgh-456": Object {
+        "category": "Bread",
+        "gi": 68,
+        "id": "efgh-456",
+        "name": "White Bread",
+        "sources": Object {
+          "havard": "havard-white-bread",
+        },
+      },
+    }
+  }
+  match={
+    Object {
+      "params": Object {
+        "id": "havard",
+      },
+    }
+  }>
+  <div>
+    <h2>
+      Havard
+    </h2>
+    <Modal
+      height={80}
+      measure="%"
+      onClose={[Function]}
+      visible={false}
+      width={80}>
+      <Rodal
+        animation="zoom"
+        className=""
+        customMaskStyles={Object {}}
+        customStyles={Object {}}
+        duration={300}
+        height={80}
+        measure="%"
+        onClose={[Function]}
+        showCloseButton={true}
+        showMask={true}
+        visible={false}
+        width={80}>
+        <div
+          className="rodal rodal-fade-leave "
+          onAnimationEnd={[Function]}
+          style={
+            Object {
+              "WebkitAnimationDuration": "300ms",
+              "animationDuration": "300ms",
+              "display": "none",
+            }
+          }>
+          <div
+            className="rodal-mask"
+            onClick={[Function]}
+            style={Object {}} />
+          <Dialog
+            animation="zoom"
+            animationType="leave"
+            className=""
+            customMaskStyles={Object {}}
+            customStyles={Object {}}
+            duration={300}
+            height={80}
+            measure="%"
+            onClose={[Function]}
+            showCloseButton={true}
+            showMask={true}
+            visible={false}
+            width={80}>
+            <div
+              className="rodal-dialog rodal-zoom-leave"
+              style={
+                Object {
+                  "WebkitAnimationDuration": "300ms",
+                  "animationDuration": "300ms",
+                  "height": "80%",
+                  "width": "80%",
+                }
+              }>
+              <span
+                className="rodal-close"
+                onClick={[Function]} />
+              <styled.div>
+                <div
+                  className="CiQaJ" />
+              </styled.div>
+            </div>
+          </Dialog>
+        </div>
+      </Rodal>
+    </Modal>
+    <Component>
+      <styled.hr>
+        <hr
+          className="fTafup" />
+      </styled.hr>
+    </Component>
+    <styled.ul>
+      <ul
+        className="foqgVb">
+        <Component
+          gi={65}
+          id="havard-white-bread"
+          name="White Bread">
+          <styled.li>
+            <li
+              className="cHeXBg">
+              <Component
+                length="large"
+                position="right"
+                text="White Bread [68]">
+                <styled.span>
+                  <span
+                    className="kpQwSz">
+                    <span
+                      data-balloon="White Bread [68]"
+                      data-balloon-length="large"
+                      data-balloon-pos="right">
+                      ✔
+                    </span>
+                  </span>
+                </styled.span>
+              </Component>
+               
+              White Bread
+               [
+              65
+              ] 
+              <styled.a
+                href=""
+                onClick={[Function]}>
+                <a
+                  className="iriPU"
+                  href=""
+                  onClick={[Function]}>
+                  Edit
+                </a>
+              </styled.a>
+            </li>
+          </styled.li>
+        </Component>
+      </ul>
+    </styled.ul>
+  </div>
+</FoodSource>
+`;

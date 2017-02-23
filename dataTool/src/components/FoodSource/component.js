@@ -1,67 +1,67 @@
-import React, { Component } from 'react';
-import _values from 'lodash/values';
-import _sortBy from 'lodash/sortBy';
-import _forEach from 'lodash/forEach';
+import React, { Component, PropTypes } from 'react'
+import _values from 'lodash/values'
+import _sortBy from 'lodash/sortBy'
+import _forEach from 'lodash/forEach'
 
-import { List, ListItem, MatchedListItem, EditLink } from './styles';
+import { List, ListItem, MatchedListItem, EditLink } from './styles'
 
-import ToolTip from '../common/ToolTip';
-import Divider from '../common/Divider';
-import Modal from '../common/Modal';
-import FoodFinder from '../FoodFinder';
+import ToolTip from '../common/ToolTip'
+import Divider from '../common/Divider'
+import Modal from '../common/Modal'
+import FoodFinder from '../FoodFinder'
 
 class FoodSource extends Component {
   constructor(props, context) {
-    super(props, context);
+    super(props, context)
     this.state = {
       findFoodModalVisible: false,
       findFoodId: undefined,
-    };
-    this.openFindFoodModal = this.openFindFoodModal.bind(this);
-    this.closeFindFoodModal = this.closeFindFoodModal.bind(this);
+    }
+    this.openFindFoodModal = this.openFindFoodModal.bind(this)
+    this.closeFindFoodModal = this.closeFindFoodModal.bind(this)
   }
 
-  openFindFoodModal(e,id) {
-    e.preventDefault();
+  openFindFoodModal(e, id) {
+    e.preventDefault()
     this.setState({
       findFoodModalVisible: true,
-      findFoodId: id
-    });
+      findFoodId: id,
+    })
   }
 
   closeFindFoodModal(e) {
-    e.preventDefault();
+    e.preventDefault()
     this.setState({
       findFoodModalVisible: false,
-      findFoodId: undefined
-    });
+      findFoodId: undefined,
+    })
   }
 
   render() {
-    const { match, foodList, dataSources } = this.props;
-    const { findFoodModalVisible, findFoodId } = this.state;
+    const { match, foodList, dataSources } = this.props
+    const { findFoodModalVisible, findFoodId } = this.state
 
-    const sourceName = match.params.id;
-    const { title, data } = dataSources[sourceName] || {};
-    const sourceDataArray = _sortBy(_values(data), 'name');
+    const sourceName = match.params.id
+    const { title, data } = dataSources[sourceName] || {}
+    const sourceDataArray = _sortBy(_values(data), 'name')
 
-    const sourceMatch = {};
-    if ( data ){
-      _forEach(foodList, (food, foodId)=> {
-        const sourceFood = data[food.sources[sourceName]];
+    const sourceMatch = {}
+    if (data) {
+      _forEach(foodList, (food) => {
+        const sourceFood = data[food.sources[sourceName]]
         if (food.sources[sourceName] && sourceFood) {
           sourceMatch[sourceFood.id] = {
             ...sourceFood,
             matched: {
-              ...food
-            }
+              ...food,
+            },
           }
         }
       })
     }
 
     const FoodItem = ({ id, name, gi }) => {
-      if ( sourceMatch[id] ){
+      if (sourceMatch[id]) {
         return (
           <MatchedListItem>
             <ToolTip
@@ -69,11 +69,11 @@ class FoodSource extends Component {
               position={'right'}
             >
               ✔
-            </ToolTip> {name} [{gi}] <EditLink href="" onClick={(e)=>this.openFindFoodModal(e,id)}>Edit</EditLink>
+            </ToolTip> {name} [{gi}] <EditLink href="" onClick={e => this.openFindFoodModal(e, id)}>Edit</EditLink>
           </MatchedListItem>
-        );
+        )
       }
-      return <ListItem>{name} [{gi}] <a href="" onClick={(e)=>this.openFindFoodModal(e,id)}>Find</a></ListItem>;
+      return <ListItem>{name} [{gi}] <a href="" onClick={e => this.openFindFoodModal(e, id)}>Find</a></ListItem>
     }
 
     return (
@@ -86,11 +86,21 @@ class FoodSource extends Component {
         </Modal>
         <Divider />
         <List>
-          {sourceDataArray.map((food)=><FoodItem key={food.id} {...food}/>)}
+          {sourceDataArray.map(food => <FoodItem key={food.id} {...food} />)}
         </List>
       </div>
-    );
+    )
   }
 }
 
-export default FoodSource;
+FoodSource.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }),
+  }).isRequired,
+  dataSources: PropTypes.object.isRequired,
+  foodList: PropTypes.object.isRequired,
+}
+
+export default FoodSource
