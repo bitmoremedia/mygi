@@ -100,3 +100,11 @@ $ npm run data-tool
 | storybook-examples | runs the examples storybook [environment](http://localhost:9010/) |
 | test          | run test suite |
 | coverage      | view test coverage |
+
+## E2E Testing
+
+E2E testing is facilitated through nightwatch.js and Selenium
+
+Pre reqs for running locally:
+
+- Java Development Kit (JDK) v7 or higher

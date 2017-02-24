@@ -12,7 +12,8 @@
       "**/*.{js,jsx}"
     ],
     "coveragePathIgnorePatterns": [
-      "<rootDir>/utils/jest/", "<rootDir>/node_modules/"
+      "<rootDir>/utils/jest/",
+      "<rootDir>/node_modules/"
     ],
     "transform": {
       "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
@@ -31,6 +32,7 @@
     "develop": "gatsby develop",
     "deploy": "npm run build --prefix-links && gh-pages -d public",
     "test": "jest",
+    "e2e": "node ./node_modules/.bin/nightwatch",
     "coverage": "jest --coverage"
   },
   "author": "Russell Winborn (russ@bitmoremedia.com)",
@@ -66,6 +68,7 @@
     "gh-pages": "0.12.0",
     "jest": "19.0.2",
     "morgan": "1.8.1",
+    "nightwatch": "^0.9.12",
     "react-addons-test-utils": "15.4.2",
     "react-test-renderer": "15.4.2",
     "request": "2.79.0",
