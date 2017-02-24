@@ -123,7 +123,9 @@ To run a single test run
 $ npm run e2e e2e/tests/aboutPage.js
 ```
 
-The above commands will run e2e tests against the current site in the 'public' folder (hence you need to run the test-server first). You can also run the same e2e tests against the 'development' code line or indeed the 'live' website itself with:
+The above commands will run e2e tests against the current site in the 'public' folder (hence you need to run the test-server first)
+
+[COMING SOON] You can also run the same e2e tests against the 'development' code line or the 'live' website itself by running
 
 ```
 $ npm run e2e-dev

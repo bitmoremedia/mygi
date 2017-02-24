@@ -1,5 +1,7 @@
+let rowCount = 0
+
 module.exports = {
-  'Glycemic Index Page': (browser) => {
+  'Load Glycemic Index Page': (browser) => {
     browser.url('http://localhost:8787/glycemic-index/')
     // page body loads
     browser.waitForElementVisible('body', 1000)
@@ -13,6 +15,14 @@ module.exports = {
     // we have rows in the data table
     browser.expect.element('.gi-data-table__table tbody tr').to.be.present
 
+    // initial row count is not zero
+    browser.elements('css selector', '.gi-data-table__table tbody tr', (res) => {
+      browser.assert.notEqual(res.value.length, rowCount)
+      rowCount = res.value.length
+    })
+  },
+
+  'Add Search Filter Text': (browser) => {
     // TODO: select a category type
 
     // TODO: select a gi type
@@ -21,13 +31,22 @@ module.exports = {
     browser.setValue('.gi-data-text-filter__input', 'somecrazytextthatwillmatchnothing')
     browser.pause(1000)
     browser.expect.element('.gi-data-table__table tbody tr').to.be.not.present
-
-    browser.clearValue('.gi-data-text-filter__input')
+    // row count has changed
+    browser.elements('css selector', '.gi-data-table__table tbody tr', (res) => {
+      browser.assert.notEqual(res.value.length, rowCount)
+      rowCount = res.value.length
+    })
 
     // matching search filter shows some results
+    browser.clearValue('.gi-data-text-filter__input')
     browser.setValue('.gi-data-text-filter__input', 'bean')
     browser.pause(1000)
     browser.expect.element('.gi-data-table__table tbody tr').to.be.present
+    // row count has changed
+    browser.elements('css selector', '.gi-data-table__table tbody tr', (res) => {
+      browser.assert.notEqual(res.value.length, rowCount)
+      rowCount = res.value.length
+    })
 
     browser.end()
   },
