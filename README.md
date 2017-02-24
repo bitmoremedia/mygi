@@ -20,7 +20,7 @@ Tech stack
 - [REDUX](https://github.com/reactjs/redux) - state management
 - [Styled Components](https://styled-components.com/) - for Component styling
 - [Story Book](https://getstorybook.io/) - for sandboxed development and testing of components (game changer)
-- [Jest](https://facebook.github.io/jest/) & [Enzyme](https://github.com/airbnb/enzyme)- Unit tests (assertions and snapshot and coverage)
+- [Jest](https://facebook.github.io/jest/) & [Enzyme](https://github.com/airbnb/enzyme)- Unit tests (assertions, snapshots and coverage)
 - [NodeJS](https://nodejs.org/en/) & [Express](http://expressjs.com/) - gloriously simple JSON file based local persistence API
 
 ## Main Commands
