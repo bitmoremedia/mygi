@@ -28,7 +28,7 @@ exports[`about page active 1`] = `
             onClick={[Function]}
             style={Object {}}
           >
-            Gylcemic Index
+            Glycemic Index
           </a>
         </li>
         <li>
@@ -116,7 +116,7 @@ exports[`component renders as expected 1`] = `
             onClick={[Function]}
             style={Object {}}
           >
-            Gylcemic Index
+            Glycemic Index
           </a>
         </li>
         <li>
@@ -204,7 +204,7 @@ exports[`glycemic index page active 1`] = `
             onClick={[Function]}
             style={Object {}}
           >
-            Gylcemic Index
+            Glycemic Index
           </a>
         </li>
         <li>
@@ -292,7 +292,7 @@ exports[`glycemic index sub page active 1`] = `
             onClick={[Function]}
             style={Object {}}
           >
-            Gylcemic Index
+            Glycemic Index
           </a>
         </li>
         <li>

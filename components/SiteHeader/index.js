@@ -22,7 +22,7 @@ const SiteHeader = ({ activePath }) => {
         <div className="site-header__page-links">
           <PageLink className={giLinkClass} to={'/glycemic-index'}>
             <div className="site-header__page-link">
-              Gylcemic Index
+              Glycemic Index
             </div>
           </PageLink>
           <PageLink className={aboutLinkClass} to={'/about'}>

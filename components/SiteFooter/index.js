@@ -28,7 +28,7 @@ const SiteFooter = ({ activePath }) => {
           </li>
           <li>
             <PageLink className={activeLink('/glycemic-index')} to={'/glycemic-index'}>
-              Gylcemic Index
+              Glycemic Index
             </PageLink>
           </li>
           <li>

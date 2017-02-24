@@ -32,7 +32,7 @@ exports[`about page active 1`] = `
           <div
             className="site-header__page-link"
           >
-            Gylcemic Index
+            Glycemic Index
           </div>
         </a>
         <a
@@ -84,7 +84,7 @@ exports[`component renders as expected 1`] = `
           <div
             className="site-header__page-link"
           >
-            Gylcemic Index
+            Glycemic Index
           </div>
         </a>
         <a
@@ -136,7 +136,7 @@ exports[`glycemic index page active 1`] = `
           <div
             className="site-header__page-link"
           >
-            Gylcemic Index
+            Glycemic Index
           </div>
         </a>
         <a
@@ -188,7 +188,7 @@ exports[`glycemic index sub page active 1`] = `
           <div
             className="site-header__page-link"
           >
-            Gylcemic Index
+            Glycemic Index
           </div>
         </a>
         <a

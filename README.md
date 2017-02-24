@@ -101,10 +101,31 @@ $ npm run data-tool
 | test          | run test suite |
 | coverage      | view test coverage |
 
+
 ## E2E Testing
 
-E2E testing is facilitated through nightwatch.js and Selenium
+E2E testing of the main app is facilitated through nightwatch.js and Selenium
 
 Pre reqs for running locally:
 
 - Java Development Kit (JDK) v7 or higher
+- have the test server running '$ npm run test-server'
+
+To run the full test suite run
+
+```
+$ npm run e2e
+```
+
+To run a single test run
+
+```
+$ npm run e2e e2e/tests/aboutPage.js
+```
+
+The above commands will run e2e tests against the current site in the 'public' folder (hence you need to run the test-server first). You can also run the same e2e tests against the 'development' code line or indeed the 'live' website itself with:
+
+```
+$ npm run e2e-dev
+$ npm run e2e-live
+```
