@@ -8,8 +8,7 @@ Tech stack
 - [Preact](https://github.com/developit/preact) - 3KB React Alternative
 - [SCSS](http://sass-lang.com/) - site styles
 - [Github](https://github.com) - hosting and version control
-- [Jest](https://facebook.github.io/jest/) - Unit tests (assertions and snapshot) and coverage reports
-- [Enzyme](https://github.com/airbnb/enzyme) - Unit tests
+- [Jest](https://facebook.github.io/jest/) & [Enzyme](https://github.com/airbnb/enzyme) - Unit tests (assertions, snapshots and coverage)
 - [Nightwatch.js](http://nightwatchjs.org/) - E2E tests
 - [Airbnb ESLint Config](https://github.com/airbnb/javascript) - linting
 
@@ -21,8 +20,7 @@ Tech stack
 - [REDUX](https://github.com/reactjs/redux) - state management
 - [Styled Components](https://styled-components.com/) - for Component styling
 - [Story Book](https://getstorybook.io/) - for sandboxed development and testing of components (game changer)
-- [Jest](https://facebook.github.io/jest/) - unit tests (assertions and snapshot) and coverage reports
-- [Enzyme](https://github.com/airbnb/enzyme) - more unit tests
+- [Jest](https://facebook.github.io/jest/) & [Enzyme](https://github.com/airbnb/enzyme)- Unit tests (assertions and snapshot and coverage)
 - [NodeJS](https://nodejs.org/en/) & [Express](http://expressjs.com/) - gloriously simple JSON file based local persistence API
 
 ## Main Commands
