@@ -8,9 +8,10 @@ Tech stack
 - [Preact](https://github.com/developit/preact) - 3KB React Alternative
 - [SCSS](http://sass-lang.com/) - site styles
 - [Github](https://github.com) - hosting and version control
-- [Jest](https://facebook.github.io/jest/) - unit tests (assertions and snapshot) and coverage reports
-- [Enzyme](https://github.com/airbnb/enzyme) - more unit tests
-- [Airbnb ESLint Config](https://github.com/airbnb/javascript) -  linting
+- [Jest](https://facebook.github.io/jest/) - Unit tests (assertions and snapshot) and coverage reports
+- [Enzyme](https://github.com/airbnb/enzyme) - Unit tests
+- [Nightwatch.js](http://nightwatchjs.org/) - E2E tests
+- [Airbnb ESLint Config](https://github.com/airbnb/javascript) - linting
 
 This repo also contains a dataTool Single Page Application which can be run locally and is used for collating the various source data feeds to provide the master Glycemic Index data for the site
 
