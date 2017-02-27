@@ -8,19 +8,19 @@ MyGi is the companion website for the MyGi health App (coming soon to iOS and An
 - [Preact](https://github.com/developit/preact) - 3KB React Alternative
 - [SCSS](http://sass-lang.com/) - site styles
 - [Github](https://github.com) - hosting and version control
-- [Jest](https://facebook.github.io/jest/) & [Enzyme](https://github.com/airbnb/enzyme) - Unit tests (assertions, snapshots and coverage)
-- [Nightwatch.js](http://nightwatchjs.org/) - E2E tests
+- [Jest](https://facebook.github.io/jest/) & [Enzyme](https://github.com/airbnb/enzyme) - Unit testing (assertions, snapshots and coverage reports)
+- [Nightwatch.js](http://nightwatchjs.org/) - E2E testing
 - [Airbnb ESLint Config](https://github.com/airbnb/javascript) - linting
 
-This repo also contains a dataTool Single Page Application which can be run locally and is used for collating the various source data feeds to provide the master Glycemic Index data for the site
+This repo also contains a **Data Tool** Single Page Application that is run locally and used to master the GI values based on the various source data feeds to provide the Glycemic Index data for the site
 
 ### Data Tool - Tech Stack
 
 - [Create React App](https://github.com/facebookincubator/create-react-app) - React SPA starter (un-ejected)
 - [REDUX](https://github.com/reactjs/redux) - state management
 - [Styled Components](https://styled-components.com/) - for Component styling
-- [Story Book](https://getstorybook.io/) - for sandboxed development and testing of components (game changer)
-- [Jest](https://facebook.github.io/jest/) & [Enzyme](https://github.com/airbnb/enzyme)- Unit tests (assertions, snapshots and coverage)
+- [Story Book](https://getstorybook.io/) - for sandboxed development and testing of components (an absolute game changer - I love it!)
+- [Jest](https://facebook.github.io/jest/) & [Enzyme](https://github.com/airbnb/enzyme)- Unit testing (assertions, snapshots and coverage reports)
 - [NodeJS](https://nodejs.org/en/) & [Express](http://expressjs.com/) - gloriously simple JSON file based local persistence API
 - [Airbnb ESLint Config](https://github.com/airbnb/javascript) - linting
 
@@ -87,7 +87,7 @@ The Data Tool itself is probably more interesting than the static site that it i
 
 Found in **dataTool** sub directory
 
-Note: if you need a 'back-end' then be sure to call the below from the root directory first
+Note: if you need a 'back-end' for development of the Data Tool then be sure to call the below from the project root directory first
 
 ```
 $ npm run data-tool
@@ -105,12 +105,12 @@ $ npm run data-tool
 
 ## E2E Testing
 
-E2E testing of the main app is facilitated through nightwatch.js and Selenium
+E2E testing of the main app is facilitated through nightwatch.js
 
 Pre reqs for running locally:
 
 - Java Development Kit (JDK) v7 or higher
-- have the test server running '$ npm run start-test-server'
+- have the test server running '$ npm run start-public-server'
 
 To run the full test suite run
 
