@@ -4,7 +4,7 @@ module.exports = {
   custom_commands_path: '',
   custom_assertions_path: '',
   page_objects_path: '',
-  globals_path: 'e2e/globals',
+  globals_path: 'e2e/globals/public',
 
   selenium: {
     start_process: true,

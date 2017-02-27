@@ -1,7 +1,7 @@
 const request = require('request')
 const liveServer = require('live-server')
 const path = require('path')
-const config = require('../globals')
+const config = require('../globals/public')
 
 const publicPath = path.resolve(__dirname, '..', '..', 'public')
 const params = {

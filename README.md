@@ -36,8 +36,9 @@ Tech stack
 
 | Scripts      | Description           |
 | ------------- | --------------------- |
-| test          | run the Jest test suite for the static site components  |
-| coverage      | view test suite coverage for the static site components |
+| test          | run the Unit Test suite for the static site components  |
+| coverage      | view Unit Test suite coverage for the static site components |
+| e2e           | run the E2E tests for the public site output |
 | extract       | run the data extraction processes, adding files for any that are missing (only really useful for when new data sources are added) |
 | reset-to-average | override any manual GI values with the average value from all identified data sources |
 | build         | runs the build in isolation without a deployment - useful for local testing of the build output (i.e. the 'public' directory)  |
@@ -124,7 +125,7 @@ $ npm run e2e e2e/tests/aboutPage.js
 
 The above commands will run e2e tests against the current site in the 'public' folder (hence you need to start the Test Server first)
 
-[COMING SOON] You can also run the same e2e tests against the 'development' code line or the 'live' website by running:
+You can also run the same e2e tests against the 'development' code line or the 'live' website by running:
 
 ```
 $ npm run e2e-dev
