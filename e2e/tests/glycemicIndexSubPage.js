@@ -1,6 +1,6 @@
 module.exports = {
   'Glycemic Index Sub Page': (browser) => {
-    browser.url('http://localhost:8787/glycemic-index/low-gi/cereals/')
+    browser.url(`${browser.globals.host_url}/glycemic-index/low-gi/cereals/`)
     // page body loads
     browser.waitForElementVisible('body', 1000)
     // the 'Glycemic Index' link in the header is active

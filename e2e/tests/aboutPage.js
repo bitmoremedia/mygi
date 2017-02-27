@@ -1,6 +1,6 @@
 module.exports = {
   'About Page': (browser) => {
-    browser.url('http://localhost:8787/about')
+    browser.url(`${browser.globals.host_url}/about`)
     // page body loads
     browser.waitForElementVisible('body', 1000)
     // the 'About' link in the header is active

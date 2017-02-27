@@ -2,7 +2,7 @@ let rowCount = 0
 
 module.exports = {
   'Load Glycemic Index Page': (browser) => {
-    browser.url('http://localhost:8787/glycemic-index/')
+    browser.url(`${browser.globals.host_url}/glycemic-index/`)
     // page body loads
     browser.waitForElementVisible('body', 1000)
     // the 'Glycemic Index' link in the header is active
