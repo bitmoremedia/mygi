@@ -2,7 +2,7 @@
 
 MyGi is the companion website for the MyGi health App (coming soon to iOS and Android) and a best endeavours listing of the Glycemic Index of various foods.
 
-Tech stack
+### Website Site - Tech Stack
 
 - [Gatsby](https://github.com/gatsbyjs/gatsby) - React based static site generator
 - [Preact](https://github.com/developit/preact) - 3KB React Alternative
@@ -14,7 +14,7 @@ Tech stack
 
 This repo also contains a dataTool Single Page Application which can be run locally and is used for collating the various source data feeds to provide the master Glycemic Index data for the site
 
-Tech stack
+### Data Tool - Tech Stack
 
 - [Create React App](https://github.com/facebookincubator/create-react-app) - React SPA starter (un-ejected)
 - [REDUX](https://github.com/reactjs/redux) - state management
@@ -22,6 +22,7 @@ Tech stack
 - [Story Book](https://getstorybook.io/) - for sandboxed development and testing of components (game changer)
 - [Jest](https://facebook.github.io/jest/) & [Enzyme](https://github.com/airbnb/enzyme)- Unit tests (assertions, snapshots and coverage)
 - [NodeJS](https://nodejs.org/en/) & [Express](http://expressjs.com/) - gloriously simple JSON file based local persistence API
+- [Airbnb ESLint Config](https://github.com/airbnb/javascript) - linting
 
 ## Main Commands
 
@@ -69,8 +70,8 @@ $ npm run deploy
 
 This script will:
 
-- empty the 'public' directory
-- copy files from '_public' to 'public'
+- empty the `public` directory
+- copy files from `_public` to `public`
 - generate our custom dynamic GI markdown pages
 - run the gatsby build process
 - publish to the gh-pages branch
