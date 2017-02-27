@@ -32,8 +32,10 @@
     "develop": "gatsby develop",
     "deploy": "npm run build --prefix-links && gh-pages -d public",
     "test": "jest",
-    "test-server": "node ./e2e/scripts/testServer",
-    "e2e": "node ./node_modules/.bin/nightwatch",
+    "start-test-server": "node ./e2e/scripts/startTestServer",
+    "e2e-public": "node ./node_modules/.bin/nightwatch",
+    "e2e": "node ./e2e/scripts/testServerCheck && npm run e2e-public",
+    "e2e----": "concurrently --kill-others \"npm run --silent test-server\" \"npm run --silent e2e-public\"",
     "coverage": "jest --coverage"
   },
   "author": "Russell Winborn (russ@bitmoremedia.com)",

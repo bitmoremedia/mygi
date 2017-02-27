@@ -108,7 +108,7 @@ E2E testing of the main app is facilitated through nightwatch.js and Selenium
 Pre reqs for running locally:
 
 - Java Development Kit (JDK) v7 or higher
-- have the test server running '$ npm run test-server'
+- have the test server running '$ npm run start-test-server'
 
 To run the full test suite run
 
@@ -122,9 +122,9 @@ To run a single test run
 $ npm run e2e e2e/tests/aboutPage.js
 ```
 
-The above commands will run e2e tests against the current site in the 'public' folder (hence you need to run the test-server first)
+The above commands will run e2e tests against the current site in the 'public' folder (hence you need to start the Test Server first)
 
-[COMING SOON] You can also run the same e2e tests against the 'development' code line or the 'live' website itself by running
+[COMING SOON] You can also run the same e2e tests against the 'development' code line or the 'live' website by running:
 
 ```
 $ npm run e2e-dev
