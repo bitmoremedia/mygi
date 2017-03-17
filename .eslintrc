@@ -4,6 +4,9 @@
   "env" : {
     "jest" : true,
   },
+  "settings": {
+    "import/core-modules": ["gatsby-helpers", "config"],
+  },
   "rules": {
       "semi": 0,
       "one-var-declaration-per-line": 0,
